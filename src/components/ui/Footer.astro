@@ -13,112 +13,90 @@ const logos = [
 ];
 
 const links = [
-  { name: "About us", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Use Cases", href: "#cases" },
-  { name: "Pricing", href: "#Testimonials" },
-  { name: "Blog", href: "#Home" },
+  { name: "Sobre nosotros", href: "#about" },
+  { name: "Servicios", href: "#services" },
+  { name: "Casos de éxito", href: "#cases" },
+  // { name: "Testimonios", href: "#testimonials" },
+  // { name: "Blog", href: "#blog" },
+];
+const legalLinks = [
+  { name: "Política de privacidad", href: "#privacy" },
+  { name: "Términos y condiciones", href: "#terms" },
 ];
 ---
 
-<section class="sm:px-5">
+<section id="footer" class="sm:px-5 bg-dark text-gray">
   <div class="w-full max-w-[1240px] mx-auto">
-    <div
-      class="px-[15px] bg-dark text-gray py-[55px] lg:px-[60px] sm:rounded-t-[45px]"
-    >
-      <div>
-        <div
-          class="flex flex-col lg:flex-row gap-7 items-center justify-between"
-        >
-          <picture>
-            <a href="#home">
-              <Image src={Logo} alt="Logo for Kreatif Brand" />
-            </a>
-          </picture>
-          <ul class="flex flex-col sm:flex-row gap-5">
-            {
-              links.map((link) => {
-                return (
-                  <li class="text-center">
-                    <a class="underline" href={link.href}>
-                      {link.name}
-                    </a>
-                  </li>
-                );
-              })
-            }
-          </ul>
-          <ul class="flex gap-5">
-            {
-              logos.map((logo) => {
-                return (
-                  <li>
-                    <a href={logo.link} target="_blank">
-                      <picture>
-                        <Image src={logo.src} alt={logo.name} />
-                      </picture>
-                    </a>
-                  </li>
-                );
-              })
-            }
+    <div class="px-[15px] py-[55px] lg:px-[60px] sm:rounded-t-[45px]">
+      <div class="flex flex-col lg:flex-row gap-2 justify-between">
+        {/* Columna 1: Logo y descripción */}
+        <div class="flex flex-col items-center lg:items-start w-full lg:w-1/4 mb-8 lg:mb-0">
+          <a href="#home" class="mb-4">
+            <Image class="h-24" src={Logo} alt="Logo WT Ingelec" />
+          </a>
+          <p class="text-sm text-center lg:text-left">
+            Soluciones eléctricas innovadoras para tu empresa. Comprometidos con la calidad y la eficiencia.
+          </p>
+        </div>
+        {/* Columna 2: Enlaces útiles */}
+        <div class="w-full lg:w-1/4 mb-8 lg:mb-0">
+          <h4 class="text-blueSecundary text-lg font-medium mb-4 text-center lg:text-left">Enlaces útiles</h4>
+          <ul class="flex flex-col gap-2 items-center lg:items-start">
+            {links.map((link) => (
+              <li>
+                <a class="hover:underline" href={link.href}>{link.name}</a>
+              </li>
+            ))}
           </ul>
         </div>
-
-        <div class="flex flex-col lg:flex-row mt-[66px] mb-[51px]">
-          <div
-            class="flex text-center lg:text-start flex-col w-full lg:w-[30%]"
-          >
-            <h3 class="mb-5 text-center md:text-left text-2xl text-green">Contact us</h3>
-            <div class="flex flex-col justify-between gap-4">
-              <span> Email: examplemail.com </span>
-              <span> Phone: +123 456 789 </span>
-              <span class="lg:w-3/4">
-                Address: 1234 Street Name, City Name, Country Name
-              </span>
-            </div>
+        {/* Columna 3: Contacto */}
+        <div class="w-full lg:w-1/4 mb-8 lg:mb-0">
+          <h4 class="text-blueSecundary text-lg font-medium mb-4 text-center lg:text-left">Contacto</h4>
+          <div class="flex flex-col gap-2 text-center lg:text-left">
+            <span>Email: <a href="mailto:info@wt-ingelec.com" class="hover:underline">info@wtingelec.com</a></span>
+            <span>Teléfono: <a href="tel:+123456789" class="hover:underline">+57 310 877 5089</a></span>
+            <!-- <span>Dirección: Calle Ejemplo 1234, Ciudad, País</span> -->
           </div>
-          <div class="flex-grow my-10 lg:my-0 lg:ml-12">
-            <ShortForm />
+        </div>
+        {/* Columna 4: Newsletter y redes sociales */}
+        <div class="w-full lg:w-1/4 flex flex-col items-center lg:items-start">
+          <h4 class="text-blueSecundary text-lg font-medium mb-4 text-center lg:text-left">Suscríbete</h4>
+          <form class="flex w-full max-w-xs mb-4">
+            <input type="email" placeholder="Tu email" class="rounded-l px-3 py-2 w-full text-dark" required />
+            <button type="submit" class="bg-blue text-white px-4 py-2 rounded-r hover:bg-dark">Enviar</button>
+          </form>
+          <div>
+            <h5 class="text-blueSecundary font-medium mb-2 text-center lg:text-left">Síguenos</h5>
+            <ul class="flex gap-4 justify-center lg:justify-start">
+              {logos.map((logo) => (
+                <li>
+                  <a href={logo.link} target="_blank" rel="noopener noreferrer" aria-label={logo.name}>
+                    <Image src={logo.src} alt={logo.name} class="h-7 w-7 hover:scale-110 transition" />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
-
-      <div class="h-[1px] bg-gray mb-5"></div>
-      <div
-        class="flex flex-col lg:flex-row h-20 justify-center mt-4 text-center md:justify-between md:mt-0"
-      >
-        <span
-          >2024 Positivus - Made With <a
-            class="underline"
-            target="_blank"
-            href="https://astro.build">Astro</a
-          > by 
-          <a 
-          class="underline"
-          target="_blank"
-          href="https://manulthanura.com">Manul</a
-          ></span
-        >&nbsp
+      {/* Línea divisoria */}
+      <div class="h-[1px] bg-gray my-8"></div>
+      {/* Legal y créditos */}
+      <div class="flex flex-col md:flex-row justify-between items-center text-xs gap-2">
+        <div class="flex gap-4 mb-2 md:mb-0">
+          {legalLinks.map((link) => (
+            <a href={link.href} class="hover:underline">{link.name}</a>
+          ))}
+        </div>
         <span>
-          Credits (
-          <a
-            href="https://www.olgaskuja.design/"
-            target="_blank"
-            class="underline">Olga</a
-          >,
-          <a
-            href="https://esteban-vasquez.netlify.app/"
-            target="_blank"
-            class="underline">Esteban</a
-          >)
-          <span> &</span>
-          <a
-            class="underline"
-            href="https://creativecommons.org/licenses/by/4.0/"
-            target="_blank">Licence</a
-          >
+          © 2025 WT Ingelec - Desarrollado por 
+          <a class="underline ml-1" target="_blank" href="https://daniel-tunjano.onrender.com/">DanielTB</a>
         </span>
+      </div>
+    </div>
+  </div>
+</section>
+        
       </div>
     </div>
   </div>

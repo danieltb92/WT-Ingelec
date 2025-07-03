@@ -32,8 +32,12 @@
     --green: #b9ff66;
     --black: rgb(0, 0, 0);
     --dark: #191a23;
-    --gray: #f3f3f3;
+    --gray: #e7e7e7;
     --white: #ffffff;
+    --blue: #003A74;
+    /* --blueSecundary: #006DDA; */
+    --blueSecundary: #55aaff;
+
   }
 
   /* @layer base {
@@ -125,6 +129,13 @@
       @apply bg-green text-black rounded-[7px] px-[7px];
     }
 
+    .bluehead {
+      @apply bg-blue text-white rounded-[7px] px-[7px];
+    }
+
+    .bluehead-secundary {
+      @apply bg-blueSecundary text-white rounded-[7px] px-[7px];
+    }
     .whitehead {
       @apply bg-white text-black rounded-[7px] px-[7px];
     }

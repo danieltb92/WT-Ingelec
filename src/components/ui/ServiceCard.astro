@@ -11,35 +11,46 @@ import wob from "../../assets/icon7.svg";
 3. Black card with gray title and gray on black icon
 */
 
-const { index, titleTop, titleBottom, img, alt, link } = Astro.props;
+const { index, titleTop, titleBottom, description, img, alt, link } =
+  Astro.props;
 ---
 
 <Card isUnderline={true}>
   <div
-    class=`h-[300px] w-full sm:h-full lg:gap-[60px] grid custom-grid lg:grid-cols-2 lg:grid-rows-1 p-8 sm:p-[50px] rounded-[45px] ${index === 1 ? 'bg-gray' : index === 2 ? 'bg-green' : 'bg-dark text-gray'}`
+    class=`h-[250px] h-auto w-full flex flex-col gap-6 sm:h-full sm:p-[50px] lg:gap-[40px] lg:flex flex-col p-8 rounded-[15px] ${index === 1 ? 'bg-gray' : index === 2 ? 'bg-blueSecundary text-white' : 'bg-blueSecundary text-white'}`
   >
-    <h3 class=`flex flex-col col-span-2 lg:col-span-1`>
-      <span class=`w-[fit-content] ${index === 1 ? 'greenhead' : 'whitehead'}`
+    <h3 class=`text-lg flex flex-col col-span-1 lg:col-span-1`>
+      <span class=`w-[fit-content] ${index === 1 ? 'blackhead' : 'whitehead'}`
         >{titleTop}</span
       >
-      <span class=`w-[fit-content] ${index === 1 ? 'greenhead' : 'whitehead'}`
+      <!-- <span class=`w-[fit-content] ${index === 1 ? 'blackhead' : 'whitehead'}`
         >{titleBottom}</span
-      >
+      > -->
     </h3>
-    <picture
-      class="w-full h-full row-span-1 order-1 lg:order-none lg:row-span-2 flex justify-center items-center"
-    >
-      <Image
-        src={img}
-        alt={alt}
-        class="h-[100px] w-auto sm:h-auto sm:w-3/4 object-cover"
-      />
-    </picture>
-    <div class="flex items-end">
+    <div class="flex flex-col items-center gap-6 md:flex-row">
+      <p
+        class="flex flex-col text-blackm lg:order-2 lg:row-span-1 lg:col-span-1"
+      >
+        <span>{description}</span>
+      </p>
+      <picture
+        class="w-full h-full row-span-1 order-1 lg:order-3 lg:row-span-2 flex justify-center items-center"
+      >
+        <Image
+          src={img}
+          alt={alt}
+          class="h-full w-2/5 sm:h-auto sm:w-3/4 object-cover"
+        />
+      </picture>
+    </div>
+
+    <div class="flex items-end order-3 lg:col-span-2 lg:row-start-3">
       <a href={link} class="flex items-center gap-3.5"
-        ><Image src={index === 1 || index === 2 ? gob : wob} alt={alt} />
+        ><Image src={wob} alt={alt} />
         <span class="hidden sm:block">Service Info</span></a
       >
+              <!-- ><Image src={index === 1 || index === 2 ? gob : wob} alt={alt} /> -->
+
     </div>
   </div>
 </Card>

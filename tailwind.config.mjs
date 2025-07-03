@@ -23,6 +23,8 @@ export default {
         dark: "var(--dark)",
         gray: "var(--gray)",
         white: "var(--white)",
+        blue: "var(--blue)",
+        blueSecundary: "var(--blueSecundary)",
       },
     },
   },

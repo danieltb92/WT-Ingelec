@@ -1,8 +1,8 @@
 ---
-const { id } = Astro.props;
+const { id, class: customClass = "", ...rest } = Astro.props;
 ---
 
-<section id={id} class="px-5 flex justify-center overflow-hidden lg:block">
+<section id={id} class={`px-8 sm:px-16 flex justify-center overflow-hidden lg:block ${customClass}`} {...rest}>
   <div class="w-full max-w-[1280px] mx-auto">
     <slot />
   </div>

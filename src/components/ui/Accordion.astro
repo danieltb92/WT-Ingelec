@@ -4,35 +4,52 @@ import AccordionItem from "./AccordionItem.astro";
 const content = [
 {
   index: 1,
-  title: "Consultation",
-  description: "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements."
+  title: "Ingeniería y Diseño Avanzado",
+  description: "La base sólida para el éxito de tus proyectos eléctricos. Nuestro departamento técnico especializado te acompaña en cada fase, desde la concepción hasta la legalización.",
+  image: "./src/assets/pics/card-services1.webp",
+  title2:"Detalles del Servicio:",
+  body: [
+    "Estudios de Factibilidad y Viabilidad: Evaluamos la viabilidad técnica y económica de tu inversión, minimizando riesgos y optimizando recursos.",
+    "Análisis Detallado de Carga: Identificamos y gestionamos tus necesidades energéticas para optimizar el uso de energía y prevenir sobrecargas.",
+    "Diseños y Cálculos Eléctricos de Precisión: Desarrollamos planos y memorias de cálculo detalladas, asegurando la optimización y funcionalidad de la infraestructura eléctrica.",
+    "Asesorías y Legalización de Proyectos: Brindamos acompañamiento experto en trámites y normativas, incluyendo legalización de proyectos, para la correcta aprobación y puesta en marcha."
+  ]
 },
 {
   index: 2,
-  title: "Research",
-  description: "After the consultation, we will conduct thorough research to identify your target audience, competitors, and industry trends. This will help us develop a comprehensive strategy to achieve your business goals."
+  title: "Montajes y Construcción Eléctrica",
+  description: "Transformamos tus diseños en realidad, ejecutando montajes eléctricos y electromecánicos con la más alta calidad y seguridad. Nuestra experiencia abarca desde la obra civil hasta la puesta en marcha de sistemas complejos.",
+  image: "./src/assets/pics/card-services2.webp",
+  title2: "Detalles del Servicio:",
+  body: ["Montajes Electromecánicos y Obra Civil: Ejecutamos instalaciones robustas, incluyendo celdas de medida, cableado estructurado, canalizaciones y acometidas, con la obra civil asociada.",
+    "Instalación de Subestaciones: Montaje de subestaciones completas en media y baja tensión, incluyendo transformadores principales y celdas de medida.",
+    "Plantas Eléctricas y Transferencias Automáticas: Suministro, cálculo, instalación y mantenimiento de plantas eléctricas, incluyendo transferencias automáticas y cabinas de insonorización para asegurar suministro ininterrumpido.",
+    "Puestas a Tierra y Apantallamiento: Implementación de sistemas de protección óptimos para equipos y personal."
+  ]
 },
 {
   index: 3,
-  title: "Implementation",
-  description: "Once the research is complete, we will begin implementing the strategy. This may include optimizing your website, creating content, and launching marketing campaigns. Our team will work diligently to ensure that all tasks are completed on time and within budget."
+  title: "Automatización y Control de Procesos",
+  description: "Modernizamos tus operaciones con soluciones de automatización a medida que optimizan tus procesos, reducen costos operativos y mejoran la confiabilidad de tus sistemas.",
+  image: "./src/assets/pics/card-services3.webp",
+  title2: "Detalles del Servicio:",
+  body: ["Sistemas de Automatización Industrial y Control de Procesos: Diseño e implementación de soluciones para el control de procesos, mejorando la eficiencia y productividad industrial.",
+  "Ensamble y Cableado de Tableros Eléctricos: Diseño y fabricación de tableros de control y distribución personalizados, asegurando funcionalidad y seguridad.",
+"Modernización de Plantas: Actualización y optimización de la infraestructura existente para mejorar el rendimiento y la vida útil de tus sistemas."]
 },
 {
   index: 4,
-  title: "Optimization",
-  description: "After the initial implementation, we will continuously monitor and optimize your marketing efforts to ensure maximum results. This may involve adjusting ad campaigns, refining content, and analyzing data to identify areas for improvement."
-},
-{
-  index: 5,
-  title: "Reporting",
-  description: "Throughout the process, we will provide regular reports on the performance of your marketing campaigns. This will allow you to track progress, measure success, and make informed decisions about future strategies."
-},
-{
-  index: 6,
-  title: "Improvement",
-  description: "Based on the data and insights gathered from the reports, we will make recommendations for further improvement. This may involve refining existing strategies, exploring new opportunities, or adjusting tactics to better align with your business goals."
+  title: "Soluciones Especializadas y Mantenimiento",
+  description: "Más allá de la implementación, garantizamos la continuidad operativa y la eficiencia de tus instalaciones con servicios de mantenimiento preventivo y correctivo, y soluciones específicas para diversas necesidades.",
+  image: "./src/assets/pics/card-services4.webp",
+  title2: "Detalles del Servicio:",
+  body: ["Mantenimiento Preventivo y Correctivo: Aseguramos el funcionamiento óptimo de instalaciones eléctricas, sistemas de iluminación y plantas eléctricas.",
+    "Iluminación de Alta Eficiencia: Diseño e implementación de sistemas de iluminación modernos para canopy, áreas perimetrales e interiores.",
+    "Suministro de Materiales: Proveemos componentes y equipos de calidad para la ejecución de tus proyectos eléctricos.",
+    "Servicios para Sectores Críticos: Experiencia en el mantenimiento de grupos electrógenos para aeropuertos y soporte en áreas clasificadas para Oil & Gas."]
 }
 ];
+
 ---
 
 {
@@ -42,6 +59,9 @@ const content = [
         index={item.index}
         title={item.title}
         description={item.description}
+        image={item.image}
+        title2={item.title2}
+        body={item.body}
       />
     );
   })
