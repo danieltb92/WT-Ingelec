@@ -1,4 +1,27 @@
 ---
+/**
+ * Componente Cases.astro
+ * 
+ * Muestra una sección de "Case Studies" en formato carrusel horizontal.
+ * - En móvil muestra 1 card, en tablet 2 y en escritorio 3 cards visibles.
+ * - El usuario puede navegar con scroll horizontal o con los botones de flecha.
+ * - El scroll es suave y las cards hacen snap al inicio.
+ * - El componente es completamente responsive y no corta la última card.
+ * 
+ * Props: Ninguna (usa datos locales).
+ * 
+ * Estructura:
+ * - Section: Contenedor principal de la sección.
+ * - SectionTitle: Título y descripción de la sección.
+ * - Botones de navegación: Flechas izquierda y derecha para mover el carrusel.
+ * - Carrusel: Contenedor horizontal con scroll y snap.
+ * - Cards: Cada card representa un caso de éxito.
+ * 
+ * Lógica JS:
+ * - Calcula cuántas cards mostrar según el ancho de pantalla.
+ * - Los botones mueven el carrusel a la siguiente/anterior card.
+ * - El scroll se ajusta automáticamente al cambiar el tamaño de pantalla.
+ */
 import { Image } from "astro:assets";
 import Card from "../ui/Card.astro";
 import Section from "./Section.astro";
@@ -7,19 +30,42 @@ const cards = [
   {
     index: 0,
     title:
-      "For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.",
+      "Aeronáutica Civil",
+    project:"Mantenimiento Integral de Grupos Electrógenos en Aeropuertos Clave.",
+    description:
+      "Aseguramos la continuidad y seguridad operacional en múltiples aeropuertos de la Zona Sur de Colombia (Cali, Buenaventura, Popayán, Tumaco, Guapi, Pasto, Ipiales) mediante el mantenimiento preventivo y correctivo de sus grupos electrógenos, esenciales para la operación aérea.",
+    link: "https://google.com"
+  },
+  {
+    index: 1,
+    title:
+      "Grupo Sachiel S.A.",
+    project: " Implementación Eléctrica Completa para Estaciones de Servicio. (Estaciones de Servicio Petrobras y Petromil)",
+    description:"Realizamos diseños eléctricos y montajes generales para áreas administrativas y clasificadas (bombas sumergibles, equipos surtidores). Esto incluyó planos, cálculos de memorias, puestas a tierra, canalizaciones, y sistemas de iluminación para canopy y áreas perimetrales.",
     link: "https://google.com",
   },
   {
     index: 1,
     title:
-      "For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.",
+      " Inversiones Ligol",
+  project: "Mantenimiento Preventivo y Correctivo de Instalaciones en Red de Estaciones. (Estaciones de Servicio Petrobras, Mobil y Texaco)",
+  description:"Mantenimiento continuo de instalaciones eléctricas, sistemas de iluminación y plantas eléctricas en una amplia red de estaciones de servicio, asegurando su operatividad, cumplimiento normativo y la seguridad.",
+    link: "https://google.com",
+  },
+   {
+    index: 1,
+    title:
+      "Erazo Valencia SA",
+    project: "Soluciones Eléctricas para Sede Empresarial y Pozo Petrolero.",
+    description:"Suministro de materiales, montaje de subestaciones, diseños y montajes en media y baja tensión, tanto en la sede Iberia Cundinamarca como en un pozo petrolero en Barrancabermeja, Santander.",
     link: "https://google.com",
   },
   {
     index: 1,
     title:
-      "For a national retail chain, we created a social media marketing campaign that increased followers by 25% and generated a 20% increase in online sales.",
+      "Estación de Servicio Santa Ana Britalia (Bogotá)",
+  project: "Proyecto Eléctrico Total para Aumento de Carga (300 KVA).",
+  description:"Gestión integral del proyecto eléctrico, incluyendo diseños, cálculos, trámites ante CODENSA SAP, montaje eléctrico, canalización, cableado y suministro de materiales principales como transformador y celdas de medida.",
     link: "https://google.com",
   },
 ];
@@ -30,26 +76,138 @@ import SectionTitle from "../ui/SectionTitle.astro";
 
 <Section id="cases">
   <SectionTitle
-    sectionTitle="Case Studies"
-    description="Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies"
+    sectionTitle="Casos de Exito"
+    description="Hemos sido el socio estratégico de importantes empresas y organizaciones a nivel nacional, entregando soluciones de ingeniería eléctrica que marcan la diferencia y garantizan el éxito operativo."
   />
-  <div class="flex flex-col lg:flex-row justify-between rounded-[45px] p-1">
-    {
-      cards.map((card) => (
-        <Card>
-          <div class="flex p-[60px] h-full bg-dark text-gray rounded-[45px] m-[1px]">
-            <div class="flex flex-col gap-5">
-              <p>{card.title}</p>
-              <a href={card.link} class="flex items-center gap-[15px]">
-                <span class="text-green">Case Info</span>
-                <picture>
-                  <Image src={larrow} alt="Arrow pointing up right" />
-                </picture>
-              </a>
+  <div class="relative w-full  mx-auto">
+    <!-- Carrusel horizontal con scroll y snap -->
+    <div id="cases-carousel" class="overflow-x-auto scrollbar-hide" tabindex="0" style="WebkitOverflowScrolling: touch;">
+      <div id="cases-track" class="flex gap-6" style="scroll-snap-type: x mandatory;">
+        {
+          cards.map((card, idx) => (
+            <div
+              class="w-full min-w-full sm:min-w-[50vw] lg:min-w-[33.3333%] lg:w-1/3 flex-shrink-0"
+              style="scroll-snap-align: start;"
+            >
+              <Card>
+                <div class="flex p-8 sm:p-8 lg:p-8 h-[450px] sm:h-[400px] md:h-[300px] lg:h-[520px] bg-dark text-gray rounded-[45px]">
+                  <div class="flex flex-col gap-4">
+                    <h2 class="text-blueSecundary text-xl font-medium">{card.title}</h2>
+                    <p class="">{card.project}</p>
+                    <p>{card.description}</p>
+                    <a href={card.link} class="flex items-center gap-[15px]">
+                      <span class="text-blueSecundary">Case Info</span>
+                      <picture>
+                        <Image src={larrow} alt="Arrow pointing up right" />
+                      </picture>
+                    </a>
+                  </div>
+                </div>
+              </Card>
             </div>
-          </div>
-        </Card>
-      ))
-    }
+          ))
+        }
+      </div>
+    </div>
+    <!-- Botones de navegación -->
+    <div class="flex justify-center gap-2 my-4">
+      <button id="cases-prev" type="button" class="w-10 h-10 rounded-full bg-dark text-white flex items-center justify-center shadow hover:bg-blue transition-colors" aria-label="Anterior">
+        &#8592;
+      </button>
+      <button id="cases-next" type="button" class="w-10 h-10 rounded-full bg-dark text-white flex items-center justify-center shadow hover:bg-blue transition-colors" aria-label="Siguiente">
+        &#8594;
+      </button>
+    </div>
   </div>
 </Section>
+<style>
+  /* Oculta la barra de scroll en navegadores compatibles */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  #cases-carousel {
+    scroll-behavior: smooth;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
+  }
+  #cases-carousel:focus {
+    outline: none;
+  }
+  #cases-carousel > div {
+    scroll-snap-type: x mandatory;
+  }
+  #cases-carousel > div > div {
+    scroll-snap-align: start;
+  }
+</style>
+<script type="text/javascript">
+  // Lógica para navegación del carrusel con botones y responsividad
+  if (typeof window !== "undefined") {
+    setTimeout(() => {
+      const carousel = document.getElementById('cases-carousel');
+      const track = document.getElementById('cases-track');
+      const prevBtn = document.getElementById('cases-prev');
+      const nextBtn = document.getElementById('cases-next');
+      const cards = track ? track.children : [];
+      let cardsPerView = 1;
+
+      function updateCardsPerView() {
+        if (window.innerWidth >= 1024) {
+          cardsPerView = 3;
+        } else if (window.innerWidth >= 640) {
+          cardsPerView = 2;
+        } else {
+          cardsPerView = 1;
+        }
+      }
+
+      function scrollToCard(idx) {
+        if (!carousel || !cards.length) return;
+        const card = cards[idx];
+        if (card) {
+          carousel.scrollTo({
+            left: card.offsetLeft,
+            behavior: 'smooth'
+          });
+        }
+      }
+
+      let current = 0;
+      updateCardsPerView();
+
+      prevBtn?.addEventListener('click', () => {
+        updateCardsPerView();
+        current = Math.max(current - 1, 0);
+        scrollToCard(current);
+      });
+
+      nextBtn?.addEventListener('click', () => {
+        updateCardsPerView();
+        const maxIndex = cards.length - cardsPerView;
+        current = Math.min(current + 1, maxIndex < 0 ? 0 : maxIndex);
+        scrollToCard(current);
+      });
+
+      window.addEventListener('resize', () => {
+        updateCardsPerView();
+        const maxIndex = cards.length - cardsPerView;
+        if (current > maxIndex) current = maxIndex < 0 ? 0 : maxIndex;
+        scrollToCard(current);
+      });
+
+      // Corrige el scroll si hay pocos elementos
+      window.addEventListener('load', () => {
+        updateCardsPerView();
+        const maxIndex = cards.length - cardsPerView;
+        if (current > maxIndex) current = maxIndex < 0 ? 0 : maxIndex;
+        scrollToCard(current);
+      });
+    }, 0);
+  }
+</script>
