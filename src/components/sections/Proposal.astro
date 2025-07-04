@@ -3,31 +3,44 @@ import { Image } from "astro:assets";
 import Card from "../ui/Card.astro";
 import Section from "./Section.astro";
 
-import propImg from "../../assets/pics/proposal-pic.png";
+import propImg from "../../assets/pics/cta.webp";
 ---
 
 <Section>
-  <Card>
-    <div
-      class="flex bg-[#F3F3F3] rounded-[45px] p-[60px] relative mt-[123px] mb-[163px]"
-    >
-      <div class="w-full md:w-[40%] flex flex-col gap-[26px]">
-        <h2 class="text-3xl font-medium">Let's make things happen</h2>
-        <p>
-          Contact us today to learn more about how our digital marketing
-          services can help your business grow and succeed online.
-        </p>
-        <button class="btn-primary">Get your free proposal</button>
-      </div>
-      <picture
-        class="hidden md:flex absolute right-[-10%] lg:right-0 top-[-15%] h-[450px] items-center justify-center"
-      >
-        <Image
-          src={propImg}
-          alt="This is an illustration"
-          class="hidden md:flex lg:h-full lg:w-auto"
-        />
-      </picture>
+  <div
+    class="relative flex items-center justify-center w-screen left-1/2 right-1/2 -translate-x-1/2 min-h-[350px] md:min-h-[450px] rounded-[0] overflow-hidden mt-[80px] mb-[120px] parallax-bg"
+  >
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="relative z-10 w-full max-w-2xl px-6 py-16 md:py-24 flex flex-col items-center gap-6 text-white">
+      <h2 class="text-3xl md:text-4xl font-medium drop-shadow-lg text-white shadow-text">
+        Más de una década de experiencia garantizando proyectos eléctricos de vanguardia. ¿Cuál es tu próximo reto?
+      </h2>
+      <!-- <p class="text-base md:text-lg drop-shadow text-white">
+        Contact us today to learn more about how our digital marketing
+        services can help your business grow and succeed online.
+      </p> -->
+      <button class="btn-primary bg-blue  mt-2">Envíanos tu Proyecto</button>
     </div>
-  </Card>
+  </div>
 </Section>
+<style>
+  .parallax-bg {
+    background-image: url('/src/assets/pics/cta.jpg');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  @media (max-width: 1024px) {
+    .parallax-bg {
+      background-attachment: scroll;
+    }
+  }
+  .shadow-text {
+    text-shadow:
+      0 4px 24px #000,
+      0 2px 8px #000,
+      0 1px 2px #000;
+  }
+</style>
+</style>
