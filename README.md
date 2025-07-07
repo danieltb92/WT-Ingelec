@@ -4,11 +4,12 @@ Introducing "Positivus" - a stunning and versatile Astro theme designed for digi
 
 Built with clean, modern aesthetics and leveraging the power of Astro and Tailwind, Positivus empowers you to craft a captivating website that showcases your agency's expertise and fosters trust with potential clients.
 
-[![Static Badge](https://img.shields.io/badge/UI%2FUX-Olga-blue)](https://www.figma.com/@olgaaverchenko) [![View Demo](https://img.shields.io/badge/Develop-Manul_Thanura-red)](https://lk.linkedin.com/in/manulthanura)
+[![Static Badge](https://img.shields.io/badge/UI%2FUX-Olga-blue)](https://www.figma.com/@olgaaverchenko)
+[![View Demo](https://img.shields.io/badge/Develop-Manul_Thanura-red)](https://lk.linkedin.com/in/manulthanura)
 [![Static Badge](https://img.shields.io/badge/View_Demo-green)](https://positivustheme.vercel.app)
 [![Static Badge](https://img.shields.io/badge/Astro-orange)](https://astro.build/)
 
-![Cover](./public/cover.png)
+![cover](https://github.com/user-attachments/assets/6e24b893-b424-41b2-af82-4aafff713f9a)
 
 ## Theme Features
 
