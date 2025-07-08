@@ -38,10 +38,10 @@ const navButton = { href: 'https://github.com/manulthanura/Positivus', label: 'C
         <nav class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0" id="menu-items">
           <ul class="font-medium flex flex-col p-4 lg:p-0 mt-4 border rounded-lg lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 items-start lg:items-center text-left lg:text-center">
             {menuitems.map((item, index) => (
-              <li class="w-full lg:w-auto">
+              <li class="w-full lg:w-auto group">
                 <a 
                   href={item.href} 
-                  class="navbar-link mobile-nav-link block py-2 px-3 text-white rounded lg:bg-transparent lg:p-0 text-left lg:text-center"
+                  class="navbar-link mobile-nav-link block py-2 px-3 text-white rounded lg:bg-transparent lg:p-0 text-left lg:text-center transition-colors duration-200 group-hover:bg-blue/20 group-hover:text-blue"
                   data-close-menu="true"
                 >
                   {item.label}
@@ -63,7 +63,7 @@ const navButton = { href: 'https://github.com/manulthanura/Positivus', label: 'C
 
       <div>
         <div class="hidden lg:flex items-center gap-4">
-          <a class="px-5 py-2 rounded-2xl border border-zinc-900 bg-white hover:bg-[#003A74] text-black hover:text-white inline-flex" href={navButton.href}>
+          <a class="px-5 py-2 rounded-[15px] border-zinc-900 btn-primary bg-blue inline-flex" href={navButton.href}>
             <h2 class="text-center text-base font-normal leading-7">{navButton.label}</h2>
           </a>
         </div>

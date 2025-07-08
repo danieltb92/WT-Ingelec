@@ -11,4 +11,11 @@ export default defineConfig({
   integrations: [tailwind()],
   output: 'server',
   adapter: vercel(),
+  vite: {
+    server: {
+      allowedHosts:
+        'all' // This allows the server to accept requests from any host, which is useful for development environments.   
+    }
+  }
 });
+

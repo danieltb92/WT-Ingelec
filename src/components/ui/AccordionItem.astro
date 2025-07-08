@@ -130,7 +130,7 @@ const { index, title, description, image, title2, body } = Astro.props;
 
               if (otherAccordionToggle && otherAccordionIcon) {
                 otherAccordionItem.classList.remove("active");
-                otherAccordionItem.classList.remove("bg-blueSecundary");
+                otherAccordionItem.classList.remove("bg-white");
                 otherAccordionToggle.setAttribute("aria-expanded", "false");
                 // Ajusta la altura cerrada según el alto real del botón
                 otherAccordionItem.style.height = (otherAccordionToggle as HTMLElement).offsetHeight + "px";
@@ -147,7 +147,7 @@ const { index, title, description, image, title2, body } = Astro.props;
 
             // Set height according to content
             accordionItem.style.height = accordionItem.scrollHeight + "px";
-            accordionItem.classList.add("bg-blueSecundary");
+            accordionItem.classList.add("bg-white");
             accordionIcon.classList.add("rotate-180");
             accordionIcon.classList.add("collapsed");
           } else {
@@ -157,7 +157,7 @@ const { index, title, description, image, title2, body } = Astro.props;
             // Ajusta la altura cerrada según el alto real del botón
             accordionItem.style.height = (accordionToggle as HTMLElement).offsetHeight + "px";
             accordionIcon.classList.remove("rotate-180");
-            accordionItem.classList.remove("bg-blueSecundary");
+            accordionItem.classList.remove("bg-white");
             accordionIcon.classList.remove("collapsed");
           }
 
@@ -183,7 +183,7 @@ const { index, title, description, image, title2, body } = Astro.props;
           !accordionItem.contains(event.target as Node)
         ) {
           accordionItem.classList.remove("active");
-          accordionItem.classList.remove("bg-blueSecundary");
+          accordionItem.classList.remove("bg-white");
           accordionToggle.setAttribute("aria-expanded", "false");
 
           // Ajusta la altura cerrada según el alto real del botón

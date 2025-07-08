@@ -70,7 +70,7 @@ const cards = [
   },
 ];
 
-import larrow from "../../assets/icon3.svg";
+import larrow from "../../assets/icon1.svg";
 import SectionTitle from "../ui/SectionTitle.astro";
 ---
 
@@ -81,7 +81,7 @@ import SectionTitle from "../ui/SectionTitle.astro";
   />
   <div class="relative w-full  mx-auto">
     <!-- Carrusel horizontal con scroll y snap -->
-    <div id="cases-carousel" class="overflow-x-auto scrollbar-hide" tabindex="0" style="WebkitOverflowScrolling: touch;">
+    <div id="cases-carousel" class="scrollbar-hide" tabindex="0" style="WebkitOverflowScrolling: touch;">
       <div id="cases-track" class="flex gap-6" style="scroll-snap-type: x mandatory;">
         {
           cards.map((card, idx) => (
@@ -90,13 +90,13 @@ import SectionTitle from "../ui/SectionTitle.astro";
               style="scroll-snap-align: start;"
             >
               <Card>
-                <div class="flex p-8 sm:p-8 lg:p-8 h-[450px] sm:h-[400px] md:h-[300px] lg:h-[520px] bg-dark text-gray rounded-[45px]">
+                <div class="flex p-8 sm:p-8 lg:p-8 h-[470px] sm:h-[400px] md:h-[300px] lg:h-[400px] bg-white text-black rounded-[45px] border">
                   <div class="flex flex-col gap-4">
-                    <h2 class="text-blueSecundary text-xl font-medium">{card.title}</h2>
+                    <h2 class="text-blue text-xl font-medium">{card.title}</h2>
                     <p class="">{card.project}</p>
                     <p>{card.description}</p>
                     <a href={card.link} class="flex items-center gap-[15px]">
-                      <span class="text-blueSecundary">Case Info</span>
+                      <span class="text-blue">Case Info</span>
                       <picture>
                         <Image src={larrow} alt="Arrow pointing up right" />
                       </picture>
@@ -133,7 +133,7 @@ import SectionTitle from "../ui/SectionTitle.astro";
     scroll-behavior: smooth;
     overflow-x: auto !important;
     overflow-y: hidden;
-    touch-action: pan-x;
+    /* touch-action: pan-x; */
     -webkit-overflow-scrolling: touch;
   }
   #cases-carousel:focus {
