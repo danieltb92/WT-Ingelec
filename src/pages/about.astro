@@ -1,25 +1,117 @@
 ---
+import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
 import Sponsors from "../components/sections/Sponsors.astro";
-import Services from "../components/sections/Services.astro";
+import imageMain from "../assets/pics/about1.webp";
+import imageTwo from "../assets/pics/about2.webp";
+import imageThree from "../assets/pics/about3.webp";
 ---
 
 <MainLayout title="About us">
-	<main class="space-y-20">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-3">
-            <div class="relative flex flex-col-reverse items-center md:flex-row" id="hero">
-                <div class="row items-center py-5 md:pb-20 md:pt-10">
-                    <div class="text-center space-y-10">
-                        <h2 class="text-5xl font-medium leading-none md:text-6xl">We Navigate the <br> digital landscape <br> for success</h2>
-                        <p class="mt-6 mb-8  text-xl font-normal leading-7 sm:mb-12">Our digital marketing agency helps businesses grow and succeed online through a range of services including SEO, PPC, social media marketing, and content creation.</p>
-                        <a class="px-9 py-5 bg-zinc-900 hover:bg-white text-white hover:text-black border rounded-2xl justify-items-center md:justify-items-start gap-2.5 inline-flex" rel="noopener noreferrer"  href="https://github.com/manulthanura/Positivus" target="_blank">
-                            <h2 class="text-center text-xl font-normal leading-7">Book a consultation</h2>
-                        </a>
-                    </div>
-                </div>
+  <main class="space-y-20">
+    <div class="py-24 px-4 mx-auto max-w-screen-xl lg:py-20 lg:px-3">
+      <div class="relative flex flex-col-reverse items-center" id="hero">
+        <div class="row items-center p-10 py-5 md:pb-20 md:pt-10">
+          <div class="text-center space-y-10 mb-8">
+            <h2 class="text-3xl font-medium leading-none md:text-4xl">
+              Sobre Nosotros
+            </h2>
+            <p class="mt-6 mb-8 text-xl font-normal leading-7 sm:mb-12">
+              Una década de experiencia, innovación y compromiso impulsando <br> el
+              desarrollo de la industria y el comercio.
+            </p>
+            <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-2 sm:gap-6">
+              <picture>
+                <Image
+                  class="w-full h-[300px] sm:h-[400px] object-cover rounded-lg shadow-lg"
+                  src={imageMain}
+
+                  alt="WT Ingelec Services 1"
+                />
+              </picture>
+              <picture>
+                <Image
+                  class="w-full h-[300px] sm:h-[400px] object-cover rounded-lg shadow-lg"
+                  src={imageTwo}
+                  alt="WT Ingelec Services 2"
+                />
+              </picture>
+              <picture>
+                <Image
+                  class="w-full h-[300px] sm:h-[400px] object-cover rounded-lg shadow-lg"
+                  src={imageThree}
+                  alt="WT Ingelec Services 3"
+                />
+              </picture>
             </div>
+          </div>
+          <div class="text-left space-y-10 pb-8 pt-10">
+            <h2 class="text-2xl font-medium leading-none md:text-3xl">
+              Nuestra Historia y Propósito
+            </h2>
+            <p class="mt-6 mb-8 font-normal leading-7 sm:mb-12">
+              WT Ingelec SAS fue fundada en 2014 con el firme propósito de
+              atender las necesidades específicas de los sectores industrial y
+              comercial en Colombia. Desde nuestros inicios, nos hemos enfocado
+              en ofrecer soluciones integrales de alta calidad en montajes
+              eléctricos, automatización, control de procesos, modernización de
+              plantas, diseños, asesorías y legalización de proyectos. Hemos
+              evolucionado para proveer un servicio integral en la gestión de
+              proyectos, ingeniería, suministro y construcción de diversas obras
+              eléctricas, siempre alineados con las normas y reglamentos
+              nacionales e internacionales.
+            </p>
+          </div>
+          <Sponsors />
+          <div class="text-left space-y-10 pb-8">
+            <h2 class="text-2xl font-medium leading-none md:text-3xl">
+              Nuestra Misión
+            </h2>
+            <p class="mt-6 mb-8 font-normal leading-7 sm:mb-12">
+              Generar soluciones de ingeniería que se traduzcan en mayor
+              productividad, eficiencia, confiabilidad y menores costos de
+              mantenimiento para nuestros clientes.
+            </p>
+          </div>
+          <div class="text-left space-y-10 pb-8">
+            <h2 class="text-2xl font-medium leading-none md:text-3xl">
+              Nuestra Visión
+            </h2>
+            <p class="mt-6 mb-8 font-normal leading-7 sm:mb-12">
+              Proyectarnos como una firma líder en ingeniería y servicios a
+              nivel nacional, reconocida por nuestra excelencia, capacidad
+              innovadora y el valor que aportamos al desarrollo de nuestros
+              clientes y del sector.
+            </p>
+          </div>
+          <div class="text-left space-y-10 pb-8">
+            <h2 class="text-2xl font-medium leading-none md:text-3xl">
+              Nuestros Valores
+            </h2>
+            <ul class="list-disc space-y-4 pl-6">
+              <li>
+                <strong>Calidad de Excelencia:</strong> Nuestro compromiso inquebrantable
+                con los más altos estándares en cada proyecto y servicio que ofrecemos.
+              </li>
+              <li>
+                <strong>Innovación Constante:</strong> Nos mantenemos a la vanguardia
+                tecnológica, actualizando equipos y capacitando a nuestro personal
+                para ofrecer soluciones de última generación.
+              </li>
+              <li>
+                <strong>Integridad y Respeto:</strong> Actuamos con ética y profesionalismo
+                en todas nuestras interacciones, fomentando relaciones basadas en
+                la confianza.
+              </li>
+              <li>
+                <strong>Lealtad y Compromiso:</strong> Dedicación total a los objetivos
+                de nuestros clientes, trabajando con pasión y responsabilidad para
+                superar sus expectativas.
+              </li>
+            </ul>
+          </div>
         </div>
-        <Sponsors />
-        <Services />
-	</main>
+      </div>
+    </div>
+  </main>
 </MainLayout>

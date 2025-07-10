@@ -4,13 +4,14 @@ import decorForm from "../../assets/pics/contact-pic.png";
 ---
 
 <div
-  class="flex relative justify-start items-center p-[30px] bg-[#F3F3F3] rounded-[15px] overflow-hidden"
+  class="flex flex-col relative justify-start items-start p-[30px] bg-[#cfdce6] rounded-[15px] overflow-hidden"
 >
-  <form class="sm:p-6 h-full w-full lg:max-w-lg">
+  <h2 class="text-3xl pl-6 pt-3">Contáctanos</h2>
+  <form class="sm:p-6 h-full w-full lg:max-w-lg" action="https://formsubmit.co/comercial@wtingelec.com.co" method="POST">
     <!-- <div class="flex flex-col sm:flex-row gap-[35px] sm:items-center mb-10">
       <div class="flex items-center gap-[14px]">
         <input
-          type="checkbox"
+          type="checkbox" 
           id="checkbox1"
           name="checkbox1"
           class="form-checkbox text-black"
@@ -37,17 +38,36 @@ import decorForm from "../../assets/pics/contact-pic.png";
         id="name"
         name="name"
         placeholder="Nombre y Apellido"
+        required
         class="w-full px-[30px] py-[18px] border border-black rounded-[14px] text-black outline-none"
       />
     </div>
 
-    <div class="mb-4">
+    <div class="mb-4" >
       <label for="email" class="block text-black mb-2">Correo*</label>
       <input
         type="email"
         id="email"
         name="email"
         placeholder="Correo"
+        required
+        class="w-full px-[30px] py-[18px] border border-black rounded-[14px] text-black outline-none"
+      />
+      <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html">
+
+    </div>
+
+    <div class="mb-4">
+      <label for="phone" class="block text-black mb-2">Teléfono*</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="Teléfono"
+        autocomplete="tel"
+        inputmode="numeric"
+        pattern="^\+?[0-9\s\-\(\)]{7,20}$"
+        required
         class="w-full px-[30px] py-[18px] border border-black rounded-[14px] text-black outline-none"
       />
     </div>
@@ -57,7 +77,9 @@ import decorForm from "../../assets/pics/contact-pic.png";
       <textarea
         id="message"
         name="message"
-        placeholder="Mensaje"
+        placeholder="Escribe tu mensaje aquí..."
+        rows="4"
+        required
         class="w-full px-[30px] py-[18px] border border-black rounded-[14px] text-black outline-none"
       ></textarea>
     </div>

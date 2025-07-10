@@ -7,14 +7,15 @@ import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://positivustheme.vercel.app",
+  site: "https://wtingelec.com.co",
   integrations: [tailwind()],
   output: 'server',
   adapter: vercel(),
   vite: {
     server: {
       allowedHosts:
-        'all' // This allows the server to accept requests from any host, which is useful for development environments.   
+        ['all',
+        'million-ext-cult-affiliation.trycloudflare.com'] // This allows the server to accept requests from any host, which is useful for development environments.   
     }
   }
 });

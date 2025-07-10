@@ -2,59 +2,104 @@
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
-  { href: '/about', label: 'Nosotros' },
-  { href: '/#services', label: 'Servicios' },
-  { href: '/#cases', label: 'Casos de exito' },
-  { href: '/pricing', label: 'Contacto' },
+  { href: "/#about", label: "Nosotros" },
+  { href: "/#services", label: "Servicios" },
+  { href: "/#cases", label: "Casos de exito" },
+  { href: "/#footer", label: "Contacto" },
   // { href: '/pricing', label: 'Pricing' },
   // { href: '/articles', label: 'Blog'},
 ];
 
-const navButton = { href: 'https://github.com/manulthanura/Positivus', label: 'Contáctanos' };
+const navButton = {
+  href: "/#contact",
+  label: "Contáctanos",
+};
 ---
 
 <div class="">
-  <nav id="main-navbar" class="w-full top-0 left-0 z-50 fixed bg-transparent transition-colors duration-300">
-    <header class="flex flex-col lg:flex-row justify-between items-center px-4 pt-2 md:px-32">
+  <nav
+    id="main-navbar"
+    class="w-full top-0 left-0 z-50 fixed bg-transparent transition-colors duration-300"
+  >
+    <header
+      class="flex flex-col lg:flex-row justify-between items-center px-4 md:px-32"
+    >
       <Astronav>
         <div class="flex w-full lg:w-auto items-center justify-between">
           <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="/Logo.svg" class="h-24 drop-shadow-[0_0_2px_white]" alt="Logo" />
+            <img
+              src="/Logo.svg"
+              class="h-24 drop-shadow-[0_0_2px_white]"
+              alt="Logo"
+            />
           </a>
           <div class="block lg:hidden">
             <div id="menu-icon" class="w-8 h-8 text-black cursor-pointer">
               <!-- Open (hamburger) icon -->
-              <svg id="open-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-8 h-8">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <svg
+                id="open-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                class="w-8 h-8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"></path>
               </svg>
               <!-- Close (X) icon -->
-              <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-8 h-8 hidden">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              <svg
+                id="close-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                class="w-8 h-8 hidden"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"></path>
               </svg>
             </div>
           </div>
         </div>
-        
-        <nav class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0" id="menu-items">
-          <ul class="font-medium flex flex-col p-4 lg:p-0 mt-4 border rounded-lg lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 items-start lg:items-center text-left lg:text-center">
-            {menuitems.map((item, index) => (
-              <li class="w-full lg:w-auto group">
-                <a 
-                  href={item.href} 
-                  class="navbar-link mobile-nav-link block py-2 px-3 text-white rounded lg:bg-transparent lg:p-0 text-left lg:text-center transition-colors duration-200 group-hover:bg-blue/20 group-hover:text-blue"
-                  data-close-menu="true"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-            <div class="lg:hidden flex items-start justify-start mt-3 gap-4 w-full">
-              <a 
-                class="navbar-link mobile-nav-link px-9 py-5 rounded-2xl border border-zinc-900 bg-white hover:bg-black text-black hover:text-white inline-flex" 
+
+        <nav
+          class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0"
+          id="menu-items"
+        >
+          <ul
+            class="navbar-link font-medium flex flex-col p-4 sm:py-2 sm:px-5 mt-4 border rounded-lg lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0"
+          >
+            {
+              menuitems.map((item, index) => (
+                <li class="w-full lg:w-auto group">
+                  <a
+                    href={item.href}
+                    class="navbar-link mobile-nav-link block py-2 px-3 text-white rounded lg:bg-transparent lg:p-0 text-center transition-colors duration-200 group-hover:bg-blue/20 group-hover:text-blueSecundary"
+                    data-close-menu="true"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+            <div
+              class="lg:hidden flex items-center justify-center mt-3 gap-4 w-full"
+            >
+              <a
+                class="mobile-nav-link px-9 py-5 rounded-2xl border border-zinc-900 bg-white hover:bg-black text-black hover:text-white inline-flex"
                 href={navButton.href}
                 data-close-menu="true"
               >
-                <h2 class="text-left text-xl font-normal leading-7">{navButton.label}</h2>
+                <h2 class="text-left text-xl font-normal leading-7">
+                  {navButton.label}
+                </h2>
               </a>
             </div>
           </ul>
@@ -63,8 +108,13 @@ const navButton = { href: 'https://github.com/manulthanura/Positivus', label: 'C
 
       <div>
         <div class="hidden lg:flex items-center gap-4">
-          <a class="px-5 py-2 rounded-[15px] border-zinc-900 btn-primary bg-blue inline-flex" href={navButton.href}>
-            <h2 class="text-center text-base font-normal leading-7">{navButton.label}</h2>
+          <a
+            class="btn-navbar-link px-5 py-2 rounded-[15px] border border-zinc-900 btn-primary bg-white inline-flex text-black hover:bg-blue hover:text-white"
+            href={navButton.href}
+          >
+            <h2 class="text-center text-base font-normal leading-7">
+              {navButton.label}
+            </h2>
           </a>
         </div>
       </div>
@@ -74,47 +124,47 @@ const navButton = { href: 'https://github.com/manulthanura/Positivus', label: 'C
 
 <script is:inline>
   // Get references to the menu icon, open/close icons, and menu items
-  const menuIcon = document.getElementById('menu-icon');
-  const openIcon = document.getElementById('open-icon');
-  const closeIcon = document.getElementById('close-icon');
-  const menuItems = document.getElementById('menu-items');
-  const closeMenuItems = document.querySelectorAll('[data-close-menu="true"]');  // Select all items with the 'data-close-menu' attribute
+  const menuIcon = document.getElementById("menu-icon");
+  const openIcon = document.getElementById("open-icon");
+  const closeIcon = document.getElementById("close-icon");
+  const menuItems = document.getElementById("menu-items");
+  const closeMenuItems = document.querySelectorAll('[data-close-menu="true"]'); // Select all items with the 'data-close-menu' attribute
 
   // Toggle the menu visibility and icon when the menu icon is clicked
-  menuIcon.addEventListener('click', () => {
-    menuItems.classList.toggle('hidden');  // Toggle the 'hidden' class on the menu
+  menuIcon.addEventListener("click", () => {
+    menuItems.classList.toggle("hidden"); // Toggle the 'hidden' class on the menu
 
     // Toggle between open and close icons
-    openIcon.classList.toggle('hidden');
-    closeIcon.classList.toggle('hidden');
+    openIcon.classList.toggle("hidden");
+    closeIcon.classList.toggle("hidden");
   });
 
   // Close the menu when any item is clicked
-  closeMenuItems.forEach(item => {
-    item.addEventListener('click', () => {
-      menuItems.classList.add('hidden');  // Add the 'hidden' class to hide the menu
-      openIcon.classList.remove('hidden');  // Show the open (hamburger) icon
-      closeIcon.classList.add('hidden');  // Hide the close (X) icon
+  closeMenuItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      menuItems.classList.add("hidden"); // Add the 'hidden' class to hide the menu
+      openIcon.classList.remove("hidden"); // Show the open (hamburger) icon
+      closeIcon.classList.add("hidden"); // Hide the close (X) icon
     });
   });
 
   // Cambia el fondo del navbar y el color de los enlaces al hacer scroll
-  const navbar = document.getElementById('main-navbar');
-  const navbarLinks = document.querySelectorAll('.navbar-link');
-  window.addEventListener('scroll', () => {
+  const navbar = document.getElementById("main-navbar");
+  const navbarLinks = document.querySelectorAll(".navbar-link");
+  window.addEventListener("scroll", () => {
     if (window.scrollY > 40) {
-      navbar.classList.remove('bg-transparent');
-      navbar.classList.add('bg-white', 'shadow', 'text-black');
-      navbarLinks.forEach(link => {
-        link.classList.remove('text-white');
-        link.classList.add('text-black');
+      navbar.classList.remove("bg-transparent");
+      navbar.classList.add("bg-white");
+      navbarLinks.forEach((link) => {
+        link.classList.remove("text-white","bg-blue");
+        link.classList.add("text-black");
       });
     } else {
-      navbar.classList.add('bg-transparent');
-      navbar.classList.remove('bg-white', 'shadow', 'text-black');
-      navbarLinks.forEach(link => {
-        link.classList.remove('text-black');
-        link.classList.add('text-white');
+      navbar.classList.add("bg-transparent");
+      navbar.classList.remove("bg-white", "text-black");
+      navbarLinks.forEach((link) => {
+        link.classList.remove("text-black");
+        link.classList.add("text-white");
       });
     }
   });

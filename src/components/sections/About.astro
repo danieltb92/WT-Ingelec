@@ -1,0 +1,74 @@
+---
+import { Image } from "astro:assets";
+import Card from "../ui/Card.astro";
+import Section from "./Section.astro";
+
+import propImg from "../../assets/pics/cta.webp";
+---
+
+<Section id="about">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-3">
+    <div
+      class="relative flex flex-col-reverse items-center md:flex-row"
+      
+    >
+      <div class="row items-center py-5 md:pb-20 md:pt-10">
+        <div class="text-center space-y-10">
+          <h2 class="text-3xl font-medium leading-none sm:text-4xl">
+            Quiénes Somos
+          </h2>
+          <p class="mt-6 mb-8 text-xl font-normal leading-7 sm:mb-12">
+            WT Ingelec SAS, fundada en 2014, es una firma de ingeniería
+            especializada en soluciones eléctricas industriales y comerciales.
+            Desarrollamos y ejecutamos proyectos integrales, desde el diseño y
+            montaje hasta la automatización, para optimizar la infraestructura y
+            productividad de su empresa.
+          </p>
+          <a
+            class="px-9 py-5 bg-zinc-900 hover:bg-white text-white hover:text-black border rounded-2xl justify-items-center md:justify-items-start gap-2.5 inline-flex"
+            rel="noopener noreferrer"
+            href="/about"
+            target="_blank"
+          >
+            <h2 class="text-center text-xl font-normal leading-7">
+              Conoce Más Sobre Nosotros
+            </h2>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div
+    class="relative flex items-center justify-center w-screen left-1/2 right-1/2 -translate-x-1/2 min-h-[650px] md:min-h-[650px] rounded-[0] overflow-hidden mt-[80px] mb-[120px] parallax-bg"
+  >
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="relative z-10 w-full max-w-2xl px-6 py-16 md:py-24 flex flex-col items-center gap-6 text-white">
+      <h2 class="text-3xl md:text-4xl font-medium drop-shadow-lg text-white shadow-text">
+        Más de una década de experiencia garantizando proyectos eléctricos de vanguardia. ¿Cuál es tu próximo reto?
+      </h2>
+    
+      <button class="btn-primary bg-blue  mt-2">Envíanos tu Proyecto</button>
+    </div>
+  </div> -->
+</Section>
+<style>
+  .parallax-bg {
+    background-image: url("/src/assets/pics/cta.jpg");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  @media (max-width: 1024px) {
+    .parallax-bg {
+      background-attachment: scroll;
+    }
+  }
+  .shadow-text {
+    text-shadow:
+      0 4px 24px #000,
+      0 2px 8px #000,
+      0 1px 2px #000;
+  }
+</style>
