@@ -9,7 +9,7 @@ Built with clean, modern aesthetics and leveraging the power of Astro and Tailwi
 [![Static Badge](https://img.shields.io/badge/View_Demo-green)](https://positivustheme.vercel.app)
 [![Static Badge](https://img.shields.io/badge/Astro-orange)](https://astro.build/)
 
-![cover](https://github.com/user-attachments/assets/6e24b893-b424-41b2-af82-4aafff713f9a)
+![cover](https://github.com/user-attachments/assets/fdc2129c-d5c3-4876-b989-d905666e0f07)
 
 ## Theme Features
 
