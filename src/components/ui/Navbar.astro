@@ -19,17 +19,17 @@ const navButton = {
 <div class="">
   <nav
     id="main-navbar"
-    class="w-full top-0 left-0 z-50 fixed bg-transparent transition-colors duration-300"
+    class="w-full top-0 left-0 z-50 fixed bg-white transition-colors duration-300"
   >
     <header
-      class="flex flex-col lg:flex-row justify-between items-center px-4 md:px-32"
+      class="flex flex-col lg:flex-row justify-between items-center px-4 md:px-24"
     >
       <Astronav>
         <div class="flex w-full lg:w-auto items-center justify-between">
           <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img
               src="/Logo.svg"
-              class="h-24 drop-shadow-[0_0_2px_white]"
+              class="h-20 drop-shadow-[0_0_2px_white]"
               alt="Logo"
             />
           </a>
@@ -74,14 +74,14 @@ const navButton = {
           id="menu-items"
         >
           <ul
-            class="navbar-link font-medium flex flex-col p-4 sm:py-2 sm:px-5 mt-4 border rounded-lg lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0"
+            class="navbar-link font-medium flex flex-col p-4 sm:py-2 sm:px-5 mt-4 border-t-2  lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0"
           >
             {
               menuitems.map((item, index) => (
                 <li class="w-full lg:w-auto group">
                   <a
                     href={item.href}
-                    class="navbar-link mobile-nav-link block py-2 px-3 text-white rounded lg:bg-transparent lg:p-0 text-center transition-colors duration-200 group-hover:bg-blue/20 group-hover:text-blueSecundary"
+                    class="navbar-link mobile-nav-link block py-2 px-3 text-black rounded lg:bg-transparent lg:p-0 text-center transition-colors duration-200 group-hover:bg-blue/20 group-hover:text-blueSecundary"
                     data-close-menu="true"
                   >
                     {item.label}
@@ -149,23 +149,23 @@ const navButton = {
   });
 
   // Cambia el fondo del navbar y el color de los enlaces al hacer scroll
-  const navbar = document.getElementById("main-navbar");
-  const navbarLinks = document.querySelectorAll(".navbar-link");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 40) {
-      navbar.classList.remove("bg-transparent");
-      navbar.classList.add("bg-white");
-      navbarLinks.forEach((link) => {
-        link.classList.remove("text-white","bg-blue");
-        link.classList.add("text-black");
-      });
-    } else {
-      navbar.classList.add("bg-transparent");
-      navbar.classList.remove("bg-white", "text-black");
-      navbarLinks.forEach((link) => {
-        link.classList.remove("text-black");
-        link.classList.add("text-white");
-      });
-    }
-  });
+  // const navbar = document.getElementById("main-navbar");
+  // const navbarLinks = document.querySelectorAll(".navbar-link");
+  // window.addEventListener("scroll", () => {
+  //   if (window.scrollY > 40) {
+  //     navbar.classList.remove("bg-transparent");
+  //     navbar.classList.add("bg-white");
+  //     navbarLinks.forEach((link) => {
+  //       link.classList.remove("text-white","bg-blue");
+  //       link.classList.add("text-black");
+  //     });
+  //   } else {
+  //     navbar.classList.add("bg-transparent");
+  //     navbar.classList.remove("bg-white", "text-black");
+  //     navbarLinks.forEach((link) => {
+  //       link.classList.remove("text-black");
+  //       link.classList.add("text-white");
+  //     });
+  //   }
+  // });
 </script>
