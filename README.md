@@ -1,15 +1,23 @@
-# Positivus - Digital Marketing Agency Landing Page
+# WT Ingelec - Landing Page
 
-Introducing "Positivus" - a stunning and versatile Astro theme designed for digital marketing agencies.
+Landing page oficial de **WT Ingelec SAS**, una empresa especializada en soluciones de ingeniería eléctrica.  
+Este sitio fue desarrollado con [Astro](https://astro.build/) y estilizado con [Tailwind CSS](https://tailwindcss.com/), garantizando una experiencia web rápida, moderna y responsive.
 
-Built with clean, modern aesthetics and leveraging the power of Astro and Tailwind, Positivus empowers you to craft a captivating website that showcases your agency's expertise and fosters trust with potential clients.
-
-[![Static Badge](https://img.shields.io/badge/UI%2FUX-Olga-blue)](https://www.figma.com/@olgaaverchenko)
-[![View Demo](https://img.shields.io/badge/Develop-Manul_Thanura-red)](https://lk.linkedin.com/in/manulthanura)
-[![Static Badge](https://img.shields.io/badge/View_Demo-green)](https://positivustheme.vercel.app)
+---
+[![Static Badge](https://img.shields.io/badge/View_Demo-green)](https://wtingelec.com.co)
 [![Static Badge](https://img.shields.io/badge/Astro-orange)](https://astro.build/)
 
 ![cover](https://github.com/user-attachments/assets/fdc2129c-d5c3-4876-b989-d905666e0f07)
+
+## 🚀 Tecnologías utilizadas
+
+- [Astro](https://astro.build/) – Framework moderno para sitios web estáticos y rápidos.
+- [Tailwind CSS](https://tailwindcss.com/) – Framework utility-first para estilos rápidos y personalizables.
+- [Vite](https://vitejs.dev/) – Bundler ultrarrápido para desarrollo y construcción.
+- [Markdown](https://astro.build/features/markdown-content/) – Para contenido estático (opcional).
+- [GitHub Pages](https://pages.github.com/) – Para despliegue (opcional).
+
+---
 
 ## Theme Features
 
