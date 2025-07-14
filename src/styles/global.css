@@ -141,7 +141,7 @@
     }
 
     .blackhead {
-      @apply bg-black text-white rounded-[7px] px-[7px];
+      @apply bg-dark text-white rounded-[7px] px-[7px];
     }
   }
 }
