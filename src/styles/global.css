@@ -174,3 +174,7 @@
   font-size: 1.4rem;
   font-weight: bold;
 }
+
+.imgCardInvert img {
+filter: invert(1);
+}
