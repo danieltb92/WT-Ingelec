@@ -14,26 +14,63 @@ const sponsors = [
   { logo: s1, alt: "Aeronautica Civil logo" },
   { logo: s2, alt: "People Contact logo" },
 ];
+
+// Duplicamos los logos para asegurar el loop infinito sin saltos
+const infiniteSponsors = [...sponsors, ...sponsors];
 ---
 
 <Section id="sponsors">
-  <div class="pt-16 pb-10 flex-row items-center">
-    <h2 class="text-center pb-6">Nuestros Clientes Destacados</h2>
-    <div class="flex flex-wrap justify-evenly items-center sm:grid sm:grid-cols-5 md:grid-cols-5">
-      {
-        sponsors.map((sponsor) => {
-          return (
-            <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-              <Image
-                src={sponsor.logo}
-                class="max-h-24 sm:max-h-24 w-full object-contain mx-auto"
-                alt={sponsor.alt}
-                loading="lazy"
-              />
-            </div>
-          );
-        })
-      }
+  <div class="pt-16 pb-10 flex flex-col items-center overflow-hidden">
+    <h2 class="text-center pb-12 text-xl font-medium text-black">
+      Nuestros Clientes Destacados
+    </h2>
+
+    <div class="relative w-full max-w-[100vw]">
+      <!-- Gradients for fade effect on logic -->
+      <div
+        class="absolute inset-y-0 left-0 w-12 sm:w-32 z-10 bg-gradient-to-r from-white to-transparent pointer-events-none"
+      >
+      </div>
+      <div
+        class="absolute inset-y-0 right-0 w-12 sm:w-32 z-10 bg-gradient-to-l from-white to-transparent pointer-events-none"
+      >
+      </div>
+
+      <div class="flex w-max animate-infinite-scroll hover:pause-animation">
+        {
+          infiniteSponsors.map((sponsor, index) => {
+            return (
+              <div class="mx-5 sm:mx-10 lg:mx-16 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0 hover:scale-110">
+                <Image
+                  src={sponsor.logo}
+                  class="h-20 sm:h-28 w-auto object-contain max-w-none"
+                  alt={sponsor.alt}
+                  loading={index < 5 ? "eager" : "lazy"}
+                />
+              </div>
+            );
+          })
+        }
+      </div>
     </div>
   </div>
 </Section>
+
+<style>
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-infinite-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  .hover\:pause-animation:hover {
+    animation-play-state: paused;
+  }
+</style>
