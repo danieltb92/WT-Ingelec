@@ -24,7 +24,7 @@ export default {
         gray: "var(--gray)",
         white: "var(--white)",
         blue: "var(--blue)",
-        blueSecundary: "var(--blueSecundary)",
+        blueSecondary: "var(--blueSecondary)",
       },
     },
   },

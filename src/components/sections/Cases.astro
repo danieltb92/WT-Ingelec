@@ -1,22 +1,22 @@
 ---
 /**
  * Componente Cases.astro
- * 
+ *
  * Muestra una sección de "Case Studies" en formato carrusel horizontal.
  * - En móvil muestra 1 card, en tablet 2 y en escritorio 3 cards visibles.
  * - El usuario puede navegar con scroll horizontal o con los botones de flecha.
  * - El scroll es suave y las cards hacen snap al inicio.
  * - El componente es completamente responsive y no corta la última card.
- * 
+ *
  * Props: Ninguna (usa datos locales).
- * 
+ *
  * Estructura:
  * - Section: Contenedor principal de la sección.
  * - SectionTitle: Título y descripción de la sección.
  * - Botones de navegación: Flechas izquierda y derecha para mover el carrusel.
  * - Carrusel: Contenedor horizontal con scroll y snap.
  * - Cards: Cada card representa un caso de éxito.
- * 
+ *
  * Lógica JS:
  * - Calcula cuántas cards mostrar según el ancho de pantalla.
  * - Los botones mueven el carrusel a la siguiente/anterior card.
@@ -25,47 +25,50 @@
 import { Image } from "astro:assets";
 import Card from "../ui/Card.astro";
 import Section from "./Section.astro";
+import SwiperSlider from "../ui/SwiperSlider.astro";
 
 const cards = [
   {
     index: 0,
-    title:
-      "Aeronáutica Civil",
-    project:"Mantenimiento Integral de Grupos Electrógenos en Aeropuertos Clave.",
+    title: "Aeronáutica Civil",
+    project:
+      "Mantenimiento Integral de Grupos Electrógenos en Aeropuertos Clave.",
     description:
       "Aseguramos la continuidad y seguridad operacional en múltiples aeropuertos de la Zona Sur de Colombia (Cali, Buenaventura, Popayán, Tumaco, Guapi, Pasto, Ipiales) mediante el mantenimiento preventivo y correctivo de sus grupos electrógenos, esenciales para la operación aérea.",
-    link: "https://google.com"
-  },
-  {
-    index: 1,
-    title:
-      "Grupo Sachiel S.A.",
-    project: " Implementación Eléctrica Completa para Estaciones de Servicio. (Estaciones de Servicio Petrobras y Petromil)",
-    description:"Realizamos diseños eléctricos y montajes generales para áreas administrativas y clasificadas (bombas sumergibles, equipos surtidores). Esto incluyó planos, cálculos de memorias, puestas a tierra, canalizaciones, y sistemas de iluminación para canopy y áreas perimetrales.",
     link: "https://google.com",
   },
   {
     index: 1,
-    title:
-      " Inversiones Ligol",
-  project: "Mantenimiento Preventivo y Correctivo de Instalaciones en Red de Estaciones. (Estaciones de Servicio Petrobras, Mobil y Texaco)",
-  description:"Mantenimiento continuo de instalaciones eléctricas, sistemas de iluminación y plantas eléctricas en una amplia red de estaciones de servicio, asegurando su operatividad, cumplimiento normativo y la seguridad.",
+    title: "Grupo Sachiel S.A.",
+    project:
+      " Implementación Eléctrica Completa para Estaciones de Servicio. (Estaciones de Servicio Petrobras y Petromil)",
+    description:
+      "Realizamos diseños eléctricos y montajes generales para áreas administrativas y clasificadas (bombas sumergibles, equipos surtidores). Esto incluyó planos, cálculos de memorias, puestas a tierra, canalizaciones, y sistemas de iluminación para canopy y áreas perimetrales.",
     link: "https://google.com",
   },
-   {
+  {
     index: 1,
-    title:
-      "Erazo Valencia SA",
+    title: " Inversiones Ligol",
+    project:
+      "Mantenimiento Preventivo y Correctivo de Instalaciones en Red de Estaciones. (Estaciones de Servicio Petrobras, Mobil y Texaco)",
+    description:
+      "Mantenimiento continuo de instalaciones eléctricas, sistemas de iluminación y plantas eléctricas en una amplia red de estaciones de servicio, asegurando su operatividad, cumplimiento normativo y la seguridad.",
+    link: "https://google.com",
+  },
+  {
+    index: 1,
+    title: "Erazo Valencia SA",
     project: "Soluciones Eléctricas para Sede Empresarial y Pozo Petrolero.",
-    description:"Suministro de materiales, montaje de subestaciones, diseños y montajes en media y baja tensión, tanto en la sede Iberia Cundinamarca como en un pozo petrolero en Barrancabermeja, Santander.",
+    description:
+      "Suministro de materiales, montaje de subestaciones, diseños y montajes en media y baja tensión, tanto en la sede Iberia Cundinamarca como en un pozo petrolero en Barrancabermeja, Santander.",
     link: "https://google.com",
   },
   {
     index: 1,
-    title:
-      "Estación de Servicio Santa Ana Britalia (Bogotá)",
-  project: "Proyecto Eléctrico Total para Aumento de Carga (300 KVA).",
-  description:"Gestión integral del proyecto eléctrico, incluyendo diseños, cálculos, trámites ante CODENSA SAP, montaje eléctrico, canalización, cableado y suministro de materiales principales como transformador y celdas de medida.",
+    title: "Estación de Servicio Santa Ana Britalia (Bogotá)",
+    project: "Proyecto Eléctrico Total para Aumento de Carga (300 KVA).",
+    description:
+      "Gestión integral del proyecto eléctrico, incluyendo diseños, cálculos, trámites ante CODENSA SAP, montaje eléctrico, canalización, cableado y suministro de materiales principales como transformador y celdas de medida.",
     link: "https://google.com",
   },
 ];
@@ -79,9 +82,12 @@ import SectionTitle from "../ui/SectionTitle.astro";
     sectionTitle="Casos de Exito"
     description="Hemos sido el socio estratégico de importantes empresas y organizaciones a nivel nacional, entregando soluciones de ingeniería eléctrica que marcan la diferencia y garantizan el éxito operativo."
   />
-  <div class="relative w-full  mx-auto">
+  <div class="relative w-full">
     <!-- Carrusel horizontal con scroll y snap -->
-    <div id="cases-carousel" class="scrollbar-hide" tabindex="0" style="WebkitOverflowScrolling: touch;">
+    <div class="rounded-[45px] bg-white mb-[0px] sm:mb-[50px] text-gray">
+      <SwiperSlider />
+    </div>
+    <!-- <div id="cases-carousel" class="scrollbar-hide" tabindex="0" style="WebkitOverflowScrolling: touch;">
       <div id="cases-track" class="flex gap-6" style="scroll-snap-type: x mandatory;">
         {
           cards.map((card, idx) => (
@@ -108,16 +114,26 @@ import SectionTitle from "../ui/SectionTitle.astro";
           ))
         }
       </div>
-    </div>
+    </div> -->
     <!-- Botones de navegación -->
-    <div class="flex justify-center gap-2 my-4">
-      <button id="cases-prev" type="button" class="w-10 h-10 rounded-full bg-dark text-white flex items-center justify-center shadow hover:bg-blue transition-colors" aria-label="Anterior">
+    <!-- <div class="flex justify-center gap-2 my-4">
+      <button
+        id="cases-prev"
+        type="button"
+        class="w-10 h-10 rounded-full bg-dark text-white flex items-center justify-center shadow hover:bg-blue transition-colors"
+        aria-label="Anterior"
+      >
         &#8592;
       </button>
-      <button id="cases-next" type="button" class="w-10 h-10 rounded-full bg-dark text-white flex items-center justify-center shadow hover:bg-blue transition-colors" aria-label="Siguiente">
+      <button
+        id="cases-next"
+        type="button"
+        class="w-10 h-10 rounded-full bg-dark text-white flex items-center justify-center shadow hover:bg-blue transition-colors"
+        aria-label="Siguiente"
+      >
         &#8594;
       </button>
-    </div>
+    </div> -->
   </div>
 </Section>
 <style>
@@ -150,10 +166,10 @@ import SectionTitle from "../ui/SectionTitle.astro";
   // Lógica para navegación del carrusel con botones y responsividad
   if (typeof window !== "undefined") {
     setTimeout(() => {
-      const carousel = document.getElementById('cases-carousel');
-      const track = document.getElementById('cases-track');
-      const prevBtn = document.getElementById('cases-prev');
-      const nextBtn = document.getElementById('cases-next');
+      const carousel = document.getElementById("cases-carousel");
+      const track = document.getElementById("cases-track");
+      const prevBtn = document.getElementById("cases-prev");
+      const nextBtn = document.getElementById("cases-next");
       const cards = track ? track.children : [];
       let cardsPerView = 1;
 
@@ -173,7 +189,7 @@ import SectionTitle from "../ui/SectionTitle.astro";
         if (card) {
           carousel.scrollTo({
             left: card.offsetLeft,
-            behavior: 'smooth'
+            behavior: "smooth",
           });
         }
       }
@@ -181,20 +197,20 @@ import SectionTitle from "../ui/SectionTitle.astro";
       let current = 0;
       updateCardsPerView();
 
-      prevBtn?.addEventListener('click', () => {
+      prevBtn?.addEventListener("click", () => {
         updateCardsPerView();
         current = Math.max(current - 1, 0);
         scrollToCard(current);
       });
 
-      nextBtn?.addEventListener('click', () => {
+      nextBtn?.addEventListener("click", () => {
         updateCardsPerView();
         const maxIndex = cards.length - cardsPerView;
         current = Math.min(current + 1, maxIndex < 0 ? 0 : maxIndex);
         scrollToCard(current);
       });
 
-      window.addEventListener('resize', () => {
+      window.addEventListener("resize", () => {
         updateCardsPerView();
         const maxIndex = cards.length - cardsPerView;
         if (current > maxIndex) current = maxIndex < 0 ? 0 : maxIndex;
@@ -202,7 +218,7 @@ import SectionTitle from "../ui/SectionTitle.astro";
       });
 
       // Corrige el scroll si hay pocos elementos
-      window.addEventListener('load', () => {
+      window.addEventListener("load", () => {
         updateCardsPerView();
         const maxIndex = cards.length - cardsPerView;
         if (current > maxIndex) current = maxIndex < 0 ? 0 : maxIndex;

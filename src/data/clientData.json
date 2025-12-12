@@ -1,38 +1,37 @@
 [
-    {
-        "index": 1,
-        "name": "John Smith",
-        "role": "Marketing dierector at XYZ",
-        "comment": "We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence."
-    },
-    {
-        "index": 2,
-        "name": "Jane Doe",
-        "role": "CEO at ABC",
-        "comment": "We chose Positivus to help us with our SEO and PPC campaigns and have been very impressed with their results. They are knowledgeable, responsive, and truly care about the success of our business. We highly recommend Positivus to any company looking to grow their online presence."
-    },
-    {
-        "index": 3,
-        "name": "Alice Johnson",
-        "role": "Owner at 123",
-        "comment": "I recently started working with Positivus and have been very impressed with their professionalism and expertise. They have helped me increase my online visibility and generate more leads for my business. I highly recommend Positivus to anyone looking to improve their online marketing strategy."
-    },
-    {
-        "index": 4,
-        "name": "Bob Brown",
-        "role": "Dierector at XYZ",
-        "comment": "Positivus has been a great partner for our company. They are knowledgeable, responsive, and truly care about the success of our business. We have seen a significant increase in website traffic and leads as a result of their efforts. I highly recommend Positivus to any company looking to grow their online presence."
-    },
-    {
-        "index": 5,
-        "name": "Gupta Patel",
-        "role": "Content creator",
-        "comment": "I have been working with Positivus for the past year and have been very impressed with their professionalism and expertise. They have helped me increase my online visibility and generate more leads for my business. I highly recommend Positivus to anyone looking to improve their online marketing strategy."
-    },
-    {
-        "index": 6,
-        "name": "Sara Johnson",
-        "role": "Freelancer",
-        "comment": "Positivus made a huge difference in our online presence. They are knowledgeable, responsive, and truly care about the success of our business. We have seen a significant increase in website traffic and leads as a result of their efforts. I highly recommend Positivus to any company looking to grow their online presence."
-    }
+  {
+    "index": 7,
+    "title": "Aeronáutica Civil",
+    "project": "Mantenimiento Integral de Grupos Electrógenos en Aeropuertos Clave.",
+    "description": "Aseguramos la continuidad y seguridad operacional en múltiples aeropuertos de la Zona Sur de Colombia (Cali, Buenaventura, Popayán, Tumaco, Guapi, Pasto, Ipiales) mediante el mantenimiento preventivo y correctivo de sus grupos electrógenos, esenciales para la operación aérea.",
+    "link": "https://google.com"
+  },
+  {
+    "index": 8,
+    "title": "Grupo Sachiel S.A.",
+    "project": " Implementación Eléctrica Completa para Estaciones de Servicio. (Estaciones de Servicio Petrobras y Petromil)",
+    "description": "Realizamos diseños eléctricos y montajes generales para áreas administrativas y clasificadas (bombas sumergibles, equipos surtidores). Esto incluyó planos, cálculos de memorias, puestas a tierra, canalizaciones, y sistemas de iluminación para canopy y áreas perimetrales.",
+    "link": "https://google.com"
+  },
+  {
+    "index": 9,
+    "title": " Inversiones Ligol",
+    "project": "Mantenimiento Preventivo y Correctivo de Instalaciones en Red de Estaciones. (Estaciones de Servicio Petrobras, Mobil y Texaco)",
+    "description": "Mantenimiento continuo de instalaciones eléctricas, sistemas de iluminación y plantas eléctricas en una amplia red de estaciones de servicio, asegurando su operatividad, cumplimiento normativo y la seguridad.",
+    "link": "https://google.com"
+  },
+  {
+    "index": 10,
+    "title": "Erazo Valencia SA",
+    "project": "Soluciones Eléctricas para Sede Empresarial y Pozo Petrolero.",
+    "description": "Suministro de materiales, montaje de subestaciones, diseños y montajes en media y baja tensión, tanto en la sede Iberia Cundinamarca como en un pozo petrolero en Barrancabermeja, Santander.",
+    "link": "https://google.com"
+  },
+  {
+    "index": 11,
+    "title": "Estación de Servicio Santa Ana Britalia (Bogotá)",
+    "project": "Proyecto Eléctrico Total para Aumento de Carga (300 KVA).",
+    "description": "Gestión integral del proyecto eléctrico, incluyendo diseños, cálculos, trámites ante CODENSA SAP, montaje eléctrico, canalización, cableado y suministro de materiales principales como transformador y celdas de medida.",
+    "link": "https://google.com"
+  }
 ]

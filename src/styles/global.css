@@ -34,10 +34,9 @@
     --dark: #191a23;
     --gray: #e7e7e7;
     --white: #ffffff;
-    --blue: #003A74;
+    --blue: #003a74;
     /* --blueSecundary: #006DDA; */
-    --blueSecundary: #55aaff;
-
+    --blueSecondary: #55aaff;
   }
 
   /* @layer base {
@@ -176,5 +175,5 @@
 }
 
 .imgCardInvert img {
-filter: invert(1);
+  filter: invert(1);
 }

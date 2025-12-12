@@ -30,53 +30,112 @@ const legalLinks = [
     <div class="px-[15px] py-[55px] lg:px-[60px] sm:rounded-t-[45px]">
       <div class="flex flex-col lg:flex-row gap-2 justify-between">
         {/* Columna 1: Logo y descripción */}
-        <div class="flex flex-col items-center lg:items-start w-full lg:w-1/4 mb-8 lg:mb-0">
+        <div
+          class="flex flex-col items-center lg:items-start w-full lg:w-1/4 mb-8 lg:mb-0"
+        >
           <a href="#home" class="mb-4">
             <Image class="h-24" src={Logo} alt="Logo WT Ingelec" />
           </a>
           <p class="text-sm text-center lg:text-left">
-            Soluciones eléctricas innovadoras para tu empresa. Comprometidos con la calidad y la eficiencia.
+            Soluciones eléctricas innovadoras para tu empresa. Comprometidos con
+            la calidad y la eficiencia.
           </p>
         </div>
         {/* Columna 2: Enlaces útiles */}
         <div class="w-full lg:w-1/4 mb-8 lg:mb-0">
-          <h4 class="text-blueSecundary text-lg font-medium mb-4 text-center lg:text-left">Enlaces útiles</h4>
+          <h4
+            class="text-blueSecundary text-lg font-medium mb-4 text-center lg:text-left"
+          >
+            Enlaces útiles
+          </h4>
           <ul class="flex flex-col gap-2 items-center lg:items-start">
-            {links.map((link) => (
-              <li>
-                <a class="hover:underline" href={link.href}>{link.name}</a>
-              </li>
-            ))}
+            {
+              links.map((link) => (
+                <li>
+                  <a class="hover:underline" href={link.href}>
+                    {link.name}
+                  </a>
+                </li>
+              ))
+            }
           </ul>
         </div>
         {/* Columna 3: Contacto */}
         <div class="w-full lg:w-1/4 mb-8 lg:mb-0">
-          <h4 class="text-blueSecundary text-lg font-medium mb-4 text-center lg:text-left">Contacto</h4>
-          <div class="flex flex-col justify-center max-lg:items-center gap-2 text-center lg:text-left">
-            <span>Email: <a href="mailto:info@wtingelec.com.co" class="hover:underline">info@wtingelec.com.co</a></span>
-            <span>Teléfono: <a href="tel:+573108775089" class="hover:underline">+57 310 877 5089</a></span>
-            <span class="p-2 w-[200px] bg-emerald-500 rounded-md text-center"><a href="https://wa.me/+573108775089" class="hover:underline text-center">Whatsapp</a></span>
+          <h4
+            class="text-blueSecundary text-lg font-medium mb-4 text-center lg:text-left"
+          >
+            Contacto
+          </h4>
+          <div
+            class="flex flex-col justify-center max-lg:items-center gap-2 text-center lg:text-left"
+          >
+            <span
+              >Email: <a
+                href="mailto:info@wtingelec.com.co"
+                class="hover:underline">info@wtingelec.com.co</a
+              ></span
+            >
+            <span
+              >Teléfono: <a href="tel:+573108775089" class="hover:underline"
+                >+57 310 877 5089</a
+              ></span
+            >
+            <span class="p-2 w-[200px] bg-emerald-500 rounded-md text-center"
+              ><a
+                href="https://wa.me/+573108775089"
+                class="hover:underline text-center">Whatsapp</a
+              ></span
+            >
 
             <!-- <span>Dirección: Calle Ejemplo 1234, Ciudad, País</span> -->
           </div>
         </div>
         {/* Columna 4: Newsletter y redes sociales */}
         <div class="w-full lg:w-1/4 flex flex-col items-center lg:items-start">
-          <h4 class="text-blueSecundary text-lg font-medium mb-4 text-center lg:text-left">Suscríbete</h4>
+          <h4
+            class="text-blueSecundary text-lg font-medium mb-4 text-center lg:text-left"
+          >
+            Suscríbete
+          </h4>
           <form class="flex w-full max-w-xs mb-4">
-            <input type="email" placeholder="Tu email" class="rounded-l px-3 py-2 w-full text-dark" required />
-            <button type="submit" class="bg-blue text-white px-4 py-2 rounded-r hover:bg-dark">Enviar</button>
+            <input
+              type="email"
+              placeholder="Tu email"
+              class="rounded-l px-3 py-2 w-full text-dark"
+              required
+            />
+            <button
+              type="submit"
+              class="bg-blue text-white px-4 py-2 rounded-r hover:bg-dark"
+              >Enviar</button
+            >
           </form>
           <div>
-            <h5 class="text-blueSecundary font-medium mb-2 text-center lg:text-left">Síguenos</h5>
+            <h5
+              class="text-blueSecundary font-medium mb-2 text-center lg:text-left"
+            >
+              Síguenos
+            </h5>
             <ul class="flex gap-4 justify-center lg:justify-start">
-              {logos.map((logo) => (
-                <li>
-                  <a href={logo.link} target="_blank" rel="noopener noreferrer" aria-label={logo.name}>
-                    <Image src={logo.src} alt={logo.name} class="h-7 w-7 hover:scale-110 transition" />
-                  </a>
-                </li>
-              ))}
+              {
+                logos.map((logo) => (
+                  <li>
+                    <a
+                      href={logo.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={logo.name}
+                    >
+                      <Image
+                        src={logo.src}
+                        alt={logo.name}
+                        class="h-7 w-7 hover:scale-110 transition"
+                      />
+                    </a>
+                  </li>
+                ))
+              }
             </ul>
           </div>
         </div>
@@ -84,21 +143,26 @@ const legalLinks = [
       {/* Línea divisoria */}
       <div class="h-[1px] bg-gray my-8"></div>
       {/* Legal y créditos */}
-      <div class="flex flex-col md:flex-row justify-between items-center text-xs gap-2">
+      <div
+        class="flex flex-col md:flex-row justify-between items-center text-xs gap-2"
+      >
         <div class="flex gap-4 mb-2 md:mb-0">
-          {legalLinks.map((link) => (
-            <a href={link.href} class="hover:underline">{link.name}</a>
-          ))}
+          {
+            legalLinks.map((link) => (
+              <a href={link.href} class="hover:underline">
+                {link.name}
+              </a>
+            ))
+          }
         </div>
         <span>
-          © 2025 WT Ingelec - Desarrollado por 
-          <a class="underline ml-1" target="_blank" href="https://daniel-tunjano.onrender.com/">DanielTB</a>
+          © 2025 WT Ingelec - Desarrollado por
+          <a
+            class="underline ml-1"
+            target="_blank"
+            href="https://danieltunjano.online/">DanielTB</a
+          >
         </span>
-      </div>
-    </div>
-  </div>
-</section>
-        
       </div>
     </div>
   </div>
