@@ -40,7 +40,7 @@ const infiniteSponsors = [...sponsors, ...sponsors];
         {
           infiniteSponsors.map((sponsor, index) => {
             return (
-              <div class="mx-5 sm:mx-10 lg:mx-16 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0 hover:scale-110">
+              <div class="mx-5 sm:mx-10 lg:mx-16 flex items-center justify-center grayscale opacity-50 transition-all duration-300 hover:grayscale-0 hover:scale-110 hover:opacity-100  ">
                 <Image
                   src={sponsor.logo}
                   class="h-20 sm:h-28 w-auto object-contain max-w-none"
