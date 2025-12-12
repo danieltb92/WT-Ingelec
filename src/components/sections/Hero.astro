@@ -1,12 +1,19 @@
 ---
 import HeroIlust from "@/assets/pics/hero.webp";
+import { Image } from "astro:assets";
 ---
 
 <div
-  class="px-8 sm:px-16 relative min-h-[calc(100dvh-80px)] mt-[80px] w-full flex flex-col-reverse items-center md:flex-row bg-cover bg-no-repeat bg-[-250px_top] sm:bg-left-top lg:bg-top pt-20 justify-items-end md:justify-normal"
+  class="px-8 sm:px-16 relative min-h-[calc(100dvh-80px)] mt-[80px] w-full flex flex-col-reverse items-center md:flex-row pt-20 justify-items-end md:justify-normal"
   id="hero"
-  style={`background-image: url('${HeroIlust.src}');`}
 >
+  <Image
+    src={HeroIlust}
+    alt="Fondo hero"
+    loading="eager"
+    fetchpriority="high"
+    class="absolute inset-0 w-full h-full object-cover object-[-250px_top] sm:object-left-top lg:object-top -z-10"
+  />
   <div class="absolute inset-0 z-0 bg-black opacity-10"></div>
   <div
     class="relative z-10 w-full max-w-[1280px] mx-auto flex flex-col-reverse items-start md:items-center md:flex-row"

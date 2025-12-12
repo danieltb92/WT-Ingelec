@@ -2,6 +2,7 @@
 import Footer from "@/components/ui/Footer.astro";
 import Navbar from "@/components/ui/Navbar.astro";
 import MainHead from "@/layouts/MainHead.astro";
+import Snow from "@/components/effects/Snow.astro";
 import "@/styles/global.css";
 
 const { ...props } = Astro.props;
@@ -30,5 +31,6 @@ const { ...props } = Astro.props;
       <slot />
       <Footer />
     </main>
+    <Snow />
   </body>
 </html>
