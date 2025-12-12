@@ -1,51 +1,54 @@
 ---
-import SectionTitle from "../ui/SectionTitle.astro";
-import ServiceCard from "../ui/ServiceCard.astro";
-import Section from "./Section.astro";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+import ServiceCard from "@/components/ui/ServiceCard.astro";
+import Section from "@/components/sections/Section.astro";
 
-import c1 from "../../assets/pics/card-pic1.png";
-import c2 from "../../assets/pics/card-pic2.png";
-import c3 from "../../assets/pics/card-pic3.png";
-import c4 from "../../assets/pics/card-pic4.png";
+import c1 from "@/assets/pics/card-pic1.png";
+import c2 from "@/assets/pics/card-pic2.png";
+import c3 from "@/assets/pics/card-pic3.png";
+import c4 from "@/assets/pics/card-pic4.png";
 
 const cards = [
   {
     index: 1,
     titleTop: "Ingeniería & Diseño",
     titleBottom: "Optimization",
-    description: "Evaluamos, diseñamos y calculamos tus proyectos eléctricos. Incluye estudios de factibilidad y análisis de carga para una planificación precisa y legalización.",
+    description:
+      "Evaluamos, diseñamos y calculamos tus proyectos eléctricos. Incluye estudios de factibilidad y análisis de carga para una planificación precisa y legalización.",
     img: c1,
     alt: "SEO",
-    link: "/servicesPage",
+    link: "/services",
   },
   {
     index: 2,
     titleTop: "Montajes & Construcción",
     titleBottom: "advertising",
-    description: "Ejecutamos montajes electromecánicos, obra civil y sistemas de puesta a tierra. Suministramos e instalamos plantas eléctricas completas.",
+    description:
+      "Ejecutamos montajes electromecánicos, obra civil y sistemas de puesta a tierra. Suministramos e instalamos plantas eléctricas completas.",
     img: c2,
     alt: "SEO",
-    link: "/servicesPage",
+    link: "/services",
   },
   {
     index: 3,
     titleTop: "Automatización & Control",
     titleBottom: "Marketing",
-    description: "Modernizamos tus procesos con sistemas de automatización, control industrial y ensamble de tableros eléctricos para mayor eficiencia.",
+    description:
+      "Modernizamos tus procesos con sistemas de automatización, control industrial y ensamble de tableros eléctricos para mayor eficiencia.",
     img: c3,
     alt: "SEO",
-    link: "/servicesPage",
+    link: "/services",
   },
   {
     index: 1,
     titleTop: "Soluciones & Mantenimiento",
     titleBottom: "Marketing",
-    description: "Ofrecemos mantenimiento integral para equipos electricos tipo industrial plantas eléctricas, incluyendo servicios para sectores como Oil & Gas y Aeroportuario. ",
+    description:
+      "Ofrecemos mantenimiento integral para equipos electricos tipo industrial plantas eléctricas, incluyendo servicios para sectores como Oil & Gas y Aeroportuario. ",
     img: c4,
     alt: "SEO",
-    link: "/servicesPage",
+    link: "/services",
   },
-
 ];
 
 const description =

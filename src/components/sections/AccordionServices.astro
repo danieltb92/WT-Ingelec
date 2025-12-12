@@ -1,17 +1,14 @@
 ---
-import Accordion from "../ui/Accordion.astro";
-import SectionTitle from "../ui/SectionTitle.astro";
-import Section from "./Section.astro";
+import Accordion from "@/components/ui/Accordion.astro";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+import Section from "@/components/sections/Section.astro";
 
 const description = "Conoce Nuestras Soluciones en Profundidad";
 ---
 
 <Section id="SectionServicesAccordion" class="sm:px-0">
   <div class="mt-[50px]">
-    <SectionTitle
-      sectionTitle="Nuestros Servicios"
-      description={description}
-    />
+    <SectionTitle sectionTitle="Nuestros Servicios" description={description} />
     <Accordion />
   </div>
 </Section>

@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "@/layouts/MainLayout.astro";
+import AccordionServices from "@/components/sections/AccordionServices.astro";
+import Card from "@/components/ui/Card.astro";
+import imageMain from "@/assets/pics/section-services2.webp";
+---
+
+<MainLayout title="Nuestros Servicios">
+  <main class="space-y-20">
+    <div
+      class="justify-items-center py-36 px-0 sm:px-16 mx-auto max-w-screen-xl lg:py-40 lg:px-16"
+    >
+      <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
+          Servicios Eléctricos Integrales
+        </h2>
+        <p class="mb-5 mx-2 sm:mx-10 font-light text-gray-500 sm:text-xl">
+          Desde el diseño hasta el mantenimiento, soluciones de ingeniería de
+          vanguardia para la industria y el comercio.
+        </p>
+      </div>
+      <div
+        class="h-auto w-full sm:w-10/12 flex flex-col lg:flex-col items-center justify-center gap-10 py-8 px-0 sm:px-4 mb-8 lg:mb-12"
+      >
+        <picture class="justify-items-center w-full">
+          <Image
+            class="mx-0 sm:mx-10 w-full h-auto rounded-lg shadow-lg"
+            src={imageMain}
+            alt="WT Ingelec Services"
+          />
+        </picture>
+        <p class="max-sm:px-8 w-full font-light text-gray-500 text-base">
+          En WT Ingelec SAS, ofrecemos un portafolio completo de soluciones de
+          ingeniería eléctrica que abarcan todas las fases de tu proyecto.
+          Nuestra experiencia nos permite proveer un servicio integral en la
+          gestión, ingeniería, suministro y construcción de obras eléctricas,
+          cumpliendo con las normas y reglamentos exigidos por la ley nacional e
+          internacional. Nuestro compromiso es generar soluciones que se
+          traduzcan en mayor productividad, eficiencia, confiabilidad y menores
+          costos de mantenimiento.
+        </p>
+      </div>
+      <div class="w-full flex justify-center">
+        <div class="w-full">
+          <AccordionServices />
+        </div>
+      </div>
+    </div>
+  </main>
+</MainLayout>

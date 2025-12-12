@@ -1,31 +1,32 @@
 ---
 import { Image } from "astro:assets";
-import MainLayout from "../layouts/MainLayout.astro";
-import Sponsors from "../components/sections/Sponsors.astro";
-import imageMain from "../assets/pics/about1.webp";
-import imageTwo from "../assets/pics/about2.webp";
-import imageThree from "../assets/pics/about3.webp";
+import MainLayout from "@/layouts/MainLayout.astro";
+import Sponsors from "@/components/sections/Sponsors.astro";
+import imageMain from "@/assets/pics/about1.webp";
+import imageTwo from "@/assets/pics/about2.webp";
+import imageThree from "@/assets/pics/about3.webp";
 ---
 
 <MainLayout title="Sobre Nosotros">
   <main class="space-y-20">
-    <div class="py-24 px-8 mx-auto max-w-screen-xl lg:py-20 lg:px-3">
-      <div class="relative flex flex-col-reverse items-center" id="hero">
-        <div class="row items-center py-5 md:pb-20 md:pt-10">
+    <div class="pt-36 pb-10 px-6 mx-auto max-w-screen-xl lg:py-20 lg:px-16">
+      <div class="relative flex flex-col-reverse items-center" id="main">
+        <div class="row items-center py-5 md:pt-10">
           <div class="text-center space-y-10 mb-8">
             <h2 class="text-3xl font-medium leading-none md:text-4xl">
               Sobre Nosotros
             </h2>
             <p class="mt-6 mb-8 text-xl font-normal leading-7 sm:mb-12">
-              Una década de experiencia, innovación y compromiso impulsando <br> el
-              desarrollo de la industria y el comercio.
+              Una década de experiencia, innovación y compromiso impulsando <br
+              /> el desarrollo de la industria y el comercio.
             </p>
-            <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-2 sm:gap-6">
+            <div
+              class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-2 sm:gap-6"
+            >
               <picture>
                 <Image
                   class="w-full h-[300px] sm:h-[400px] object-cover rounded-lg shadow-lg"
                   src={imageMain}
-
                   alt="WT Ingelec Services 1"
                 />
               </picture>
@@ -62,29 +63,31 @@ import imageThree from "../assets/pics/about3.webp";
               nacionales e internacionales.
             </p>
           </div>
-          <Sponsors />
-          <div class="text-left space-y-10 pb-8">
+          <div class="w-[90dvw] p-none flex justify-center">
+            <Sponsors />
+          </div>
+          <div class="text-left space-y-10 pb-8 py-10">
             <h2 class="text-2xl font-medium leading-none md:text-3xl">
               Nuestra Misión
             </h2>
-            <p class="mt-6 mb-8 font-normal leading-7 sm:mb-12">
+            <p class="mt-4 mb-8 font-normal leading-7 sm:mb-12">
               Generar soluciones de ingeniería que se traduzcan en mayor
               productividad, eficiencia, confiabilidad y menores costos de
               mantenimiento para nuestros clientes.
             </p>
           </div>
-          <div class="text-left space-y-10 pb-8">
+          <div class="text-left space-y-10 pb-8 py-10">
             <h2 class="text-2xl font-medium leading-none md:text-3xl">
               Nuestra Visión
             </h2>
-            <p class="mt-6 mb-8 font-normal leading-7 sm:mb-12">
+            <p class="mt-4 mb-8 font-normal leading-7 sm:mb-12">
               Proyectarnos como una firma líder en ingeniería y servicios a
               nivel nacional, reconocida por nuestra excelencia, capacidad
               innovadora y el valor que aportamos al desarrollo de nuestros
               clientes y del sector.
             </p>
           </div>
-          <div class="text-left space-y-10 pb-8">
+          <div class="text-left space-y-10 pb-8 py-10">
             <h2 class="text-2xl font-medium leading-none md:text-3xl">
               Nuestros Valores
             </h2>

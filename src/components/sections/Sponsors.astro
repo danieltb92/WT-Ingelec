@@ -1,11 +1,11 @@
 ---
 import { Image } from "astro:assets";
-import s1 from "../../assets/company/company-logo1.png";
-import s2 from "../../assets/company/company-logo2.png";
-import s3 from "../../assets/company/company-logo3.png";
-import s4 from "../../assets/company/company-logo4.png";
-import s5 from "../../assets/company/company-logo5.png";
-import Section from "./Section.astro";
+import s1 from "@/assets/company/company-logo1.png";
+import s2 from "@/assets/company/company-logo2.png";
+import s3 from "@/assets/company/company-logo3.png";
+import s4 from "@/assets/company/company-logo4.png";
+import s5 from "@/assets/company/company-logo5.png";
+import Section from "@/components/sections/Section.astro";
 
 const sponsors = [
   { logo: s5, alt: "Erazo Valencia logo" },
@@ -25,7 +25,7 @@ const infiniteSponsors = [...sponsors, ...sponsors];
       Nuestros Clientes Destacados
     </h2>
 
-    <div class="relative w-full max-w-[100vw]">
+    <div class="relative w-full">
       <!-- Gradients for fade effect on logic -->
       <div
         class="absolute inset-y-0 left-0 w-12 sm:w-32 z-10 bg-gradient-to-r from-white to-transparent pointer-events-none"

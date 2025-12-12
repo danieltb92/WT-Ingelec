@@ -1,17 +1,14 @@
 ---
 import { Image } from "astro:assets";
-import Card from "../ui/Card.astro";
-import Section from "./Section.astro";
+import Card from "@/components/ui/Card.astro";
+import Section from "@/components/sections/Section.astro";
 
-import propImg from "../../assets/pics/cta.webp";
+import propImg from "@/assets/pics/cta.webp";
 ---
 
 <Section id="about">
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-3">
-    <div
-      class="relative flex flex-col-reverse items-center md:flex-row"
-      
-    >
+    <div class="relative flex flex-col-reverse items-center md:flex-row">
       <div class="row items-center py-5 md:pb-20 md:pt-10">
         <div class="text-center space-y-10">
           <h2 class="text-3xl font-medium leading-none sm:text-4xl">
