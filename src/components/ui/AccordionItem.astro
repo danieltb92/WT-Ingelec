@@ -13,7 +13,7 @@ const { index, title, description, image, title2, body } = Astro.props;
 
 <div
   id="accordion__item"
-  class="accordion__item group max-sm:h-[60px] h-[160px] bg-[#FFFFFF] overflow-hidden w-full transition-all duration-500 mb-[30px] rounded-[15px] border border-dark shadow-[0px_5px_0px_#191a23]"
+  class="accordion__item group max-sm:h-[60px] h-[160px] bg-[#FFFFFF] overflow-hidden w-full transition-all duration-500 mb-[30px] rounded-[15px] border border-dark shadow-[0px_5px_0px_#191a23] gsap-fade-up"
 >
   <button
     class="accordion__toggle w-full max-sm:h-[60px] h-[160px] flex items-center justify-between p-4 sm:p-[60px] cursor-pointer"
@@ -22,7 +22,9 @@ const { index, title, description, image, title2, body } = Astro.props;
     aria-controls={`${title} accordion__item menu content`}
   >
     <div class="flex items-center gap-4 sm:gap-[25px] flex-1 min-w-0">
-      <span class="block text-base sm:text-xl md:text-2xl lg:text-3xl truncate">{title}</span>
+      <span class="block text-base sm:text-xl md:text-2xl lg:text-3xl truncate"
+        >{title}</span
+      >
     </div>
     <div
       class="bg-gray w-10 h-10 sm:w-[58px] sm:h-[58px] flex justify-center items-center rounded-full border border-dark flex-shrink-0 ml-4"
@@ -43,22 +45,26 @@ const { index, title, description, image, title2, body } = Astro.props;
     <p class="prose mb-4 mt-1 max-w-full pt-5 pb-[60px] transition-[height]">
       {description}
     </p>
-    {image && (
-      <div class="flex justify-center w-full my-4">
-        <img src={image} alt={title} class="h-auto rounded-lg shadow" />
-      </div>
-    )}
+    {
+      image && (
+        <div class="flex justify-center w-full my-4">
+          <img src={image} alt={title} class="h-auto rounded-lg shadow" />
+        </div>
+      )
+    }
     <div>
       <h3 class="prose mb-1 mt-1 max-w-full pt-5 pb-[10px] transition-[height]">
         {title2}
       </h3>
-      {Array.isArray(body) && body.length > 0 && body[0] !== "" ? (
-        <ul class="mb-4 mt-1 max-w-full pt-1 pb-[60px] list-disc pl-6 transition-[height]">
-          {body.map((item) => (
-            <li>{item}</li>
-          ))}
-        </ul>
-      ) : null}
+      {
+        Array.isArray(body) && body.length > 0 && body[0] !== "" ? (
+          <ul class="mb-4 mt-1 max-w-full pt-1 pb-[60px] list-disc pl-6 transition-[height]">
+            {body.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        ) : null
+      }
     </div>
   </div>
 </div>
@@ -97,7 +103,9 @@ const { index, title, description, image, title2, body } = Astro.props;
 
     function adjustHeights() {
       accordionItems.forEach((accordionItem) => {
-        const accordionToggle = accordionItem.querySelector(".accordion__toggle") as HTMLElement;
+        const accordionToggle = accordionItem.querySelector(
+          ".accordion__toggle"
+        ) as HTMLElement;
         if (accordionItem.classList.contains("active")) {
           // Si está abierto, ajusta la altura al nuevo scrollHeight
           accordionItem.style.height = accordionItem.scrollHeight + "px";
@@ -133,7 +141,8 @@ const { index, title, description, image, title2, body } = Astro.props;
                 otherAccordionItem.classList.remove("bg-white");
                 otherAccordionToggle.setAttribute("aria-expanded", "false");
                 // Ajusta la altura cerrada según el alto real del botón
-                otherAccordionItem.style.height = (otherAccordionToggle as HTMLElement).offsetHeight + "px";
+                otherAccordionItem.style.height =
+                  (otherAccordionToggle as HTMLElement).offsetHeight + "px";
                 otherAccordionIcon.classList.remove("rotate-180");
                 otherAccordionIcon.classList.remove("collapsed");
               }
@@ -155,7 +164,8 @@ const { index, title, description, image, title2, body } = Astro.props;
             accordionToggle.setAttribute("aria-expanded", "false");
 
             // Ajusta la altura cerrada según el alto real del botón
-            accordionItem.style.height = (accordionToggle as HTMLElement).offsetHeight + "px";
+            accordionItem.style.height =
+              (accordionToggle as HTMLElement).offsetHeight + "px";
             accordionIcon.classList.remove("rotate-180");
             accordionItem.classList.remove("bg-white");
             accordionIcon.classList.remove("collapsed");
@@ -187,7 +197,8 @@ const { index, title, description, image, title2, body } = Astro.props;
           accordionToggle.setAttribute("aria-expanded", "false");
 
           // Ajusta la altura cerrada según el alto real del botón
-          accordionItem.style.height = (accordionToggle as HTMLElement).offsetHeight + "px";
+          accordionItem.style.height =
+            (accordionToggle as HTMLElement).offsetHeight + "px";
           accordionIcon.classList.remove("rotate-180");
           accordionIcon.classList.remove("collapsed");
         }
@@ -203,5 +214,4 @@ const { index, title, description, image, title2, body } = Astro.props;
   // Run on page swap
   accordionSetup();
   document.addEventListener("astro:after-swap", accordionSetup);
-</script>
 </script>

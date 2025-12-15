@@ -58,18 +58,22 @@ const description =
 <Section id="services">
   <div class="mt-[80px] sm:mt-[20px] mb-5">
     <SectionTitle sectionTitle="Nuestros Servicios" description={description} />
-    <div class="grid lg:grid-cols-2 lg:grid-rows-2 gap-8">
+    <div
+      class="grid lg:grid-cols-2 lg:grid-rows-2 gap-8 gsap-stagger-container"
+    >
       {
         cards.map((card) => (
-          <ServiceCard
-            index={card.index}
-            titleTop={card.titleTop}
-            titleBottom={card.titleBottom}
-            description={card.description}
-            img={card.img}
-            alt={card.alt}
-            link={card.link}
-          />
+          <div class="gsap-stagger-item h-full">
+            <ServiceCard
+              index={card.index}
+              titleTop={card.titleTop}
+              titleBottom={card.titleBottom}
+              description={card.description}
+              img={card.img}
+              alt={card.alt}
+              link={card.link}
+            />
+          </div>
         ))
       }
     </div>
