@@ -24,7 +24,13 @@ const { ...props } = Astro.props;
       overflow: hidden;
     }
   </style>
-  <script src="../utils/lenis"></script>
+  <script src="../utils/lenis.js"></script>
+  <script>
+    import { initAnimations } from "../utils/animations.js";
+    document.addEventListener("DOMContentLoaded", () => {
+      initAnimations();
+    });
+  </script>
   <body class="bg-white font-grotesk">
     <main>
       <Navbar />
