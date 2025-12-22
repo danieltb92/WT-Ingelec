@@ -1,63 +1,90 @@
-# WT Ingelec - Landing Page
+# WT Ingelec - Plataforma Corporativa Web
 
-Landing page oficial de **WT Ingelec SAS**, una empresa especializada en soluciones de ingeniería eléctrica.  
-Este sitio fue desarrollado con [Astro](https://astro.build/) y estilizado con [Tailwind CSS](https://tailwindcss.com/), garantizando una experiencia web rápida, moderna y responsive.
+![Astro](https://img.shields.io/badge/Astro-v5.0-orange?style=flat-square&logo=astro)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v3.4-38B2AC?style=flat-square&logo=tailwind-css)
+![TypeScript](https://img.shields.io/badge/TypeScript-v5.4-3178C6?style=flat-square&logo=typescript)
+![Status](https://img.shields.io/badge/Status-En_Desarrollo-green?style=flat-square)
 
----
-[![Static Badge](https://img.shields.io/badge/View_Demo-green)](https://wtingelec.com.co)
-[![Static Badge](https://img.shields.io/badge/Astro-orange)](https://astro.build/)
+> **Una experiencia digital de alto impacto para soluciones de ingeniería eléctrica.**
 
-![cover](https://github.com/user-attachments/assets/fdc2129c-d5c3-4876-b989-d905666e0f07)
-
-## 🚀 Tecnologías utilizadas
-
-- [Astro](https://astro.build/) – Framework moderno para sitios web estáticos y rápidos.
-- [Tailwind CSS](https://tailwindcss.com/) – Framework utility-first para estilos rápidos y personalizables.
-- [Vite](https://vitejs.dev/) – Bundler ultrarrápido para desarrollo y construcción.
-- [Markdown](https://astro.build/features/markdown-content/) – Para contenido estático (opcional).
-- [GitHub Pages](https://pages.github.com/) – Para despliegue (opcional).
+Este proyecto es la **Landing Page Corporativa oficial de WT Ingelec SAS**, diseñada para comunicar profesionalismo, innovación y confianza en el sector de la ingeniería eléctrica. Desarrollada con tecnologías modernas para garantizar un rendimiento excepcional y una experiencia de usuario fluida.
 
 ---
 
-## Theme Features
+## 🌟 Características Principales
 
-Leveraging the power of Astro and Tailwind CSS, Positivus offers:
+- **⚡ Rendimiento Extremo:** Construido sobre **Astro** para entregar HTML estático por defecto, asegurando tiempos de carga mínimos y puntajes perfectos en Core Web Vitals.
+- **🎨 Diseño UI/UX Moderno:** Interfaz limpia y corporativa utilizando **Tailwind CSS**, con un tema oscuro y elegante (`#003A74`).
+- **✨ Animaciones Avanzadas:** Integración de **GSAP** para animaciones de entrada secuenciales y timelines complejos en el Hero y otras secciones.
+- **🌊 Scroll Suave:** Experiencia de navegación premium implementada con **Lenis**.
+- **📱 Diseño Responsivo:** Totalmente adaptado para móviles, tablets y escritorio.
+- **🧩 Componentes Interactivos:**
+  - Carruseles de clientes y testimonios con **Swiper.js**.
+  - Acordeones de servicios optimizados.
+  - Formularios de contacto funcionales.
 
-- Clean and modern design.
-- SEO-friendly.
-- Multiple Layouts.
-- Seamless Navigation.
-- Pre-built Sections.
-- Customizable Components.
-- Mobile-Responsiveness.
+## 🛠️ Stack Tecnológico
 
-## 🚀 Project Structure
+Este proyecto utiliza una arquitectura moderna JAMstack:
 
-The project is built using Astro.js and Tailwind CSS. Here's a quick look at the project structure:
+- **Core:** [Astro](https://astro.build/) (v5.x) - Framework metaframwork para web.
+- **Estilos:** [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework.
+- **Lenguaje:** [TypeScript](https://www.typescriptlang.org/) - Para mayor robustez y tipado estático.
+- **Animaciones:**
+  - [GSAP](https://gsap.com/) - GreenSock Animation Platform.
+  - [Lenis](https://lenis.studiofreight.com/) - Smooth Scrolling.
+- **UI Components:**
+  - [Swiper](https://swiperjs.com/) - Modern touch slider.
+  - `astro-navbar` - Gestión de navegación.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🚀 Instalación y Uso Local
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Sigue estos pasos para ejecutar el proyecto en tu máquina local:
 
-Any static assets, like images, can be placed in the `public/` directory.
+1.  **Clonar el repositorio:**
 
-## 🧞 Commands
+    ```bash
+    git clone https://github.com/tu-usuario/WT-Ingelec.git
+    cd WT-Ingelec
+    ```
 
-All commands are run from the root of the project, from a terminal:
+2.  **Instalar dependencias:**
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+    ```bash
+    npm install
+    ```
 
-## 👀 Want to learn more?
+3.  **Iniciar el servidor de desarrollo:**
+    ```bash
+    npm run dev
+    ```
+    El sitio estará disponible en `http://localhost:4321`.
 
-Feel free to check [Astro documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 📂 Estructura del Proyecto
 
-## 📄 License
+```text
+/
+├── public/             # Assets estáticos (imágenes, favicons)
+├── src/
+│   ├── components/     # Componentes UI reutilizables
+│   │   ├── sections/   # Secciones principales (Hero, About, Services...)
+│   │   └── ui/         # Elementos base (Botones, Inputs...)
+│   ├── data/           # Datos estáticos (JSON) para contenido
+│   ├── layouts/        # Plantillas base (MainLayout, HeadLayout)
+│   ├── pages/          # Rutas y páginas del sitio (Astro file-based routing)
+│   └── styles/         # Estilos globales y configuraciones de Tailwind
+└── astro.config.mjs    # Configuración de Astro
+```
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+## 🎯 Enfoque del Desarrollo (Portfolio Highlights)
+
+Este proyecto destaca por varias decisiones técnicas clave enfocadas en la calidad:
+
+- **Optimización de Recursos:** Uso de formatos de imagen modernos (WebP) y carga diferida (lazy loading) para mejorar el LCP (Largest Contentful Paint).
+- **Arquitectura de Componentes:** Estructura modular que permite la fácil escalabilidad y mantenimiento del código.
+- **Tipografía y Accesibilidad:** Selección cuidadosa de fuentes y colores para asegurar legibilidad y contraste adecuado.
+- **Mejora Progresiva:** Funcionalidades básicas garantizadas incluso sin JavaScript, con mejoras interactivas añadidas progresivamente.
+
+---
+
+Desarrollado con ❤️ y ⚡ (Astro)

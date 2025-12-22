@@ -1,9 +1,9 @@
 # Documento de Requisitos del Producto (PRD)
 
 **Nombre del Proyecto:** WT Ingelec - Plataforma Corporativa Web  
-**Versión:** 1.0  
-**Estado:** En Desarrollo  
-**Fecha:** 16 de Diciembre, 2024
+**Versión:** 1.2  
+**Estado:** En Producción (Mejora Continua)  
+**Fecha de Última Actualización:** 22 de Diciembre, 2025
 
 ---
 
@@ -11,91 +11,93 @@
 
 El proyecto consiste en el desarrollo de una **landing page corporativa de alto impacto** para **WT Ingelec SAS**, una empresa líder en soluciones de ingeniería eléctrica. El objetivo principal es establecer una presencia digital sólida que comunique profesionalismo, innovación y confiabilidad (principios clave de la marca), sirviendo como herramienta principal para la captación de clientes y la presentación de portafolio.
 
+Actualmente, el proyecto se encuentra en una etapa avanzada de maquetación con componentes funcionales en **Astro**, utilizando **Tailwind CSS** para estilos y **GSAP** para animaciones.
+
 ## 2. Objetivos del Negocio
 
-- **Captación de Leads:** Facilitar que clientes potenciales (industriales y comerciales) contacten a la empresa fácilmente.
+- **Captación de Leads:** Facilitar que clientes potenciales (industriales y comerciales) contacten a la empresa fácilmente a través de formularios optimizados.
 - **Autoridad de Marca:** Mostrar experiencia a través de casos de éxito reales (ej. Aeronáutica Civil, Petrobras).
 - **Presentación de Servicios:** Explicar claramente el catálogo de servicios (Mantenimiento, Diseños Eléctricos, Montajes).
-- **Performance:** Garantizar una carga ultrarrápida y una experiencia de usuario fluida para mejorar el posicionamiento SEO.
+- **Performance:** Garantizar una carga ultrarrápida y una experiencia de usuario fluida (Core Web Vitals > 90).
 
 ## 3. Público Objetivo (User Personas)
 
-1.  **Gerentes de Operaciones / Infraestructura:** Buscan proveedores confiables para mantenimiento o proyectos nuevos en sus empresas (ej. Aeropuertos, Estaciones de Servicio). Valoran la experiencia técnica y certificaciones.
-2.  **Dueños de Negocios Industriales:** Buscan soluciones integrales (diseño + montaje) para no lidiar con múltiples contratistas.
-3.  **Entidades Estatales:** Buscan contratistas con historial comprobado de cumplimiento en licitaciones (ej. Aeronáutica Civil).
+1.  **Gerentes de Operaciones / Infraestructura:** Buscan proveedores confiables para mantenimiento o proyectos nuevos.
+2.  **Dueños de Negocios Industriales:** Buscan soluciones integrales (diseño + montaje).
+3.  **Entidades Estatales:** Buscan contratistas con historial comprobado de cumplimiento.
 
-## 4. Alcance Funcional (Sitemap & Features)
+## 4. Alcance Funcional Actual (Sitemap & Features)
 
 ### 4.1. Página de Inicio (Home)
 
-La entrada principal debe impactar visualmente y guiar al usuario.
-
 - **Hero Section:**
-  - Título H1 claro ("Soluciones Eléctricas | WT Ingelec").
-  - Subtítulo de valor (Innovación y confiabilidad).
-  - Call-to-Action (CTA) primario ("Solicitar Cotización" o "Ver Servicios").
-  - _Posible mejora:_ Integración de animaciones de fondo (Vanta.js o partículas) para denotar "energía".
-- **Sección de Clientes / Sponsors:** Carrusel de logotipos de clientes actuales para generar confianza inmediata.
-- **Casos de Éxito (Cases):**
-  - Visualización de proyectos destacados (data proveniente de `clientData.json`).
-  - Detalles: Cliente, Tipo de Proyecto y Descripción técnica breve.
-- **Propuesta de Valor (Proposal):** Sección destacada de por qué elegir a WT Ingelec.
-- **Testimonios:** Slider con reseñas de clientes satisfechos.
+  - **Estado:** Implementado.
+  - **Contenido:** Título H1 Animado ("Soluciones Eléctricas de Vanguardia..."), Subtítulo y Botón CTA ("Empieza tu proyecto").
+  - **Visual:** Imagen de fondo estática de alta calidad (`heroNavidad.webp` actualmente activa por temporada).
+  - **Animaciones:** Entrada secuencial de textos y botón con GSAP (`gsap.timeline`).
+  - _Pendiente:_ Integración final de efectos de fondo interactivos (Vanta.js o partículas/nieve) que se han explorado pero no están activos en la versión principal `Hero.astro`.
+- **Sección de Clientes / Sponsors:** `Sponsors.astro` - Carrusel/Grid de logotipos de clientes.
+- **Casos de Éxito (Cases):** `Cases.astro` - Visualización de proyectos destacados.
+- **Propuesta de Valor (Proposal):** `Proposal.astro`.
+- **Testimonios:** `Testimonials.astro` - Implementado con `SwiperSlider`. _Nota: Textos por defecto en inglés, requieren localización a español._
 
 ### 4.2. Página de Servicios
 
-- **Listado de Servicios:** Desglose detallado de la oferta (posiblemente usando `AccordionServices.astro` para ahorrar espacio).
-- **Proceso de Trabajo (Process):** Explicación visual paso a paso de cómo trabajan (Diagnóstico -> Propuesta -> Ejecución).
+- **Pagina Dedicada:** `services.astro`.
+- **Componentes:**
+  - `AccordionServices.astro`: Desglose detallado de la oferta en formato acordeón para optimizar espacio.
+  - `Process.astro`: Sección para explicar el flujo de trabajo (actualmente reutiliza componentes de acordeón, verificar contenido final).
 
 ### 4.3. Página "Sobre Nosotros" (About)
 
-- **Historia y Misión:** Narrativa de la empresa.
-- **Equipo (Team):** Fotos y roles del personal clave para humanizar la marca.
+- **Pagina Dedicada:** `about.astro`.
+- **Componentes:**
+  - `About.astro`: Narrativa de la empresa.
+  - `Team.astro`: Sección para presentar al equipo de trabajo.
 
 ### 4.4. Contacto
 
-- Formulario de contacto funcional.
-- Datos de ubicación, teléfono y correo electrónico.
-- Mapa (opcional).
+- **Componente:** `Contact.astro`.
+- **Funcionalidad:** Formulario de contacto funcional (`Form.astro`) integrado en el home y posible página dedicada.
 
 ### 4.5. Componentes Transversales
 
-- **Navegación (Navbar):** Menú responsivo (mobile-first).
-- **Footer:** Enlaces rápidos, legales y datos de contacto.
+- **Navegación:** `Navbar` responsivo (Astro Navbar).
+- **Footer:** Componente de pie de página estándar.
 
 ## 5. Requisitos No Funcionales (Técnicos)
 
-### 5.1. Stack Tecnológico
+### 5.1. Stack Tecnológico (Confirmado)
 
-- **Core:** [Astro](https://astro.build/) (v5.x) - Elegido por su rendimiento y capacidad de generar HTML estático.
-- **Estilos:** [Tailwind CSS](https://tailwindcss.com/) - Para desarrollo rápido y diseño responsivo customizado.
-- **Lenguaje:** TypeScript - Para seguridad de tipos y mantenibilidad.
+- **Core:** [Astro](https://astro.build/) (v5.x) - Generación de sitio estático (SSG) / Híbrido.
+- **Estilos:** [Tailwind CSS](https://tailwindcss.com/) (v3.x).
+- **Lenguaje:** TypeScript.
 - **Animaciones:**
-  - **GSAP (GreenSock):** Para animaciones complejas de entrada y scroll.
-  - **Lenis:** Para "smooth scrolling" (desplazamiento suave de lujo).
-- **Componentes UI:** Swiper (para carruseles/sliders).
+  - **GSAP (GreenSock):** Usado extensivamente para timelines y animaciones de entrada.
+  - **Lenis:** Implementado para scroll suave.
+- **Componentes UI:**
+  - `Swiper`: Para carruseles (testimonios, sponsors).
+  - `astro-navbar`: Manejo de navegación.
 
-### 5.2. Rendimiento (Performance)
+_Nota: React ha sido removido/no está en uso en las dependencias actuales._
 
-- **Core Web Vitals:** El sitio debe puntuar >90 en Lighthouse (Performance, Accessibility, SEO).
-- **Imágenes:** Uso de formatos modernos (WebP/AVIF) y lazy loading nativo de Astro.
-- **SEO:** Etiquetas meta dinámicas (título, descripción) para cada página (gestionado en `siteData.json` y layouts).
+### 5.2. Diseño (UI/UX)
 
-### 5.3. Diseño (UI/UX)
+- **Estética:** Corporativa moderna, uso de tema oscuro/azul profundo (`#003A74`).
+- **Temporada:** Adaptabilidad de assets gráficos (ej. Hero de Navidad).
 
-- **Estética:** "Ingeniería Moderna". Uso de paleta de colores corporativa (probablemente azules, blancos, grises industriales o acentos eléctricos).
-- **Responsividad:** Diseño 100% adaptable a móviles, tablets y escritorio.
+## 6. Estructura de Datos
 
-## 6. Estructura de Datos Actual
+- `src/data/siteData.json`: Configuración general y metadatos SEO.
+- `src/data/clientData.json`: Información estructurada de proyectos y clientes.
 
-El proyecto maneja datos estructurados para facilitar actualizaciones sin tocar código duro:
+## 7. Estado Actual y Próximos Pasos (Roadmap)
 
-- `siteData.json`: Información global del sitio (Metadata SEO, Título general).
-- `clientData.json`: Base de datos de proyectos realizados (Cliente, Descripción, Link).
+**Estado:** Fase 1 (MVP) Completada y Desplegada. Actualmente en ciclo de mejora continua.
 
-## 7. Roadmap y Próximos Pasos Sugeridos
+**Pendientes Inmediatos:**
 
-1.  **Fase 1 (MVP - Actual):** Estructura base, migración de contenido real, despliegue inicial.
-2.  **Fase 2 (Interacción):** Refinar animaciones GSAP para que los elementos aparezcan al hacer scroll (fade-ins, slides). Implementar efecto de partículas en el Hero.
-3.  **Fase 3 (Contenido):** Expandir la sección de `Cases.astro` para tener páginas de detalle individuales por proyecto si es necesario.
-4.  **Fase 4 (Optimización):** Auditoría de SEO técnico y accesibilidad.
+1.  **Localización:** Traducir textos placeholder en `Testimonials` y asegurar consistencia de idioma en todo el sitio.
+2.  **Refinamiento de Contenido:** Verificar que `Process.astro` y `AccordionServices.astro` tengan el contenido diferenciado correcto.
+3.  **Efectos Visuales:** Decidir e implementar la versión final del fondo del Hero (Estático vs Interactivo/Vanta/Nieve).
+4.  **Gestión:** Se ha establecido un tablero Kanban (Jira/Trello) para el seguimiento de tareas pendientes.
