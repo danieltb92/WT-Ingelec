@@ -2,6 +2,7 @@ import siteData from "../data/siteData.json";
 import { slugify } from "./slugify";
 
 export default function jsonLDGenerator({ type, post, url }) {
+  const urlObj = typeof url === 'string' ? new URL(url) : url;
   const schemas = [];
 
   // Organization Schema (Global)
@@ -31,6 +32,32 @@ export default function jsonLDGenerator({ type, post, url }) {
     "publisher": {
       "@id": `${siteData.siteUrl}#organization`
     }
+  });
+
+  // BreadcrumbList Schema
+  const pathSegments = urlObj.pathname.split('/').filter(p => p);
+  const breadcrumbItems = [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": siteData.siteUrl
+    }
+  ];
+
+  pathSegments.forEach((segment, index) => {
+    const segmentLabel = segment.charAt(0).toUpperCase() + segment.slice(1);
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      "position": index + 2,
+      "name": segmentLabel,
+      "item": `${siteData.siteUrl}/${segment}`
+    });
+  });
+
+  schemas.push({
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbItems
   });
 
   // BlogPosting Schema (Conditional)
