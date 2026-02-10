@@ -4,5 +4,25 @@
   "image": {
     "src": "https://github.com/user-attachments/assets/fdc2129c-d5c3-4876-b989-d905666e0f07",
     "alt": "WT Ingelec SAS"
+  },
+  "siteUrl": "https://wtingelec.com",
+  "organization": {
+    "name": "WT Ingelec",
+    "legalName": "WT Ingelec SAS",
+    "logo": "https://github.com/user-attachments/assets/fdc2129c-d5c3-4876-b989-d905666e0f07",
+    "url": "https://wtingelec.com",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+57-311-510-9251",
+      "contactType": "customer service",
+      "email": "info@wtingelec.com.co",
+      "areaServed": "CO",
+      "availableLanguage": "es"
+    },
+    "sameAs": [
+      "https://facebook.com",
+      "https://linkedin.com",
+      "https://twitter.com"
+    ]
   }
 }
