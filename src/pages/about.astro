@@ -1,15 +1,20 @@
 ---
 import { Image } from "astro:assets";
 import MainLayout from "@/layouts/MainLayout.astro";
+import Breadcrumb from "@/components/ui/Breadcrumb.astro";
 import Sponsors from "@/components/sections/Sponsors.astro";
 import imageMain from "@/assets/pics/about1.webp";
 import imageTwo from "@/assets/pics/about2.webp";
 import imageThree from "@/assets/pics/about3.webp";
 ---
 
-<MainLayout title="Sobre Nosotros">
-  <main class="space-y-20">
-    <div class="pt-36 pb-10 px-6 mx-auto max-w-screen-xl lg:py-20 lg:px-16">
+<MainLayout
+  title="Sobre Nosotros | WT Ingelec SAS"
+  description="Conoce WT Ingelec SAS: más de 10 años de experiencia en soluciones eléctricas e ingeniería para el sector industrial y comercial en Colombia. Nuestra misión, visión y valores."
+>
+  <main class="space-y-5">
+    <Breadcrumb items={[{ name: "Nosotros", href: "/about" }]} />
+    <div class="pt-4 pb-10 px-6 mx-auto max-w-screen-xl lg:py-20 lg:px-16">
       <div class="relative flex flex-col-reverse items-center" id="main">
         <div class="row items-center py-5 md:pt-10">
           <div class="text-center space-y-10 mb-8">

@@ -1,6 +1,12 @@
 import siteData from "../data/siteData.json";
 import { slugify } from "./slugify";
 
+const navigationItems = [
+  { name: "Inicio", url: "/" },
+  { name: "Nosotros", url: "/about" },
+  { name: "Servicios", url: "/services" },
+];
+
 export default function jsonLDGenerator({ type, post, url }) {
   const urlObj = typeof url === 'string' ? new URL(url) : url;
   const schemas = [];
@@ -8,6 +14,7 @@ export default function jsonLDGenerator({ type, post, url }) {
   // Organization Schema (Global)
   schemas.push({
     "@type": "Organization",
+    "@id": `${siteData.siteUrl}#organization`,
     "name": siteData.organization.name,
     "legalName": siteData.organization.legalName,
     "url": siteData.organization.url,
@@ -23,15 +30,34 @@ export default function jsonLDGenerator({ type, post, url }) {
     "sameAs": siteData.organization.sameAs
   });
 
-  // WebSite Schema (Global or Home)
+  // WebSite Schema with SiteNavigationElement for sitelinks
   schemas.push({
     "@type": "WebSite",
+    "@id": `${siteData.siteUrl}#website`,
     "name": siteData.title,
     "url": siteData.siteUrl,
     "description": siteData.description,
     "publisher": {
       "@id": `${siteData.siteUrl}#organization`
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": `${siteData.siteUrl}/search?q={search_term_string}`
+      },
+      "query-input": "required name=search_term_string"
     }
+  });
+
+  // SiteNavigationElement for sitelinks
+  navigationItems.forEach((item, index) => {
+    schemas.push({
+      "@type": "SiteNavigationElement",
+      "position": index + 1,
+      "name": item.name,
+      "url": `${siteData.siteUrl}${item.url}`
+    });
   });
 
   // BreadcrumbList Schema

@@ -1,0 +1,30 @@
+---
+const { items = [] } = Astro.props;
+
+const defaultItems = [
+  { name: "Inicio", href: "/" },
+  ...items
+];
+---
+
+<nav aria-label="Breadcrumb" class="pt-28 px-6 md:px-24">
+  <ol class="flex flex-wrap items-center gap-2 text-sm text-gray-600">
+    {defaultItems.map((item, index) => (
+      <li class="flex items-center gap-2">
+        {index > 0 && <span class="text-gray-400">/</span>}
+        {index === defaultItems.length - 1 ? (
+          <span class="font-medium text-blue" aria-current="page">
+            {item.name}
+          </span>
+        ) : (
+          <a 
+            href={item.href} 
+            class="hover:text-blueSecundary transition-colors"
+          >
+            {item.name}
+          </a>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

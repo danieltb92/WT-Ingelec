@@ -1,15 +1,20 @@
 ---
 import { Image } from "astro:assets";
 import MainLayout from "@/layouts/MainLayout.astro";
+import Breadcrumb from "@/components/ui/Breadcrumb.astro";
 import AccordionServices from "@/components/sections/AccordionServices.astro";
 import Card from "@/components/ui/Card.astro";
 import imageMain from "@/assets/pics/section-services2.webp";
 ---
 
-<MainLayout title="Nuestros Servicios">
-  <main class="space-y-20">
+<MainLayout
+  title="Servicios Eléctricos e Ingeniería | WT Ingelec SAS"
+  description="Servicios integrales de ingeniería eléctrica: montajes eléctricos, automatización, control de procesos, modernización de plantas, diseño y asesoría técnica para industria y comercio."
+>
+  <main class="space-y-5">
+    <Breadcrumb items={[{ name: "Servicios", href: "/services" }]} />
     <div
-      class="justify-items-center py-36 px-0 sm:px-16 mx-auto max-w-screen-xl lg:py-40 lg:px-16"
+      class="justify-items-center py-16 px-0 sm:px-16 mx-auto max-w-screen-xl lg:py-20 lg:px-16"
     >
       <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
         <h1
