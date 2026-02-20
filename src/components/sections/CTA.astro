@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import Card from "@/components/ui/Card.astro";
 import Section from "@/components/sections/Section.astro";
+import Button from "@/components/ui/Button.astro";
 
 import propImg from "@/assets/pics/cta.webp";
 ---
@@ -24,9 +25,9 @@ import propImg from "@/assets/pics/cta.webp";
         Contact us today to learn more about how our digital marketing
         services can help your business grow and succeed online.
       </p> -->
-      <button class="btn-primary bg-dark mt-2 gsap-fade-up">
-        <a href="#contact">Envíanos tu Proyecto</a></button
-      >
+      <Button variant="secondary" href="#contact" class="mt-2 gsap-fade-up">
+        Envíanos tu Proyecto
+      </Button>
     </div>
   </div>
 </Section>

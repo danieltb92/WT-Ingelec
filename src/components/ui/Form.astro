@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import decorForm from "@/assets/pics/contact1.webp";
+import Button from "@/components/ui/Button.astro";
 ---
 
 <div
@@ -91,9 +92,14 @@ import decorForm from "@/assets/pics/contact1.webp";
       ></textarea>
     </div>
 
-    <button type="submit" name="submit" class="btn-primary w-full"
-      >Enviar</button
+    <Button
+      variant="primary"
+      type="submit"
+      name="submit"
+      class="w-full border border-[var(--blue)] hover:border-black"
     >
+      Enviar
+    </Button>
   </form>
   <picture
     class="absolute w-full right-[-20%] bottom-[10%] xl:bottom-[0%] hidden lg:block scale-x-[-1]"

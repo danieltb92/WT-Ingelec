@@ -1,0 +1,41 @@
+---
+interface Props extends Record<string, any> {
+  href?: string;
+  variant?: "primary" | "secondary" | "tertiary" | "outline" | "ghost";
+  class?: string;
+  type?: "button" | "submit" | "reset";
+  id?: string;
+}
+
+const {
+  href,
+  variant = "primary",
+  class: className,
+  type = "button",
+  id,
+  ...rest
+} = Astro.props;
+
+const variants = {
+  primary: "btn-primary",
+  secondary: "btn-secondary",
+  tertiary: "btn-tertiary",
+  outline: "btn-outline",
+  ghost: "btn-ghost",
+};
+
+const variantClass = variants[variant] || variants.primary;
+const classes = [variantClass, className].filter(Boolean).join(" ");
+---
+
+{
+  href ? (
+    <a href={href} class={classes} id={id} {...rest}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class={classes} id={id} {...rest}>
+      <slot />
+    </button>
+  )
+}

@@ -1,17 +1,18 @@
 ---
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import Button from "@/components/ui/Button.astro";
 
 const menuitems = [
   { href: "/about", label: "Nosotros" },
   { href: "/services", label: "Servicios" },
   { href: "/#cases", label: "Casos de exito" },
-  { href: "/#footer", label: "Contacto" },
+  // { href: "/#footer", label: "Contácto" },
   // { href: '/pricing', label: 'Pricing' },
   // { href: '/articles', label: 'Blog'},
 ];
 
 const navButton = {
-  href: "/#contact",
+  href: "/#footer",
   label: "Contáctanos",
 };
 ---
@@ -25,7 +26,10 @@ const navButton = {
       class="flex flex-col lg:flex-row justify-between items-center px-4 md:px-24"
     >
       <Astronav>
-        <div class="flex w-full lg:w-auto items-center justify-between">
+        <!-- Logo y Botón de Menú Móvil -->
+        <div
+          class="flex w-full lg:w-auto items-center justify-between relative z-[70]"
+        >
           <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img
               src="/Logo.svg"
@@ -69,19 +73,20 @@ const navButton = {
           </div>
         </div>
 
+        <!-- Enlaces de Navegación (Menú desplegable en móvil / Lista horizontal en desktop) -->
         <nav
-          class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0"
+          class="hidden fixed inset-0 bg-white z-[60] lg:static lg:bg-transparent lg:flex lg:w-auto lg:mt-0"
           id="menu-items"
         >
           <ul
-            class="navbar-link font-medium flex flex-col p-4 sm:py-2 sm:px-5 mt-4 border-t-2 lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0"
+            class="navbar-link font-medium flex flex-col items-center justify-center h-full w-full gap-8 p-4 lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 lg:h-auto lg:w-auto lg:gap-0"
           >
             {
               menuitems.map((item, index) => (
                 <li class="w-full lg:w-auto group">
                   <a
                     href={item.href}
-                    class="navbar-link mobile-nav-link block py-2 px-3 text-black rounded lg:bg-transparent lg:p-0 text-center transition-colors duration-200 group-hover:bg-blue/20 group-hover:text-blueSecundary"
+                    class="navbar-link mobile-nav-link block py-2 px-3 text-2xl lg:text-base text-black rounded lg:bg-transparent lg:p-0 text-center transition-colors duration-200 group-hover:bg-blue/20 group-hover:text-blueSecundary hover:opacity-50"
                     data-close-menu="true"
                   >
                     {item.label}
@@ -89,33 +94,37 @@ const navButton = {
                 </li>
               ))
             }
+            <!-- Botón de Contacto (Solo visible en menú móvil) -->
             <div
               class="lg:hidden flex items-center justify-center mt-3 gap-4 w-full"
             >
-              <a
-                class="mobile-nav-link px-9 py-5 rounded-2xl border border-zinc-900 bg-white hover:bg-black text-black hover:text-white inline-flex"
+              <Button
+                variant="primary"
                 href={navButton.href}
+                class="mobile-nav-link px-14 py-5 rounded-lg border border-[var(--blue)] hover:border-black text-white hover:text-black w-fit"
                 data-close-menu="true"
               >
                 <h2 class="text-left text-xl font-normal leading-7">
                   {navButton.label}
                 </h2>
-              </a>
+              </Button>
             </div>
           </ul>
         </nav>
       </Astronav>
 
       <div>
+        <!-- Botón de Contacto (Solo visible en Desktop) -->
         <div class="hidden lg:flex items-center gap-4">
-          <a
-            class="btn-navbar-link px-5 py-2 rounded-[15px] border border-zinc-900 btn-primary bg-white inline-flex text-black hover:bg-blue hover:text-white"
+          <Button
+            variant="primary"
             href={navButton.href}
+            class="btn-navbar-link px-8 py-3 rounded-lg border border-zinc-900"
           >
             <h2 class="text-center text-base font-normal leading-7">
               {navButton.label}
             </h2>
-          </a>
+          </Button>
         </div>
       </div>
     </header>
@@ -132,7 +141,8 @@ const navButton = {
 
   // Toggle the menu visibility and icon when the menu icon is clicked
   menuIcon.addEventListener("click", () => {
-    menuItems.classList.toggle("hidden"); // Toggle the 'hidden' class on the menu
+    const isHidden = menuItems.classList.toggle("hidden"); // Toggle the 'hidden' class on the menu
+    document.body.style.overflow = isHidden ? "" : "hidden"; // Prevent scroll when menu is open
 
     // Toggle between open and close icons
     openIcon.classList.toggle("hidden");
@@ -143,6 +153,7 @@ const navButton = {
   closeMenuItems.forEach((item) => {
     item.addEventListener("click", () => {
       menuItems.classList.add("hidden"); // Add the 'hidden' class to hide the menu
+      document.body.style.overflow = ""; // Re-enable scroll
       openIcon.classList.remove("hidden"); // Show the open (hamburger) icon
       closeIcon.classList.add("hidden"); // Hide the close (X) icon
     });

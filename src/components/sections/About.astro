@@ -4,20 +4,21 @@ import Card from "@/components/ui/Card.astro";
 import Section from "@/components/sections/Section.astro";
 
 import propImg from "@/assets/pics/cta.webp";
+import Button from "@/components/ui/Button.astro";
 ---
 
 <Section id="about">
   <div class="py-8 mx-auto max-w-screen-xl lg:py-16 lg:px-3">
     <div class="relative flex flex-col-reverse items-center md:flex-row">
       <div class="row items-center py-5 md:pb-20 md:pt-10">
-        <div class="text-center space-y-10">
+        <div class="text-center">
           <h2
             class="text-3xl font-medium leading-none sm:text-4xl gsap-fade-up"
           >
             Quiénes Somos
           </h2>
           <p
-            class="mt-6 mb-8 py-5 sm:py-10 px-0 lg:px-[10%] text-xl font-normal text-start leading-7 sm:mb-12 gsap-fade-up"
+            class="py-8 sm:py-10 px-0 lg:px-[10%] text-xl font-normal text-start leading-7 gsap-fade-up"
           >
             WT Ingelec SAS, fundada en 2014, es una firma de ingeniería
             especializada en soluciones eléctricas industriales y comerciales.
@@ -25,16 +26,16 @@ import propImg from "@/assets/pics/cta.webp";
             montaje hasta la automatización, para optimizar la infraestructura y
             productividad de su empresa.
           </p>
-          <a
-            class="px-9 py-5 bg-dark hover:bg-white text-white hover:text-black border rounded-2xl justify-items-center md:justify-items-start gap-2.5 inline-flex gsap-fade-up"
-            rel="noopener noreferrer"
+          <Button
+            variant="primary"
             href="/about"
+            class="px-9 py-5 rounded-lg justify-items-center md:justify-items-start gap-2.5 inline-flex gsap-fade-up border border-zinc-900"
             target="_blank"
           >
             <h2 class="text-center text-xl font-normal leading-7">
               Conoce Más Sobre Nosotros
             </h2>
-          </a>
+          </Button>
         </div>
       </div>
     </div>
