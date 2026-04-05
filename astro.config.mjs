@@ -11,6 +11,9 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://wtingelec.com.co",
   integrations: [tailwind(), sitemap()],
+  devToolbar: {
+    enabled: false,
+  },
   // output: 'server',
   // adapter: vercel(),
   // vite: {
