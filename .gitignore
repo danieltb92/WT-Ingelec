@@ -26,3 +26,6 @@ pnpm-debug.log*
 
 # blog
 public/blog
+
+# agents
+.agents/
