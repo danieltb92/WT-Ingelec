@@ -146,8 +146,8 @@
       @apply bg-blue text-white rounded-[7px] px-[7px];
     }
 
-    .bluehead-secundary {
-      @apply bg-blueSecundary text-white rounded-[7px] px-[7px];
+    .bluehead-secondary {
+      @apply bg-blueSecondary text-white rounded-[7px] px-[7px];
     }
     .whitehead {
       @apply bg-white text-black rounded-[7px] px-[7px];
