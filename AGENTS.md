@@ -17,6 +17,7 @@ npm run astro        # Astro CLI commands
 
 ```
 src/
+  assets/           # Images and SVG assets for processing
   components/
     sections/        # Full-width page sections (Hero, About, Services, etc.)
     ui/             # Reusable UI components (Navbar, Footer, Cards, Forms)
@@ -27,9 +28,10 @@ src/
   pages/            # Static routes (index.astro, 404.astro)
   data/             # JSON config files (siteData.json, clientData.json)
   utils/            # JS utilities (animations.js, lenis.js, slugify.js, jsonLD.js)
+  utils.ts          # Shared TypeScript utilities
   styles/           # global.css with Tailwind directives
   content/          # Blog content collection (config.ts, blog/*.md)
-public/             # Static assets (fonts, images)
+public/             # Static assets (fonts, favicons)
 ```
 
 ## Code Style Guidelines
@@ -91,11 +93,12 @@ Hero sections use inline IDs with GSAP timeline:
 --dark: #191a23 (dark backgrounds)
 --gray: #e7e7e7 (borders/dividers)
 --white: #ffffff
+--black: rgb(0, 0, 0)
 ```
 
 #### Custom Utility Classes (in global.css)
-- `.btn-primary`, `.btn-secondary`, `.btn-tertiary` - Button variants
-- `.greenhead`, `.bluehead`, `.blackhead`, `.whitehead` - Highlighted text backgrounds
+- `.btn-primary`, `.btn-secondary`, `.btn-tertiary`, `.btn-outline`, `.btn-ghost` - Button variants
+- `.greenhead`, `.bluehead`, `.bluehead-secondary`, `.blackhead`, `.whitehead` - Highlighted text backgrounds
 - `.font-outline`, `.font-outline-sm` - Text stroke effects
 
 #### Responsive Pattern
@@ -135,6 +138,7 @@ import HeroImg from "@/assets/pics/hero.webp";
 - **Swiper 11** - Carousels/sliders
 - **Tailwind CSS 3.4** - Utility-first styling
 - **@astrojs/sitemap** - Auto-generates sitemap.xml on build
+- **astro-navbar** - Accessible navbar component
 
 ## No Testing Setup
 
