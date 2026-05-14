@@ -2,6 +2,7 @@
 interface Props extends Record<string, any> {
   href?: string;
   variant?: "primary" | "secondary" | "tertiary" | "outline" | "ghost";
+  size?: "sm" | "md" | "lg";
   class?: string;
   type?: "button" | "submit" | "reset";
   id?: string;
@@ -10,6 +11,7 @@ interface Props extends Record<string, any> {
 const {
   href,
   variant = "primary",
+  size = "md",
   class: className,
   type = "button",
   id,
@@ -24,8 +26,15 @@ const variants = {
   ghost: "btn-ghost",
 };
 
+const sizes = {
+  sm: "btn-sm",
+  md: "btn-md",
+  lg: "btn-lg",
+};
+
 const variantClass = variants[variant] || variants.primary;
-const classes = [variantClass, className].filter(Boolean).join(" ");
+const sizeClass = sizes[size] || sizes.md;
+const classes = [variantClass, sizeClass, className].filter(Boolean).join(" ");
 ---
 
 {

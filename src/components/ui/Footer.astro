@@ -48,11 +48,11 @@ const legalLinks = [
           >
             Enlaces útiles
           </h4>
-          <ul class="flex flex-col gap-2 items-center lg:items-start">
+          <ul class="flex flex-col gap-1 items-center lg:items-start">
             {
               links.map((link) => (
                 <li>
-                  <a class="hover:underline" href={link.href}>
+                  <a class="hover:underline text-base" href={link.href}>
                     {link.name}
                   </a>
                 </li>
@@ -68,7 +68,7 @@ const legalLinks = [
             Contacto
           </h4>
           <div
-            class="flex flex-col justify-center max-lg:items-center gap-2 text-center lg:text-left"
+            class="flex flex-col text-base justify-center max-lg:items-center gap-2 text-center lg:text-left"
           >
             <span
               >Email: <a
@@ -98,7 +98,7 @@ const legalLinks = [
           >
             Suscríbete
           </h4>
-          <form class="flex w-full max-w-xs mb-4">
+          <form class="flex text-base w-full max-w-xs mb-4">
             <input
               type="email"
               placeholder="Tu email"
