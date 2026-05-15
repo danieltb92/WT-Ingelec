@@ -9,7 +9,7 @@ const { title, description, image, frontmatter, robots } = Astro.props;
   <meta charset="utf-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <!-- Google Tag Manager -->
-  <script>
+  <script is:inline>
     (function (w, d, s, l, i) {
       w[l] = w[l] || [];
       w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
@@ -23,7 +23,7 @@ const { title, description, image, frontmatter, robots } = Astro.props;
   </script>
   <!-- End Google Tag Manager -->
   <!-- Microsoft Clarity -->
-  <script type="text/javascript">
+  <script is:inline type="text/javascript">
     (function (c, l, a, r, i, t, y) {
       c[a] =
         c[a] ||
