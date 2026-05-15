@@ -21,28 +21,28 @@ const infiniteSponsors = [...sponsors, ...sponsors];
 
 <Section id="sponsors">
   <div
-    class="pt-16 pb-10 flex flex-col items-center overflow-hidden gsap-fade-up"
+    class="z-10 pb-8 md:pb-28 flex flex-col items-center overflow-visible gsap-fade-up"
   >
-    <h2 class="text-center pb-12 text-xl font-medium text-black">
+    <!-- <h2 class="text-start pb-12 text-xl font-medium text-black">
       Nuestros Clientes Destacados
-    </h2>
+    </h2> -->
 
     <div class="relative w-full">
       <!-- Gradients for fade effect on logic -->
-      <div
+      <!-- <div
         class="absolute inset-y-0 left-0 w-12 sm:w-32 z-10 bg-gradient-to-r from-white to-transparent pointer-events-none"
       >
       </div>
       <div
         class="absolute inset-y-0 right-0 w-12 sm:w-32 z-10 bg-gradient-to-l from-white to-transparent pointer-events-none"
       >
-      </div>
+      </div> -->
 
       <div class="flex w-max animate-infinite-scroll hover:pause-animation">
         {
           infiniteSponsors.map((sponsor, index) => {
             return (
-              <div class="mx-5 sm:mx-10 lg:mx-16 flex items-center justify-center grayscale opacity-50 transition-all duration-300 hover:grayscale-0 hover:scale-110 hover:opacity-100  ">
+              <div class=" flex items-center justify-center grayscale opacity-50 transition-all duration-300 hover:grayscale-0 hover:opacity-100 border border-slate-500 min-w-[200px] md:w-[300px] h-[150px] md:h-[180px] px-6 md:px-none">
                 <Image
                   src={sponsor.logo}
                   class="h-20 sm:h-28 w-auto object-contain max-w-none"
