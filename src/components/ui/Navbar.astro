@@ -20,7 +20,7 @@ const navButton = {
 <div>
   <nav
     id="main-navbar"
-    class="w-full top-0 left-0 z-50 fixed bg-white transition-colors duration-300 shadow-sm shadow-gray"
+    class="w-full top-0 left-0 z-50 fixed bg-white transition-colors duration-300 shadow-md shadow-gray"
   >
     <header
       class="flex flex-col lg:flex-row justify-between items-center px-4 md:px-24"
@@ -100,8 +100,9 @@ const navButton = {
             >
               <Button
                 variant="primary"
+                size="sm"
                 href={navButton.href}
-                class="mobile-nav-link px-12 py-4 rounded-lg border border-[var(--blue)] hover:border-black text-white hover:text-black w-fit"
+                class=""
                 data-close-menu="true"
               >
                 <h2 class="text-left text-xl font-normal leading-7">

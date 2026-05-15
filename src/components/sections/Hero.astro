@@ -14,24 +14,24 @@ import Button from "@/components/ui/Button.astro";
     alt="Fondo hero"
     loading="eager"
     fetchpriority="high"
-    class="absolute inset-0 w-full h-full object-cover object-[-250px_top] sm:object-left-top lg:object-top -z-10"
+    class="absolute inset-0 w-full h-full object-cover object-[20%_top] md:object-[-250px_top] lg:object-top -z-10"
   />
   <div class="absolute inset-0 z-0 bg-black opacity-10"></div>
   <div
     class="relative z-10 w-full max-w-[1280px] mx-auto flex flex-col-reverse items-start md:items-center md:flex-row"
   >
-    <div class="items-start py-5 w-full md:w-8/12 md:pb-20 md:pt-10">
+    <div class="items-start py-10 w-full md:w-8/12 md:pb-20 md:pt-10">
       <div class="text-left space-y-9">
         <h1
           id="hero-title"
           class="text-4xl font-medium leading-none md:text-6xl text-left md:text-left text-white opacity-0 translate-y-10"
         >
-          Soluciones Eléctricas<br /> de Vanguardia<br /> para la Industria y el
+          <span class="text-[var(--color-accent)] font-bold">Soluciones Eléctricas</span><br /> de Vanguardia<br /> para la Industria y el
           Comercio 
         </h1>
         <p
             id="hero-desc"
-            class="mt-6 mb-6 text-lg md:text-xl font-normal md:font-medium leading-5 sm:mb-6 text-left md:text-left md:pr-12 text-white opacity-0 translate-y-10"
+            class="hidden md:block mt-6 mb-6 text-lg md:text-xl font-normal md:font-medium leading-5 sm:mb-6 text-left md:text-left md:pr-12 text-white opacity-0 translate-y-10"
           >
             Desde el diseño hasta la puesta en marcha, WT Ingelec<br /> garantiza
             proyectos eléctricos eficientes, confiables y de vanguardia.
@@ -44,7 +44,6 @@ import Button from "@/components/ui/Button.astro";
             href="/#contact"
             variant="primary"
             size="lg"
-            class=""
           >
             Empieza tu proyecto
           </Button>

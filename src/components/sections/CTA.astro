@@ -9,11 +9,17 @@ import propImg from "@/assets/pics/cta.webp";
 
 <Section>
   <div
-    class="parallax-bg relative flex items-center justify-center w-screen left-1/2 right-1/2 -translate-x-1/2 min-h-[650px] md:min-h-[650px] rounded-[0] overflow-hidden mt-[80px] mb-[120px]"
+    class="cta-parallax relative flex items-center justify-center w-screen left-1/2 right-1/2 -translate-x-1/2 min-h-[750px] md:min-h-screen rounded-[0] overflow-hidden mt-[80px] mb-[120px]"
+    data-parallax
   >
+    <Image
+      src={propImg}
+      alt="Background"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
     <div class="absolute inset-0 bg-black/40"></div>
     <div
-      class="relative z-10 w-full max-w-2xl px-6 py-16 md:py-24 flex flex-col items-center gap-6 text-white"
+      class="relative z-10 w-full max-w-2xl px-6 py-16 md:py-0 flex flex-col items-center justify-center gap-6 text-white min-h-[inherit]"
     >
       <h2
         class="text-3xl text-center md:text-4xl font-medium drop-shadow-lg text-white shadow-text gsap-fade-up"
@@ -21,10 +27,6 @@ import propImg from "@/assets/pics/cta.webp";
         Más de una década de experiencia garantizando proyectos eléctricos de
         vanguardia. <br />¿Cuál es tu próximo reto?
       </h2>
-      <!-- <p class="text-base md:text-lg drop-shadow text-white">
-        Contact us today to learn more about how our digital marketing
-        services can help your business grow and succeed online.
-      </p> -->
       <Button 
         variant="secondary"
         size="md" 
@@ -37,18 +39,6 @@ import propImg from "@/assets/pics/cta.webp";
   </div>
 </Section>
 <style>
-  .parallax-bg {
-    background-image: url("/src/assets/pics/cta.jpg");
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
-  @media (max-width: 1024px) {
-    .parallax-bg {
-      background-attachment: scroll;
-    }
-  }
   .shadow-text {
     text-shadow:
       0 4px 24px #000,

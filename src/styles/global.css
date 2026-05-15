@@ -20,7 +20,7 @@
        ======================================== */
     
     /* Colores Base (mantener para backward compatibility) */
-    --green: #FFB800;
+    --yellow: #FFB800;
     --black: #0F172A;
     --dark: #1E293B;
     --gray: #CBD5E1;
@@ -230,7 +230,7 @@
     @apply btn bg-[var(--color-accent)] text-black border border-[var(--color-accent)];
   }
   .btn-tertiary:hover {
-    @apply bg-white text-black transform scale-105;
+    @apply bg-white text-black border-white;
   }
 
   .btn-outline {
@@ -259,11 +259,21 @@
     @apply px-10 py-6 text-lg;
   }
 
+  /* Size responsive: lg -> md -> sm en mobile */
+  @media (max-width: 767px) {
+    .btn-lg {
+      @apply !px-6 !py-4 !text-base;
+    }
+    .btn-md {
+      @apply !px-5 !py-3 !text-sm;
+    }
+  }
+
   /* ========================================
      TARJETAS - CARDS
      ======================================== */
   .card {
-    @apply bg-white rounded-xl p-6;
+    @apply bg-white rounded-md p-6;
   }
 
   .card-elevated {

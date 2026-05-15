@@ -44,7 +44,7 @@ import Button from "@/components/ui/Button.astro";
         name="name"
         placeholder="Nombre y Apellido"
         required
-        class="w-full px-[30px] py-[18px] border border-black rounded-[14px] text-black outline-none"
+        class="w-full px-[30px] py-[18px] border border-black rounded-sm text-black outline-none"
       />
     </div>
 
@@ -56,7 +56,7 @@ import Button from "@/components/ui/Button.astro";
         name="email"
         placeholder="Correo"
         required
-        class="w-full px-[30px] py-[18px] border border-black rounded-[14px] text-black outline-none"
+        class="w-full px-[30px] py-[18px] border border-black rounded-sm text-black outline-none"
       />
       <input
         type="hidden"
@@ -76,7 +76,7 @@ import Button from "@/components/ui/Button.astro";
         inputmode="numeric"
         pattern="^\+?[0-9\s\-\(\)]{7,20}$"
         required
-        class="w-full px-[30px] py-[18px] border border-black rounded-[14px] text-black outline-none"
+        class="w-full px-[30px] py-[18px] border border-black rounded-sm text-black outline-none"
       />
     </div>
 
@@ -88,21 +88,22 @@ import Button from "@/components/ui/Button.astro";
         placeholder="Escribe tu mensaje aquí..."
         rows="4"
         required
-        class="w-full px-[30px] py-[18px] border border-black rounded-[14px] text-black outline-none"
+        class="w-full px-[30px] py-[18px] border border-black rounded-sm text-black outline-none"
       ></textarea>
     </div>
 
     <Button
       variant="primary"
+      size="sm"
       type="submit"
       name="submit"
-      class="w-full border border-[var(--blue)] hover:border-black"
+      class="!w-full !relative !z-10"
     >
       Enviar
     </Button>
   </form>
   <picture
-    class="absolute w-full right-[-20%] bottom-[10%] xl:bottom-[0%] hidden lg:block scale-x-[-1]"
+    class="absolute w-full right-[-20%] bottom-[10%] xl:bottom-[0%] hidden lg:block scale-x-[-1] -z-10"
   >
     <Image src={decorForm} alt="decor" />
   </picture>
