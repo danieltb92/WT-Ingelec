@@ -11,8 +11,9 @@ export function initAnimations() {
 
 export function initFadeUp() {
   gsap.utils.toArray(".gsap-fade-up").forEach((element) => {
+    const el = element as HTMLElement;
     gsap.fromTo(
-      element,
+      el,
       {
         opacity: 0,
         y: 50,
@@ -23,7 +24,7 @@ export function initFadeUp() {
         duration: 1,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: element,
+          trigger: el,
           start: "top 85%",
           toggleActions: "play none none reverse",
         },
@@ -34,7 +35,8 @@ export function initFadeUp() {
 
 export function initStagger() {
   gsap.utils.toArray(".gsap-stagger-container").forEach((container) => {
-    const children = container.querySelectorAll(".gsap-stagger-item");
+    const el = container as HTMLElement;
+    const children = el.querySelectorAll(".gsap-stagger-item");
     gsap.fromTo(
       children,
       {
@@ -48,7 +50,7 @@ export function initStagger() {
         stagger: 0.2,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: container,
+          trigger: el,
           start: "top 80%",
           toggleActions: "play none none reverse",
         },
