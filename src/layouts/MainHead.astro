@@ -1,8 +1,11 @@
 ---
 import Seo from "@/components/seo/Seo.astro";
+import siteData from "@/data/siteData.json";
 
 // Pass the contents to create SEO for the page
 const { title, description, image, frontmatter, robots } = Astro.props;
+const pageTitle = title || siteData.title;
+const pageDescription = description || siteData.description;
 ---
 
 <head>
@@ -44,11 +47,11 @@ const { title, description, image, frontmatter, robots } = Astro.props;
   <!-- iOS 
   <link rel="apple-touch-icon" sizes="256x256" href="/path/to/your/icon.png" />
   -->
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="generator" content={Astro.generator} />
 
-  <title>{title}</title>
-  <meta name="description" content={description} />
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription} />
 
   <!-- Google Fonts: Inter for body text, Space Grotesk for headings -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -59,8 +62,8 @@ const { title, description, image, frontmatter, robots } = Astro.props;
   />
 
   <Seo
-    {title}
-    {description}
+    title={pageTitle}
+    description={pageDescription}
     url={Astro.url.toString()}
     {image}
     {frontmatter}

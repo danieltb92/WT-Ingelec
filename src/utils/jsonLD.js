@@ -39,15 +39,21 @@ export default function jsonLDGenerator({ type, post, url }) {
     "description": siteData.description,
     "publisher": {
       "@id": `${siteData.siteUrl}#organization`
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": `${siteData.siteUrl}/search?q={search_term_string}`
-      },
-      "query-input": "required name=search_term_string"
     }
+  });
+
+  schemas.push({
+    "@type": "WebPage",
+    "@id": `${urlObj.href}#webpage`,
+    "url": urlObj.href,
+    "name": siteData.title,
+    "isPartOf": {
+      "@id": `${siteData.siteUrl}#website`
+    },
+    "about": {
+      "@id": `${siteData.siteUrl}#organization`
+    },
+    "inLanguage": "es-CO"
   });
 
   // SiteNavigationElement for sitelinks
@@ -73,11 +79,12 @@ export default function jsonLDGenerator({ type, post, url }) {
 
   pathSegments.forEach((segment, index) => {
     const segmentLabel = segment.charAt(0).toUpperCase() + segment.slice(1);
+    const itemPath = pathSegments.slice(0, index + 1).join('/');
     breadcrumbItems.push({
       "@type": "ListItem",
       "position": index + 2,
       "name": segmentLabel,
-      "item": `${siteData.siteUrl}/${segment}`
+      "item": `${siteData.siteUrl}/${itemPath}/`
     });
   });
 

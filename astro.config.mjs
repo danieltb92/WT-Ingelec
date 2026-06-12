@@ -9,7 +9,8 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://wtingelec.com.co",
+  site: "https://www.wtingelec.com.co",
+  trailingSlash: "always",
   integrations: [tailwind(), sitemap()],
   devToolbar: {
     enabled: false,

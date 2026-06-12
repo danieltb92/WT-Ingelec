@@ -2,7 +2,11 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 ---
 
-<MainLayout title="404">
+<MainLayout
+  title="Página no encontrada | WT Ingelec SAS"
+  description="La página solicitada no existe o fue movida. Vuelve al inicio de WT Ingelec SAS para encontrar soluciones eléctricas y de ingeniería."
+  robots={true}
+>
   <main class="space-y-20">
     <div
       class="relative flex flex-col-reverse items-center justify-center md:flex-row"
@@ -19,8 +23,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
           <a
             class="px-9 py-5 bg-black hover:bg-white text-white hover:text-black border rounded-2xl justify-items-center md:justify-items-start gap-2.5 inline-flex"
             rel="noopener noreferrer"
-            href="./"
-            target="_blank"
+            href="/"
           >
             <h2 class="text-center text-xl font-normal leading-7">
               Regresar al Inicio

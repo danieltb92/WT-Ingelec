@@ -1,16 +1,16 @@
 {
-  "title": "Soluciones Eléctricas | WT Ingelec",
+  "title": "WT Ingelec SAS | Soluciones Eléctricas y de Ingeniería",
   "description": "En WT Ingelec, somos líderes en ofrecer soluciones eléctricas y de ingeniería innovadoras y confiables para el sector industrial y comercial.",
   "image": {
-    "src": "https://github.com/user-attachments/assets/fdc2129c-d5c3-4876-b989-d905666e0f07",
+    "src": "https://www.wtingelec.com.co/cover.png",
     "alt": "WT Ingelec SAS"
   },
-  "siteUrl": "https://wtingelec.com.co",
+  "siteUrl": "https://www.wtingelec.com.co",
   "organization": {
     "name": "WT Ingelec",
     "legalName": "WT Ingelec SAS",
-    "logo": "https://github.com/user-attachments/assets/fdc2129c-d5c3-4876-b989-d905666e0f07",
-    "url": "https://wtingelec.com.co",
+    "logo": "https://www.wtingelec.com.co/Logo.svg",
+    "url": "https://www.wtingelec.com.co",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+57-311-510-9251",
@@ -19,10 +19,6 @@
       "areaServed": "CO",
       "availableLanguage": "es"
     },
-    "sameAs": [
-      "https://facebook.com",
-      "https://linkedin.com",
-      "https://twitter.com"
-    ]
+    "sameAs": []
   }
 }
