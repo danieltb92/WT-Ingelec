@@ -4,8 +4,8 @@ import decorForm from "@/assets/pics/form-img.webp";
 import Button from "@/components/ui/Button.astro";
 ---
 
-<div class="grid lg:bg-transparent w-full mx-auto grid-cols-1 lg:grid-cols-[0.8fr_1fr] items-stretch">
-  <div class="bg-white rounded-sm shadow-[0_25px_80px_rgba(0,0,0,0.08)] p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
+<div class="grid lg:bg-transparent w-full mx-auto grid-cols-1 lg:grid-cols-[0.8fr_1fr] items-stretch rounded-sm overflow-hidden">
+  <div class="bg-white shadow-[0_25px_80px_rgba(0,0,0,0.08)] p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
     <div>
       <h2 class="text-3xl pb-4">Contáctanos</h2>
       <form
@@ -105,7 +105,7 @@ import Button from "@/components/ui/Button.astro";
     </div>
   </div>
 
-  <div class="hidden lg:block overflow-hidden rounded-sm shadow-[0_25px_80px_rgba(0,0,0,0.08)]">
+  <div class="hidden lg:block overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.08)]">
     <Image
       src={decorForm}
       alt="decor"

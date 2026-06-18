@@ -35,7 +35,7 @@ const processedTestimonials = Testimonials.map((item, index, array) => ({
             <div>{item.project}</div>
           </div>
           <div class="flex flex-col justify-center items-center py-[48px] px-0 sm:px-[52px]">
-            <p class="bubble">{item.description}</p>
+            <p class="bubble border border-dark shadow-[0px_5px_0px_#191a23]">{item.description}</p>
           </div>
         </div>
       ))
@@ -103,13 +103,13 @@ const processedTestimonials = Testimonials.map((item, index, array) => ({
   .bubble {
     position: relative;
     padding: 8%;
-    background-color: var(--blue);
+    background-color: var(--color-primary);
     color: var(--white);
     border-radius: 4px;
-    border: 1px solid var(--blueSecondary);
-    @media (max-width: 768px) {
+    /* border: 1px solid var(--blueSecondary); */
+    /* @media (max-width: 768px) { 
       border: 0;
-    }
+    }*/
   }
   /* .bubble:after {
     content: "";
