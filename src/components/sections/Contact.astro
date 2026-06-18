@@ -4,13 +4,10 @@ import SectionTitle from "@/components/ui/SectionTitle.astro";
 import Section from "@/components/sections/Section.astro";
 ---
 
-<Section id="contact">
-  <div class="mt-[0px] mb-none md:mb-20 relative gsap-fade-up z-100">
-    <!-- <SectionTitle
-      class="mb-4"
-      sectionTitle="Contáctanos"
-      description="Contáctanos hoy y hablemos de tu próximo proyecto."
-    /> -->
-    <Form />
+<Section id="contact" class="bg-[var(--color-bg-dark)]">
+  <div class="overflow-visible mt-0 md:mb-10 relative gsap-fade-up">
+    <div class="w-full mx-auto p-0 py-20 sm:p-10">
+      <Form />
+    </div>
   </div>
 </Section>

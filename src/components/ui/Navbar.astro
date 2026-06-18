@@ -20,7 +20,8 @@ const navButton = {
 <div>
   <nav
     id="main-navbar"
-    class="w-full top-0 left-0 z-50 fixed bg-white transition-colors duration-300 shadow-md shadow-gray"
+    class="w-full top-0 left-0 z-50 fixed bg-white transition-transform duration-300 ease-in-out shadow-md shadow-gray"
+    style="transform: translateY(0); will-change: transform;"
   >
     <header
       class="flex flex-col lg:flex-row justify-between items-center px-4 md:px-24"
@@ -75,7 +76,7 @@ const navButton = {
 
         <!-- Enlaces de Navegación (Menú desplegable en móvil / Lista horizontal en desktop) -->
         <nav
-          class="hidden fixed inset-0 bg-white z-[60] lg:static lg:bg-transparent lg:flex lg:w-auto lg:mt-0"
+          class="hidden fixed top-0 left-0 w-screen h-dvh bg-white z-[60] lg:static lg:bg-transparent lg:flex lg:w-auto lg:h-auto lg:mt-0"
           id="menu-items"
         >
           <ul
@@ -149,6 +150,11 @@ const navButton = {
     // Toggle between open and close icons
     openIcon.classList.toggle("hidden");
     closeIcon.classList.toggle("hidden");
+
+    if (!isHidden) {
+      navbar.style.transform = "translateY(0)";
+      lastScrollY = window.scrollY;
+    }
   });
 
   // Close the menu when any item is clicked
@@ -158,27 +164,41 @@ const navButton = {
       document.body.style.overflow = ""; // Re-enable scroll
       openIcon.classList.remove("hidden"); // Show the open (hamburger) icon
       closeIcon.classList.add("hidden"); // Hide the close (X) icon
+      lastScrollY = window.scrollY;
     });
   });
 
-  // Cambia el fondo del navbar y el color de los enlaces al hacer scroll
-  // const navbar = document.getElementById("main-navbar");
-  // const navbarLinks = document.querySelectorAll(".navbar-link");
-  // window.addEventListener("scroll", () => {
-  //   if (window.scrollY > 40) {
-  //     navbar.classList.remove("bg-transparent");
-  //     navbar.classList.add("bg-white");
-  //     navbarLinks.forEach((link) => {
-  //       link.classList.remove("text-white","bg-blue");
-  //       link.classList.add("text-black");
-  //     });
-  //   } else {
-  //     navbar.classList.add("bg-transparent");
-  //     navbar.classList.remove("bg-white", "text-black");
-  //     navbarLinks.forEach((link) => {
-  //       link.classList.remove("text-black");
-  //       link.classList.add("text-white");
-  //     });
-  //   }
-  // });
+  const navbar = document.getElementById("main-navbar");
+  let lastScrollY = window.scrollY;
+  let rafId = null;
+
+  const isMenuOpen = () => !menuItems.classList.contains("hidden");
+
+  const updateNavbar = () => {
+    const currentScrollY = window.scrollY;
+    const shouldHide = currentScrollY > lastScrollY && currentScrollY > 40;
+
+    if (isMenuOpen()) {
+      navbar.style.transform = "translateY(0)";
+    } else if (shouldHide) {
+      navbar.style.transform = "translateY(-100%)";
+    } else if (currentScrollY < lastScrollY) {
+      navbar.style.transform = "translateY(0)";
+    }
+
+    lastScrollY = currentScrollY;
+    rafId = null;
+  };
+
+  window.addEventListener("scroll", () => {
+    if (rafId !== null) return;
+    rafId = requestAnimationFrame(updateNavbar);
+  });
+
+  window.addEventListener("resize", () => {
+    lastScrollY = window.scrollY;
+    if (isMenuOpen()) {
+      navbar.style.transform = "translateY(0)";
+    }
+  });
 </script>

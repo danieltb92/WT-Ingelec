@@ -1,112 +1,117 @@
 ---
 import { Image } from "astro:assets";
-import decorForm from "@/assets/pics/contact1.webp";
+import decorForm from "@/assets/pics/form-img.webp";
 import Button from "@/components/ui/Button.astro";
 ---
 
-<div
-  class="flex flex-col relative justify-start items-start p-[30px] lg:p-16 bg-[#cfdce6] lg:bg-transparent overflow-visible w-full !px-0"
->
-  <h2 class="text-3xl pl-0 md:pl-6 pt-3">Contáctanos</h2>
-  <form
-    class="px-0 py-6 sm:p-6 h-full w-full lg:max-w-lg"
-    action="https://formsubmit.co/comercial@wtingelec.com.co"
-    method="POST"
-  >
-    <!-- <div class="flex flex-col sm:flex-row gap-[35px] sm:items-center mb-10">
-      <div class="flex items-center gap-[14px]">
-        <input
-          type="checkbox" 
-          id="checkbox1"
-          name="checkbox1"
-          class="form-checkbox text-black"
-        />
-        <label for="checkbox1" class="text-black">Dí Hola</label>
-      </div>
-      <div class="flex items-center gap-[14px]">
-        <input
-          type="checkbox"
-          id="checkbox2"
-          name="checkbox2"
-          class="form-checkbox text-black"
-        />
-        <label for="checkbox2" class="flex items-center text-black"
-          >Get a Quote</label
+<div class="grid lg:bg-transparent w-full mx-auto grid-cols-1 lg:grid-cols-[0.8fr_1fr] items-stretch">
+  <div class="bg-white rounded-sm shadow-[0_25px_80px_rgba(0,0,0,0.08)] p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
+    <div>
+      <h2 class="text-3xl pb-4">Contáctanos</h2>
+      <form
+        class="space-y-4"
+        action="https://formsubmit.co/comercial@wtingelec.com.co"
+        method="POST"
+      >
+        <div class="flex flex-col sm:flex-row gap-2 md:gap-8 sm:items-center mb-10">
+          <div class="flex items-center gap-3">
+            <input
+              type="checkbox" 
+              id="checkbox1"
+              name="checkbox1"
+              class="form-checkbox text-black"
+            />
+            <label for="checkbox1" class="text-black">Dí ¡Hola!</label>
+          </div>
+          <div class="flex items-center gap-[14px]">
+            <input
+              type="checkbox"
+              id="checkbox2"
+              name="checkbox2"
+              class="form-checkbox text-black"
+            />
+            <label for="checkbox2" class="flex items-center text-black"
+              >Pedir presupuesto</label
+            >
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label for="name" class="block text-black mb-2">Nombre y Apellido*</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Nombre y Apellido"
+            required
+            class="w-full px-[30px] py-[12px] border border-black rounded-sm text-black outline-none"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label for="email" class="block text-black mb-2">Correo*</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Correo"
+            required
+            class="w-full px-[30px] py-[12px] border border-black rounded-sm text-black outline-none"
+          />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://yourdomain.co/thanks.html"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label for="phone" class="block text-black mb-2">Teléfono*</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Teléfono"
+            autocomplete="tel"
+            inputmode="numeric"
+            pattern="^\+?[0-9\s\-\(\)]{7,20}$"
+            required
+            class="w-full px-[30px] py-[12px] border border-black rounded-sm text-black outline-none"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label for="message" class="block text-black mb-2">Mensaje*</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Escribe tu mensaje aquí..."
+            rows="4"
+            required
+            class="w-full px-[30px] py-[12px] border border-black rounded-sm text-black outline-none"
+          ></textarea>
+        </div>
+
+        <Button
+          variant="primary"
+          size="md"
+          type="submit"
+          name="submit"
+          class="w-full"
         >
-      </div>
-    </div> -->
-
-    <div class="mb-4">
-      <label for="name" class="block text-black mb-2">Nombre y Apellido*</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Nombre y Apellido"
-        required
-        class="w-full px-[30px] py-[18px] border border-black rounded-sm text-black outline-none"
-      />
+          Enviar
+        </Button>
+      </form>
     </div>
+  </div>
 
-    <div class="mb-4">
-      <label for="email" class="block text-black mb-2">Correo*</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Correo"
-        required
-        class="w-full px-[30px] py-[18px] border border-black rounded-sm text-black outline-none"
-      />
-      <input
-        type="hidden"
-        name="_next"
-        value="https://yourdomain.co/thanks.html"
-      />
-    </div>
-
-    <div class="mb-4">
-      <label for="phone" class="block text-black mb-2">Teléfono*</label>
-      <input
-        type="tel"
-        id="phone"
-        name="phone"
-        placeholder="Teléfono"
-        autocomplete="tel"
-        inputmode="numeric"
-        pattern="^\+?[0-9\s\-\(\)]{7,20}$"
-        required
-        class="w-full px-[30px] py-[18px] border border-black rounded-sm text-black outline-none"
-      />
-    </div>
-
-    <div class="mb-4">
-      <label for="message" class="block text-black mb-2">Mensaje*</label>
-      <textarea
-        id="message"
-        name="message"
-        placeholder="Escribe tu mensaje aquí..."
-        rows="4"
-        required
-        class="w-full px-[30px] py-[18px] border border-black rounded-sm text-black outline-none"
-      ></textarea>
-    </div>
-
-    <Button
-      variant="primary"
-      size="sm"
-      type="submit"
-      name="submit"
-      class="!w-full !relative !z-10"
-    >
-      Enviar
-    </Button>
-  </form>
-  <picture
-    class="absolute w-full right-[-20%] bottom-[10%] xl:bottom-[0%] hidden lg:block scale-x-[-1] -z-10"
-  >
-    <Image src={decorForm} alt="decor" />
-  </picture>
+  <div class="hidden lg:block overflow-hidden rounded-sm shadow-[0_25px_80px_rgba(0,0,0,0.08)]">
+    <Image
+      src={decorForm}
+      alt="decor"
+      class="h-full w-full object-cover min-h-[420px] lg:min-h-[520px]"
+    />
+  </div>
 </div>
 <style>
   .form-checkbox {
@@ -129,7 +134,7 @@ import Button from "@/components/ui/Button.astro";
     position: absolute;
     top: 0;
     left: 0;
-    background: var(--green);
+    background: var(--color-primary);
     transform: scale(0);
     transition: transform 0.1s ease-in-out;
   }
