@@ -235,10 +235,10 @@
   }
 
   .btn-tertiary {
-    @apply btn bg-[var(--color-accent)] text-black border border-[var(--color-accent)];
+    @apply btn bg-white text-[var(--color-primary)] border border-white;
   }
   .btn-tertiary:hover {
-    @apply bg-white text-black border-white;
+    @apply bg-[var(--color-accent)] border-[var(--color-accent)];
   }
 
   .btn-outline {
