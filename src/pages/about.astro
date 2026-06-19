@@ -2,136 +2,336 @@
 import { Image } from "astro:assets";
 import MainLayout from "@/layouts/MainLayout.astro";
 import Breadcrumb from "@/components/ui/Breadcrumb.astro";
+import Section from "@/components/sections/Section.astro";
 import Sponsors from "@/components/sections/Sponsors.astro";
-import imageMain from "@/assets/pics/about1.webp";
+import Button from "@/components/ui/Button.astro";
 import imageTwo from "@/assets/pics/about2.webp";
 import imageThree from "@/assets/pics/about3.webp";
+
+
+const stats = [
+  { number: "+10", label: "Años de Experiencia" },
+  { number: "+200", label: "Proyectos Completados" },
+  { number: "+150", label: "Clientes Satisfechos" },
+  { number: "100%", label: "Compromiso" },
+];
+
+const values = [
+  {
+    title: "Calidad de Excelencia",
+    description:
+      "Nuestro compromiso inquebrantable con los más altos estándares en cada proyecto y servicio que ofrecemos.",
+    icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+  },
+  {
+    title: "Innovación Constante",
+    description:
+      "Nos mantenemos a la vanguardia tecnológica, actualizando equipos y capacitando a nuestro personal para ofrecer soluciones de última generación.",
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+  },
+  {
+    title: "Integridad y Respeto",
+    description:
+      "Actuamos con ética y profesionalismo en todas nuestras interacciones, fomentando relaciones basadas en la confianza.",
+    icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z",
+  },
+  {
+    title: "Lealtad y Compromiso",
+    description:
+      "Dedicación total a los objetivos de nuestros clientes, trabajando con pasión y responsabilidad para superar sus expectativas.",
+    icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
+  },
+];
 ---
 
 <MainLayout
   title="Sobre Nosotros | WT Ingelec SAS"
   description="Conoce WT Ingelec SAS: más de 10 años de experiencia en soluciones eléctricas e ingeniería para el sector industrial y comercial en Colombia. Nuestra misión, visión y valores."
 >
-  <main class="space-y-5">
+  <main>
+    <!-- Structured Data SEO -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WT Ingelec SAS",
+      "url": "https://www.wtingelec.com.co",
+      "logo": "https://www.wtingelec.com.co/Logo.svg",
+      "description": "Soluciones eléctricas e ingeniería para el sector industrial y comercial en Colombia.",
+      "foundingDate": "2014",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CO"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+57-311-510-9251",
+        "contactType": "customer service",
+        "email": "info@wtingelec.com.co"
+      }
+    })} />
+    
     <Breadcrumb items={[{ name: "Nosotros", href: "/about/" }]} />
-    <div class="pt-4 pb-10 px-6 mx-auto max-w-screen-xl lg:py-20 lg:px-16">
-      <div class="relative flex flex-col-reverse items-center" id="main">
-        <div class="row items-center py-5 md:pt-10">
-          <div class="text-center space-y-10 mb-8">
-            <h1
-              class="text-3xl font-extrabold leading-none md:text-4xl gsap-fade-up"
-            >
-              Sobre Nosotros
-            </h1>
-            <p
-              class="mt-6 mb-8 text-xl font-normal leading-7 sm:mb-12 gsap-fade-up"
-            >
-              Una década de experiencia, innovación y compromiso impulsando <br
-              /> el desarrollo de la industria y el comercio.
-            </p>
-            <div
-              class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-1 sm:gap-6 gsap-fade-up"
-            >
-              <picture>
-                <Image
-                  class="w-full h-[300px] sm:h-[500px] object-cover rounded-sm shadow-lg"
-                  src={imageMain}
-                  alt="WT Ingelec Services 1"
-                />
-              </picture>
-              <picture>
-                <Image
-                  class="w-full h-[300px] sm:h-[500px] object-cover rounded-sm shadow-lg"
-                  src={imageTwo}
-                  alt="WT Ingelec Services 2"
-                />
-              </picture>
-              <picture>
-                <Image
-                  class="w-full h-[300px] sm:h-[500px] object-cover rounded-sm shadow-lg"
-                  src={imageThree}
-                  alt="WT Ingelec Services 3"
-                />
-              </picture>
+
+    <!-- Hero Banner -->
+    <div
+      class="relative min-h-[100px] md:min-h-[300px] flex items-center justify-center overflow-hidden mt-[50px] md:mt-[80px]"
+    >
+      <!-- <Image
+        src={imageMain}
+        alt="Equipo de WT Ingelec trabajando en proyecto eléctrico industrial"
+        loading="eager"
+        fetchpriority="high"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+      /> -->
+      <div class="absolute inset-0 "></div>
+      <div class="relative z-10 text-center px-6 max-w-3xl">
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-medium text-black mb-4 gsap-fade-up"
+        >
+          Sobre <span class="text-[var(--color-accent)] font-bold">Nosotros</span>
+        </h1>
+        <p
+          class="text-lg md:text-xl text-white/90 font-normal gsap-fade-up"
+        >
+          Más de una década de experiencia, innovación y compromiso impulsando
+          el desarrollo de la industria y el comercio en Colombia.
+        </p>
+      </div>
+    </div>
+
+    <!-- <Breadcrumb items={[{ name: "Nosotros", href: "/about/" }]} /> -->
+
+    <!-- Estadísticas -->
+    <Section id="stats">
+      <div class="py-12 md:py-16">
+        <ol
+          class="grid grid-cols-2 md:grid-cols-4 gap-8 gsap-stagger-container list-none p-0 m-0"
+        >
+          {
+            stats.map((stat) => (
+              <li class="text-center gsap-stagger-item">
+                <span
+                  class="block text-4xl md:text-5xl font-bold text-[var(--color-primary)] font-display"
+                >
+                  {stat.number}
+                </span>
+                <span class="text-sm md:text-base text-[var(--color-text-secondary)] mt-2 block">
+                  {stat.label}
+                </span>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </Section>
+
+    <!-- Nuestra Historia -->
+    <Section id="history" class="bg-[var(--color-bg-secondary)]">
+      <div class="py-12 md:py-20">
+        <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+          <div class="w-full md:w-1/2 gsap-fade-up">
+            <div class="grid grid-cols-2 gap-3">
+              <Image
+                src={imageTwo}
+                alt="Instalaciones eléctricas industriales realizadas por WT Ingelec"
+                class="w-full h-[200px] sm:h-[280px] object-cover rounded-md shadow-lg"
+              />
+              <Image
+                src={imageThree}
+                alt="Equipo técnico de WT Ingelec en planta industrial"
+                class="w-full h-[200px] sm:h-[280px] object-cover rounded-md shadow-lg mt-6"
+              />
             </div>
           </div>
-          <div class="text-left space-y-10 pb-8 pt-10">
-            <h2
-              class="text-2xl font-medium leading-none md:text-3xl gsap-fade-up"
-            >
+          <div class="w-full md:w-1/2 space-y-6 gsap-fade-up">
+            <h2 class="text-2xl md:text-3xl font-medium">
               Nuestra Historia y Propósito
             </h2>
-            <p class="mt-6 mb-8 font-normal leading-7 sm:mb-12 gsap-fade-up">
+            <p class="text-[var(--color-text-secondary)] leading-7">
               WT Ingelec SAS fue fundada en 2014 con el firme propósito de
               atender las necesidades específicas de los sectores industrial y
               comercial en Colombia. Desde nuestros inicios, nos hemos enfocado
               en ofrecer soluciones integrales de alta calidad en montajes
               eléctricos, automatización, control de procesos, modernización de
-              plantas, diseños, asesorías y legalización de proyectos. Hemos
-              evolucionado para proveer un servicio integral en la gestión de
-              proyectos, ingeniería, suministro y construcción de diversas obras
-              eléctricas, siempre alineados con las normas y reglamentos
+              plantas, diseños, asesorías y legalización de proyectos.
+            </p>
+            <p class="text-[var(--color-text-secondary)] leading-7">
+              Hemos evolucionado para proveer un servicio integral en la gestión
+              de proyectos, ingeniería, suministro y construcción de diversas
+              obras eléctricas, siempre alineados con las normas y reglamentos
               nacionales e internacionales.
             </p>
           </div>
-          <div class="w-[90dvw] p-none flex justify-center">
-            <Sponsors />
-          </div>
-          <div class="text-left space-y-10 pb-8 py-10">
-            <h2
-              class="text-2xl font-medium leading-none md:text-3xl gsap-fade-up"
+        </div>
+      </div>
+    </Section>
+
+    <!-- Misión y Visión -->
+    <Section id="mission-vision">
+      <div class="py-12 md:py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 gsap-stagger-container">
+          <div
+            class="bg-white border border-[var(--color-border)] rounded-md p-8 shadow-[0px_5px_0px_#191a23] gsap-stagger-item"
+          >
+            <div
+              class="w-12 h-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center mb-6"
             >
-              Nuestra Misión
-            </h2>
-            <p class="mt-4 mb-8 font-normal leading-7 sm:mb-12 gsap-fade-up">
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl md:text-2xl font-medium mb-4">Nuestra Misión</h3>
+            <p class="text-[var(--color-text-secondary)] leading-7">
               Generar soluciones de ingeniería que se traduzcan en mayor
               productividad, eficiencia, confiabilidad y menores costos de
               mantenimiento para nuestros clientes.
             </p>
           </div>
-          <div class="text-left space-y-10 pb-8 py-10">
-            <h2
-              class="text-2xl font-medium leading-none md:text-3xl gsap-fade-up"
+          <div
+            class="bg-white border border-[var(--color-border)] rounded-md p-8 shadow-[0px_5px_0px_#191a23] gsap-stagger-item"
+          >
+            <div
+              class="w-12 h-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center mb-6"
             >
-              Nuestra Visión
-            </h2>
-            <p class="mt-4 mb-8 font-normal leading-7 sm:mb-12 gsap-fade-up">
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl md:text-2xl font-medium mb-4">Nuestra Visión</h3>
+            <p class="text-[var(--color-text-secondary)] leading-7">
               Proyectarnos como una firma líder en ingeniería y servicios a
               nivel nacional, reconocida por nuestra excelencia, capacidad
               innovadora y el valor que aportamos al desarrollo de nuestros
               clientes y del sector.
             </p>
           </div>
-          <div class="text-left space-y-10 pb-8 py-10">
-            <h2
-              class="text-2xl font-medium leading-none md:text-3xl gsap-fade-up"
-            >
-              Nuestros Valores
-            </h2>
-            <ul class="list-disc space-y-4 pl-6 gsap-fade-up">
-              <li>
-                <strong>Calidad de Excelencia:</strong> Nuestro compromiso inquebrantable
-                con los más altos estándares en cada proyecto y servicio que ofrecemos.
-              </li>
-              <li>
-                <strong>Innovación Constante:</strong> Nos mantenemos a la vanguardia
-                tecnológica, actualizando equipos y capacitando a nuestro personal
-                para ofrecer soluciones de última generación.
-              </li>
-              <li>
-                <strong>Integridad y Respeto:</strong> Actuamos con ética y profesionalismo
-                en todas nuestras interacciones, fomentando relaciones basadas en
-                la confianza.
-              </li>
-              <li>
-                <strong>Lealtad y Compromiso:</strong> Dedicación total a los objetivos
-                de nuestros clientes, trabajando con pasión y responsabilidad para
-                superar sus expectativas.
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
-    </div>
+    </Section>
+
+    <!-- Valores -->
+    <Section id="values" class="bg-[var(--color-bg-secondary)]">
+      <div class="py-12 md:py-20">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl md:text-3xl font-medium mb-4">Nuestros Valores</h2>
+          <p class="text-[var(--color-text-secondary)] max-w-2xl mx-auto">
+            Los principios que guían cada uno de nuestros proyectos y
+            relaciones.
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 gsap-stagger-container"
+        >
+          {
+            values.map((value) => (
+              <div class="bg-white border border-[var(--color-border)] rounded-md p-6 text-center shadow-[0px_5px_0px_#191a23] transition-all duration-200 hover:shadow-[0px_8px_0px_#191a23] hover:-translate-y-1 gsap-stagger-item">
+                <div class="w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center mx-auto mb-4">
+                  <svg
+                    class="w-6 h-6 text-black"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d={value.icon}
+                    />
+                  </svg>
+                </div>
+                <h4 class="text-lg font-medium mb-2">{value.title}</h4>
+                <p class="text-sm text-[var(--color-text-secondary)] leading-6">
+                  {value.description}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </Section>
+
+    <!-- Sponsors -->
+    <Section id="sponsors-about">
+      <div class="py-12 md:py-16">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl md:text-3xl font-medium mb-4">
+            Nuestros Clientes Destacados
+          </h2>
+          <p class="text-[var(--color-text-secondary)] max-w-2xl mx-auto">
+            Empresas que confían en nuestras soluciones de ingeniería eléctrica.
+          </p>
+        </div>
+      </div>
+    </Section>
+    <Sponsors />
+
+    <!-- CTA Final -->
+    <Section>
+      <div
+        class="relative overflow-hidden rounded-md my-12 md:my-20"
+      >
+        <!-- Degradado mesh diagonal -->
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-[#001f4d] via-[#003A74] to-[#0055a5]"
+        >
+        </div>
+        <!-- Acento dorado sutil en esquina superior derecha -->
+        <div
+          class="absolute -top-20 -right-20 w-64 h-64 bg-[var(--color-accent)] rounded-full opacity-15 blur-3xl"
+        >
+        </div>
+        <!-- Brillo sutil en esquina inferior izquierda -->
+        <div
+          class="absolute -bottom-16 -left-16 w-48 h-48 bg-[var(--color-accent)] rounded-full opacity-10 blur-3xl"
+        >
+        </div>
+        <div
+          class="relative z-10 w-full px-6 py-16 md:py-20 flex flex-col items-center gap-6 text-center"
+        >
+          <h2
+            class="text-3xl md:text-4xl font-medium text-white gsap-fade-up"
+          >
+            ¿Listo para iniciar tu proyecto?
+          </h2>
+          <p class="text-white text-lg max-w-xl gsap-fade-up">
+            Contáctanos y descubre cómo podemos ayudarte a alcanzar tus
+            objetivos.
+          </p>
+          <Button
+            variant="secondary"
+            size="md"
+            href="/#contact"
+            class="mt-2 gsap-fade-up"
+          >
+            Contáctanos
+          </Button>
+        </div>
+      </div>
+    </Section>
   </main>
 </MainLayout>

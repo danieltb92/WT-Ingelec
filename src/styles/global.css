@@ -211,6 +211,14 @@
   .btn {
     @apply inline-flex items-center justify-center font-grotesk font-medium rounded-sm px-3 py-6 transition-all duration-200;
   }
+
+  .btn:focus {
+    @apply outline-none;
+  }
+
+  .btn:focus-visible {
+    @apply outline-2 outline-offset-2 outline-[var(--color-accent)];
+  }
   
   .btn-primary {
     @apply btn bg-[var(--color-primary)] text-white border border-[var(--color-primary)];
@@ -391,4 +399,50 @@
 
 .imgCardInvert img {
   filter: invert(1);
+}
+
+/* ========================================
+   REDUCED MOTION - Accessibilidad
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .gsap-fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .gsap-stagger-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ========================================
+   FOCUS VISIBLE - Accesibilidad
+   ======================================== */
+a:focus-visible {
+  @apply outline-2 outline-offset-2 outline-[var(--color-accent)];
+}
+
+/* ========================================
+   VISUALLY HIDDEN - Screen readers
+   ======================================== */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
