@@ -241,6 +241,13 @@
     @apply bg-[var(--color-accent)] border-[var(--color-accent)];
   }
 
+  .btn-quaternary {
+    @apply btn bg-[var(--color-accent)] text-[var(--color-primary)] border border-[var(--color-accent)];
+  }
+  .btn-quaternary:hover {
+    @apply bg-[var(--color-primary)] text-white border-[var(--color-primary)];
+  }
+
   .btn-outline {
     @apply btn bg-white text-black border border-black;
   }

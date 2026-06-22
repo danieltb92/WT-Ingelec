@@ -1,7 +1,7 @@
 ---
 interface Props extends Record<string, any> {
   href?: string;
-  variant?: "primary" | "secondary" | "tertiary" | "outline" | "ghost";
+  variant?: "primary" | "secondary" | "tertiary" | "quaternary" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
   class?: string;
   type?: "button" | "submit" | "reset";
@@ -22,6 +22,7 @@ const variants = {
   primary: "btn-primary",
   secondary: "btn-secondary",
   tertiary: "btn-tertiary",
+  quaternary: "btn-quaternary",
   outline: "btn-outline",
   ghost: "btn-ghost",
 };
