@@ -96,11 +96,17 @@ const legalLinks = [
           <h4
             class="text-blueSecundary text-lg font-medium mb-4 text-center lg:text-left"
           >
-            Suscríbete
+            Suscríbete a la newsletter
           </h4>
-          <form class="flex text-base w-full max-w-xs mb-4">
+          <!-- Form Newsletter -->
+          <form
+            class="flex text-base w-full max-w-xs mb-4"
+            action="https://formspree.io/f/xgojejyd"
+            method="POST"
+          >
             <input
               type="email"
+              name="email"
               placeholder="Tu email"
               class="rounded-l px-3 py-2 w-full text-dark"
               required
@@ -111,6 +117,7 @@ const legalLinks = [
               >Enviar</button
             >
           </form>
+          
           <div>
             <h5
               class="text-blueSecundary font-medium mb-2 text-center lg:text-left"
