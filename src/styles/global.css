@@ -209,7 +209,7 @@
      BOTONES - BUTTONS
      ======================================== */
   .btn {
-    @apply inline-flex items-center justify-center font-grotesk font-medium rounded-sm px-3 py-6 transition-all duration-200;
+    @apply inline-flex items-center justify-center font-grotesk font-normal rounded-sm px-3 py-6 transition-all duration-200;
   }
 
   .btn:focus {
@@ -235,7 +235,7 @@
   }
 
   .btn-tertiary {
-    @apply btn bg-white text-[var(--color-primary)] border border-white;
+    @apply btn bg-white text-white border border-white;
   }
   .btn-tertiary:hover {
     @apply bg-[var(--color-accent)] border-[var(--color-accent)];
@@ -281,6 +281,9 @@
     }
     .btn-md {
       @apply !px-5 !py-3 !text-sm;
+    }
+    .btn-sm {
+      @apply !px-4 !py-2 !text-xs;
     }
   }
 

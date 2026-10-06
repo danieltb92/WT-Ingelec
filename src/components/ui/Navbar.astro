@@ -20,11 +20,11 @@ const navButton = {
 <div>
   <nav
     id="main-navbar"
-    class="w-full top-0 left-0 z-50 fixed bg-white transition-transform duration-300 ease-in-out shadow-md shadow-gray"
+    class="w-full h-20 top-0 left-0 z-50 fixed bg-white transition-transform duration-300 ease-in-out shadow-md shadow-gray"
     style="transform: translateY(0); will-change: transform;"
   >
     <header
-      class="flex flex-col lg:flex-row justify-between items-center px-4 md:px-24"
+      class="flex h-full flex-col lg:flex-row justify-center lg:justify-between items-center px-2 lg:px-24"
     >
       <Astronav>
         <!-- Logo y Botón de Menú Móvil -->
@@ -34,12 +34,12 @@ const navButton = {
           <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img
               src="/Logo.svg"
-              class="h-20 drop-shadow-[0_0_2px_white]"
+              class="h-16 drop-shadow-[0_0_2px_white]"
               alt="Logo"
             />
           </a>
           <div class="block lg:hidden">
-            <div id="menu-icon" class="w-8 h-8 text-black cursor-pointer">
+            <div id="menu-icon" class="w-8 h-8 px-10 text-black cursor-pointer">
               <!-- Open (hamburger) icon -->
               <svg
                 id="open-icon"
@@ -87,7 +87,7 @@ const navButton = {
                 <li class="w-full lg:w-auto group">
                   <a
                     href={item.href}
-                    class="navbar-link mobile-nav-link block py-2 px-3 text-2xl lg:text-base text-black rounded lg:bg-transparent lg:p-0 text-center transition-colors duration-200 group-hover:bg-blue/20 group-hover:text-blueSecundary hover:opacity-50"
+                    class="navbar-link mobile-nav-link block py-2 px-3 text-2xl lg:text-sm text-black rounded lg:bg-transparent lg:p-0 text-center transition-colors duration-200 group-hover:bg-blue/20 group-hover:text-blueSecundary hover:opacity-50"
                     data-close-menu="true"
                   >
                     {item.label}
@@ -100,7 +100,7 @@ const navButton = {
               class="lg:hidden flex items-center justify-center mt-3 gap-4 w-full"
             >
             <Button
-              variant="quaternary"
+              variant="primary"
               size="sm"
               href={navButton.href}
               class=""
@@ -119,14 +119,12 @@ const navButton = {
         <!-- Botón de Contacto (Solo visible en Desktop) -->
         <div class="hidden lg:flex items-center gap-4">
           <Button
-            variant="quaternary"
+            variant="primary"
             size="sm"
             href={navButton.href}
             class=""
           >
-            <h2 class="text-center text-base font-normal leading-7">
-              {navButton.label}
-            </h2>
+            {navButton.label}
           </Button>
         </div>
       </div>
