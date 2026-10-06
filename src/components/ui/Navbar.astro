@@ -20,7 +20,7 @@ const navButton = {
 <div>
   <nav
     id="main-navbar"
-    class="w-full h-20 top-0 left-0 z-50 fixed bg-white transition-transform duration-300 ease-in-out shadow-md shadow-gray"
+    class="w-full h-16 top-0 left-0 z-50 fixed bg-white transition-transform duration-300 ease-in-out shadow-md shadow-gray"
     style="transform: translateY(0); will-change: transform;"
   >
     <header
@@ -34,7 +34,7 @@ const navButton = {
           <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img
               src="/Logo.svg"
-              class="h-16 drop-shadow-[0_0_2px_white]"
+              class="h-14 drop-shadow-[0_0_2px_white]"
               alt="Logo"
             />
           </a>
@@ -87,7 +87,7 @@ const navButton = {
                 <li class="w-full lg:w-auto group">
                   <a
                     href={item.href}
-                    class="navbar-link mobile-nav-link block py-2 px-3 text-2xl lg:text-sm text-black rounded lg:bg-transparent lg:p-0 text-center transition-colors duration-200 group-hover:bg-blue/20 group-hover:text-blueSecundary hover:opacity-50"
+                    class="navbar-link mobile-nav-link block py-2 px-3 text-base lg:text-sm text-black rounded lg:bg-transparent lg:p-0 text-center transition-colors duration-200 group-hover:bg-blue/20 group-hover:text-blueSecundary hover:opacity-50"
                     data-close-menu="true"
                   >
                     {item.label}
@@ -106,10 +106,8 @@ const navButton = {
               class=""
               data-close-menu="true"
             >
-                <h2 class="text-left text-xl font-normal leading-7">
-                  {navButton.label}
-                </h2>
-              </Button>
+              {navButton.label}
+            </Button>
             </div>
           </ul>
         </nav>

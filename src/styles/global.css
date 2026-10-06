@@ -242,7 +242,7 @@
   }
 
   .btn-quaternary {
-    @apply btn bg-[var(--color-accent)] text-[var(--color-primary)] border border-[var(--color-accent)];
+    @apply btn bg-[var(--color-accent)] text-black border border-[var(--color-accent)];
   }
   .btn-quaternary:hover {
     @apply bg-[var(--color-primary)] text-white border-[var(--color-primary)];
