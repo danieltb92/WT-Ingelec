@@ -47,10 +47,10 @@ const infiniteSponsors = [...sponsors, ...sponsors];
         {
           infiniteSponsors.map((sponsor, index) => {
             return (
-              <div class=" flex items-center justify-center grayscale opacity-30 transition-all duration-300 hover:grayscale-0 hover:opacity-100  min-w-[200px] md:w-[300px] h-[150px] md:h-[180px] px-6 md:px-none">
+              <div class=" flex items-center justify-center grayscale opacity-30 transition-all duration-300 hover:grayscale-0 hover:opacity-100  min-w-[200px] md:w-[300px] h-[150px] md:h-[200px] px-none md:px-none">
                 <Image
                   src={sponsor.logo}
-                  class="h-20 sm:h-28 w-auto object-contain max-w-none"
+                  class="h-16 sm:h-24 w-fit object-contain max-w-none"
                   alt={sponsor.alt}
                   loading={index < 5 ? "eager" : "lazy"}
                 />
