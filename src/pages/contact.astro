@@ -1,0 +1,508 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "@/layouts/MainLayout.astro";
+import Breadcrumb from "@/components/ui/Breadcrumb.astro";
+import Section from "@/components/sections/Section.astro";
+import Form from "@/components/ui/Form.astro";
+import Button from "@/components/ui/Button.astro";
+import contactImg from "@/assets/pics/contact.webp";
+import contactImg1 from "@/assets/pics/contact1.webp";
+
+const contactInfo = [
+  {
+    icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
+    title: "Correo Electrónico",
+    content: "info@wtingelec.com.co",
+    href: "mailto:info@wtingelec.com.co",
+    target: "_self",
+    rel: "",
+  },
+  {
+    icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z",
+    title: "Teléfono",
+    content: "+57 311 510 9251",
+    href: "tel:+573115109251",
+    target: "_self",
+    rel: "",
+  },
+  {
+    icon: "M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8.9h.5a8.48 8.48 0 018 8v.5z",
+    title: "WhatsApp",
+    content: "+57 311 510 9251",
+    href: "https://wa.me/+573115109251",
+    target: "_blank",
+    rel: "noopener noreferrer",
+  },
+  {
+    icon: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z",
+    title: "Dirección",
+    content: "Bogotá, Colombia",
+    href: "#location",
+    target: "_self",
+    rel: "",
+  },
+];
+
+const stats = [
+  { number: "+10", label: "Años de Experiencia" },
+  { number: "+200", label: "Proyectos Completados" },
+  { number: "+150", label: "Clientes Satisfechos" },
+  { number: "100%", label: "Compromiso" },
+];
+
+const faqs = [
+  {
+    question: "¿En cuánto tiempo responden a las cotizaciones?",
+    answer:
+      "Nuestro equipo técnico evalúa cada solicitud y envía una propuesta preliminar en menos de 24 horas hábiles. Para proyectos complejos, coordinamos una llamada técnica previa.",
+  },
+  {
+    question: "¿Realizan visitas técnicas sin compromiso?",
+    answer:
+      "Sí, ofrecemos visita técnica de diagnóstico sin costo para proyectos en Bogotá y ciudades principales. Para otras ubicaciones, coordinamos según alcance del proyecto.",
+  },
+  {
+    question: "¿Qué información necesitan para cotizar?",
+    answer:
+      "Básicamente: tipo de proyecto, ubicación, planos o croquis si los tienes, carga estimada, y cualquier requisito normativo específico. Si no tienes planos, agendamos la visita técnica.",
+  },
+  {
+    question: "¿Manejan mantenimiento preventivo y correctivo?",
+    answer:
+      "Absolutamente. Tenemos planes de mantenimiento programado para grupos electrógenos, subestaciones, tableros y sistemas de automatización. Incluye informes técnicos y cumplimiento normativo.",
+  },
+];
+---
+
+<MainLayout
+  title="Contacto | WT Ingelec SAS"
+  description="Contacta a WT Ingelec SAS para soluciones eléctricas e ingeniería en Colombia. Envíanos tu consulta, solicita presupuesto o escríbenos por WhatsApp. Atendemos industria y comercio."
+>
+  <main>
+    <!-- Structured Data SEO -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contacto WT Ingelec",
+      "description": "Página de contacto de WT Ingelec SAS - Soluciones eléctricas e ingeniería en Colombia",
+      "url": "https://www.wtingelec.com.co/contact/",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "WT Ingelec SAS",
+        "url": "https://www.wtingelec.com.co",
+        "telephone": "+57-311-510-9251",
+        "email": "info@wtingelec.com.co",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "CO",
+          "addressLocality": "Bogotá"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+57-311-510-9251",
+          "contactType": "customer service",
+          "email": "info@wtingelec.com.co",
+          "areaServed": "CO",
+          "availableLanguage": "es"
+        }
+      }
+    })} />
+
+    <Breadcrumb items={[{ name: "Contacto", href: "/contact/" }]} />
+
+    <!-- Hero Section -->
+    <div
+      class="relative min-h-[400px] md:min-h-[500px] flex items-center justify-center overflow-hidden mt-[50px] md:mt-[80px]"
+    >
+      <Image
+        src={contactImg}
+        alt="Equipo de WT Ingelec en proyecto eléctrico"
+        loading="eager"
+        fetchpriority="high"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-[#003A74]/90 via-[#003A74]/80 to-[#003A74]/95"
+      >
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-3xl">
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-4 gsap-fade-up"
+        >
+          Contáctanos
+        </h1>
+        <p class="text-lg md:text-xl text-white/90 font-normal gsap-fade-up">
+          ¿Tienes un proyecto en mente? Nuestro equipo de ingenieros está listo
+          para ayudarte. Escríbenos, llámanos o visítanos.
+        </p>
+      </div>
+    </div>
+
+    <!-- Contact Info Cards -->
+    <Section id="contact-info" class="bg-[var(--color-bg-secondary)]">
+      <div class="py-12 md:py-20">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl md:text-3xl font-medium mb-4 gsap-fade-up">
+            Canales de Atención
+          </h2>
+          <p
+            class="text-[var(--color-text-secondary)] max-w-2xl mx-auto gsap-fade-up"
+          >
+            Elige el medio que prefieras, te responderemos en el menor tiempo
+            posible.
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 gsap-stagger-container"
+        >
+          {
+            contactInfo.map((item) => (
+              <a
+                href={item.href}
+                target={item.target}
+                rel={item.rel}
+                class="bg-white border border-[var(--color-border)] rounded-md p-6 text-center shadow-[0px_5px_0px_#191a23] transition-all duration-200 hover:shadow-[0px_8px_0px_#191a23] hover:-translate-y-1 gsap-stagger-item"
+              >
+                <div class="w-12 h-12 rounded-full bg-[#003A74]/10 flex items-center justify-center mx-auto mb-4">
+                  <svg
+                    class="w-6 h-6 text-[var(--color-primary)]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d={item.icon}
+                    />
+                  </svg>
+                </div>
+                <h4 class="text-lg font-medium mb-2">{item.title}</h4>
+                <p class="text-[var(--color-text-secondary)] leading-6 transition-colors group-hover:text-[var(--color-primary)]">
+                  {item.content}
+                </p>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </Section>
+
+    <!-- Stats Bar -->
+    <Section id="stats-contact">
+      <div class="py-12 md:py-16">
+        <ol
+          class="grid grid-cols-2 md:grid-cols-4 gap-8 gsap-stagger-container list-none p-0 m-0"
+        >
+          {
+            stats.map((stat) => (
+              <li class="text-center gsap-stagger-item">
+                <span class="block text-4xl md:text-5xl font-bold text-[var(--color-primary)] font-display">
+                  {stat.number}
+                </span>
+                <span class="text-sm md:text-base text-[var(--color-text-secondary)] mt-2 block">
+                  {stat.label}
+                </span>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </Section>
+
+    <!-- Main Contact Form Section -->
+    <Section id="contact-form" class="bg-[var(--color-bg-dark)]">
+      <div class="py-12 md:py-20">
+        <div
+          class="grid lg:grid-cols-[1fr_0.8fr] gap-10 lg:gap-16 items-start"
+        >
+          <!-- Form Side -->
+          <div class="gsap-fade-up">
+            <div
+              class="bg-white shadow-[0_25px_80px_rgba(0,0,0,0.08)] p-6 sm:p-8 lg:p-10 rounded-sm"
+            >
+              <div class="mb-8">
+                <h2 class="text-3xl font-medium mb-2">
+                  Envíanos un Mensaje
+                </h2>
+                <p class="text-[var(--color-text-secondary)]">
+                  Completa el formulario y nos pondremos en contacto contigo en
+                  menos de 24 horas.
+                </p>
+              </div>
+              <Form />
+            </div>
+          </div>
+
+          <!-- Info Side -->
+          <div class="hidden lg:block space-y-6">
+            <div class="gsap-fade-up">
+              <Image
+                src={contactImg1}
+                alt="Oficinas WT Ingelec"
+                class="w-full h-auto rounded-sm shadow-[0_25px_80px_rgba(0,0,0,0.08)]"
+              />
+            </div>
+            <div
+              class="bg-white rounded-sm p-6 shadow-[0px_5px_0px_#191a23] gsap-fade-up"
+            >
+              <h3 class="text-xl font-medium mb-4">Horario de Atención</h3>
+              <div class="space-y-3 text-[var(--color-text-secondary)]">
+                <div class="flex justify-between">
+                  <span>Lunes - Viernes</span>
+                  <span class="font-medium">7:00 AM - 5:00 PM</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Sábados</span>
+                  <span class="font-medium">8:00 AM - 12:00 PM</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Domingos y Festivos</span>
+                  <span class="font-medium text-[var(--color-error)]"
+                    >Cerrado</span
+                  >
+                </div>
+              </div>
+              <div class="mt-6 pt-6 border-t border-[var(--color-border)]">
+                <p class="text-sm text-[var(--color-text-muted)]">
+                  Para emergencias fuera de horario, contáctanos por WhatsApp.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Map / Location Section -->
+    <Section id="location" class="bg-[var(--color-bg-secondary)]">
+      <div class="py-12 md:py-20">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl md:text-3xl font-medium mb-4 gsap-fade-up">
+            Nuestra Ubicación
+          </h2>
+          <p
+            class="text-[var(--color-text-secondary)] max-w-2xl mx-auto gsap-fade-up"
+          >
+            Estamos ubicados en Bogotá, atendemos proyectos en toda Colombia.
+          </p>
+        </div>
+        <div
+          class="relative rounded-sm overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.08)] gsap-fade-up"
+        >
+          <!-- TODO: Reemplazar con iframe de Google Maps cuando se tenga la dirección exacta -->
+          <div
+            class="aspect-video bg-white flex items-center justify-center"
+          >
+            <div class="text-center p-8">
+              <svg
+                class="w-16 h-16 mx-auto mb-4 text-[#003A74]/50"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <p class="text-[var(--color-text-secondary)] mb-2">
+                Mapa de Ubicación
+              </p>
+              <p class="text-[var(--color-text-muted)] text-sm max-w-xs mx-auto">
+                Bogotá, Colombia — Atendemos proyectos en todo el país.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 gsap-stagger-container"
+        >
+          <div
+            class="bg-white border border-[var(--color-border)] rounded-md p-6 text-center shadow-[0px_5px_0px_#191a23] gsap-stagger-item"
+          >
+            <div
+              class="w-12 h-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center mx-auto mb-4"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <h4 class="text-lg font-medium mb-2">Oficina Principal</h4>
+            <p class="text-[var(--color-text-secondary)] leading-6">
+              Bogotá, Colombia
+            </p>
+          </div>
+          <div
+            class="bg-white border border-[var(--color-border)] rounded-md p-6 text-center shadow-[0px_5px_0px_#191a23] gsap-stagger-item"
+          >
+            <div
+              class="w-12 h-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center mx-auto mb-4"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                ></path>
+              </svg>
+            </div>
+            <h4 class="text-lg font-medium mb-2">Cobertura Nacional</h4>
+            <p class="text-[var(--color-text-secondary)] leading-6">
+              Atendemos proyectos en todo Colombia
+            </p>
+          </div>
+          <div
+            class="bg-white border border-[var(--color-border)] rounded-md p-6 text-center shadow-[0px_5px_0px_#191a23] gsap-stagger-item"
+          >
+            <div
+              class="w-12 h-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center mx-auto mb-4"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <h4 class="text-lg font-medium mb-2">Tiempo de Respuesta</h4>
+            <p class="text-[var(--color-text-secondary)] leading-6">
+              Menos de 24 horas hábiles
+            </p>
+          </div>
+        </div>
+      </div>
+    </Section>
+
+    <!-- FAQ Section -->
+    <Section id="faq-contact">
+      <div class="py-12 md:py-20">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl md:text-3xl font-medium mb-4 gsap-fade-up">
+            Preguntas Frecuentes
+          </h2>
+          <p
+            class="text-[var(--color-text-secondary)] max-w-2xl mx-auto gsap-fade-up"
+          >
+            Respuestas rápidas a las consultas más comunes.
+          </p>
+        </div>
+        <div class="max-w-3xl mx-auto gsap-stagger-container">
+          {
+            faqs.map((faq, index) => (
+              <details
+                class="bg-white border border-[var(--color-border)] rounded-md mb-4 overflow-hidden gsap-stagger-item group"
+                open={index === 0}
+              >
+                <summary class="flex items-center justify-between p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                  <h4 class="text-lg font-medium">{faq.question}</h4>
+                  <svg
+                    class="w-5 h-5 text-[var(--color-text-muted)] transition-transform group-open:rotate-180 shrink-0 ml-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </summary>
+                <div class="px-6 pb-6 text-[var(--color-text-secondary)] leading-7 border-t border-[var(--color-border)] pt-4">
+                  {faq.answer}
+                </div>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </Section>
+
+    <!-- CTA Final -->
+    <Section>
+      <div class="relative overflow-hidden rounded-md my-12 md:my-20">
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-[#001f4d] via-[var(--color-primary)] to-[#0055a5]"
+        >
+        </div>
+        <div
+          class="absolute -top-20 -right-20 w-64 h-64 bg-[var(--color-accent)] rounded-full opacity-15 blur-3xl"
+        >
+        </div>
+        <div
+          class="absolute -bottom-16 -left-16 w-48 h-48 bg-[var(--color-accent)] rounded-full opacity-10 blur-3xl"
+        >
+        </div>
+        <div
+          class="relative z-10 w-full px-6 py-16 md:py-20 flex flex-col items-center gap-6 text-center"
+        >
+          <h2 class="text-3xl md:text-4xl font-medium text-white gsap-fade-up">
+            ¿Listo para Iniciar tu Proyecto?
+          </h2>
+          <p class="text-white text-lg max-w-xl gsap-fade-up">
+            Nuestro equipo de ingenieros está listo para asesorarte.
+            Contáctanos hoy mismo.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mt-2 gsap-fade-up">
+            <Button variant="quaternary" size="md" href="#contact-form">
+              Solicitar Cotización
+            </Button>
+            <Button
+              variant="secondary"
+              size="md"
+              href="https://wa.me/+573115109251"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp Directo
+            </Button>
+          </div>
+        </div>
+      </div>
+    </Section>
+  </main>
+</MainLayout>
