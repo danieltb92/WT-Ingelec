@@ -5,13 +5,16 @@ Guidelines for AI agents working on this Astro 5.x static site for WT Ingelec (C
 ## Build Commands
 
 ```bash
-npm run dev          # Start dev server (localhost:4321)
-npm run build        # Build + TypeScript check (REQUIRED before deployment)
-npm run preview      # Preview production build locally
-npm run astro        # Astro CLI commands
+pnpm install         # Install dependencies (pnpm-lock.yaml is the source of truth)
+pnpm dev             # Start dev server (localhost:4321)
+pnpm build           # Build + TypeScript check (REQUIRED before deployment)
+pnpm preview         # Preview production build locally
+pnpm astro           # Astro CLI commands
 ```
 
-**CRITICAL**: Always run `npm run build` before committing to catch type errors.
+**CRITICAL**: Always run `pnpm build` before committing to catch type errors.
+
+**Package manager**: this repo now uses **pnpm** with Node 24 (`package-lock.json` was removed; CI workflow installs with pnpm).
 
 ## Project Structure
 
@@ -20,7 +23,7 @@ src/
   assets/           # Images and SVG assets for processing
   components/
     sections/        # Full-width page sections (Hero, About, Services, etc.)
-    ui/             # Reusable UI components (Navbar, Footer, Cards, Forms)
+    ui/             # Reusable UI components (Navbar, Footer, Cards, Form, Badge)
     seo/            # Seo.astro component
     effects/        # Visual effects (Snow.astro)
     Icons/          # SVG icon components
@@ -118,18 +121,30 @@ import HeroImg from "@/assets/pics/hero.webp";
 
 ### Error Handling
 - TypeScript strict mode catches most errors at build time
-- Always check `npm run build` output for type errors
+- Always check `pnpm build` output for type errors
 - Use optional chaining for potentially undefined data: `data?.property`
 
 ## Critical Conventions
 
 1. **Zero JS by default**: Astro ships no JavaScript unless explicitly added via `<script>` tags
 2. **Path aliases**: Always use `@/` for imports from `src/`
-3. **Build before commit**: Run `npm run build` to validate TypeScript
+3. **Build before commit**: Run `pnpm build` to validate TypeScript
 4. **Images**: Import from `@/assets/` and use Astro's `<Image>` component
 5. **Colors**: Use CSS custom properties or Tailwind theme colors
 6. **Animations**: Use provided GSAP classes or inline timeline scripts for Hero
 7. **SEO**: Use `Seo.astro` component on all pages with proper meta props
+8. **Hero spacing on landing pages**: use the shared top clearance `mt-[64px] pt-6 pb-16 md:pt-8 md:pb-24` (applied consistently on about, services, contact).
+9. **`Form.astro` is atomic** — renders the form only (props: `title`, `description`, `redirectUrl`; its script
+   enables the round checkboxes and auto-fills the message when "Pedir presupuesto" is checked). The 2-column
+   composition with the decorative image lives in `sections/Contact.astro` (home page); other pages compose
+   their own card/layout around `<Form />`.
+
+## Known Quirks
+
+- **Tailwind + CSS variables**: opacity modifiers on arbitrary `var()` colors fail silently (`bg-[var(--x)]/10` generates no rule). Use hex values instead (e.g. `bg-[#003A74]/10`).
+- **`[hidden]` vs Tailwind `.flex`**: an author-level `display: flex` beats the browser's native `[hidden]` style. To keep an element hidden while it has `hidden`, force it with `#some-id[hidden] { display: none !important; }` (see the contact-feedback banner in `contact.astro`).
+- **Commenting out template blocks with `<!-- -->` in `.astro`**: always check `dist/` afterwards — the compiler behavior on commented blocks has been inconsistent (it once kept rendering the commented components). A more robust alternative is a frontmatter flag rendered as `{SHOW_SECTIONS && (<Section>…)}`.
+- **sharp + pnpm**: pnpm does not hoist Astro's optional `sharp` dependency; if the build fails with `MissingSharp`, install it explicitly (`pnpm add sharp`).
 
 ## External Dependencies
 
