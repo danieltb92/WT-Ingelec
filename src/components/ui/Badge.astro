@@ -1,0 +1,31 @@
+---
+/**
+ * Badge - rótulo pequeño redondeado (pill/chip) con punto de acento.
+ *
+ * @param {string} text - Texto del badge.
+ * @param {"light" | "dark"} variant - `light` para fondos claros, `dark` para fondos navy.
+ * @param {string} class - Clases extra (ej. espaciado: "mb-5").
+ */
+interface Props {
+  text: string;
+  variant?: "light" | "dark";
+  class?: string;
+}
+
+const { text, variant = "light", class: className = "" } = Astro.props;
+
+const variants = {
+  light: "border-black/15 bg-black/[0.04] text-black",
+  dark: "border-white/25 bg-white/10 text-white backdrop-blur-sm",
+};
+---
+
+<p
+  class={`inline-flex items-center gap-2 rounded-s px-4 py-1.5 border border-neutral-300 capitalize text-sm font-bold bg-[var(--color-bg-secondary)] ${variants[variant]} ${className}`}
+>
+  <!-- <span
+    class="inline-block h-2 w-2 rounded-full bg-[#FFB800]"
+    aria-hidden="true"
+  ></span> -->
+  {text}
+</p>
