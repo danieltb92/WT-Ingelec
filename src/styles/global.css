@@ -98,22 +98,16 @@
     scroll-behavior: smooth;
   }
 
-  /* Body: Inter para textos largos */
-  body {
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
-    line-height: 1.7;
-    color: var(--color-text-primary);
-    background-color: var(--color-bg-primary);
-  }
-
   /* Títulos: Space Grotesk */
-  h1, h2, h3, h4, h5, h6,
+  h1, h2,
   .font-heading {
     font-family: "Space Grotesk", sans-serif;
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.02em;
+  }
+  h3, h4, h5, h6 {
+    font-family:"Inter", sans-serif;
   }
 
   h1 { font-size: 3rem; }
@@ -122,6 +116,15 @@
   h4 { font-size: 1.25rem; }
   h5 { font-size: 1.125rem; }
   h6 { font-size: 1rem; }
+
+  /* Body: Inter para textos largos */
+  body {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+  }
 
   /* Párrafos y texto largo: Inter */
   p, span, li, td, th {
@@ -347,7 +350,7 @@
      FORMULARIOS - INPUTS
      ======================================== */
   .input-base {
-    @apply w-full px-6 py-4 rounded-xl border border-[var(--color-border)] bg-white text-black font-grotesk transition-all duration-200;
+    @apply w-full px-6 py-4 rounded-xl border border-[var(--color-border)] bg-white text-black font-sans transition-all duration-200;
   }
 
   .input-base:focus {
