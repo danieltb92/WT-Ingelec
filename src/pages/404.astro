@@ -1,5 +1,6 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
+import Button from "@/components/ui/Button.astro";
 ---
 
 <MainLayout
@@ -7,30 +8,41 @@ import MainLayout from "@/layouts/MainLayout.astro";
   description="La página solicitada no existe o fue movida. Vuelve al inicio de WT Ingelec SAS para encontrar soluciones eléctricas y de ingeniería."
   robots={true}
 >
-  <main class="space-y-20">
+  <section class="mt-16 flex-1 flex items-center px-6 py-16 md:py-24">
     <div
-      class="relative flex flex-col-reverse items-center justify-center md:flex-row"
-      id="hero"
+      class="w-full max-w-[1280px] mx-auto grid items-center gap-12 md:grid-cols-2 md:gap-16"
     >
-      <div class="row items-center py-5 md:pb-20 md:pt-10">
-        <div class="justify-center flex py-5">
-          <img src="/404.svg" width="50%" alt="Hero" />
-        </div>
-        <div class="text-center space-y-10">
-          <h2 class="text-2xl font-medium leading-none md:text-4xl">
-            Lo siento, la página que buscabas no se encuentra
-          </h2>
-          <a
-            class="px-9 py-5 bg-black hover:bg-white text-white hover:text-black border rounded-2xl justify-items-center md:justify-items-start gap-2.5 inline-flex"
-            rel="noopener noreferrer"
-            href="/"
-          >
-            <h2 class="text-center text-xl font-normal leading-7">
-              Regresar al Inicio
-            </h2>
-          </a>
+      <div class="text-center md:text-left">
+        <p
+          class="mb-4 text-sm font-medium uppercase tracking-[0.08em] text-[var(--color-primary)]"
+        >
+          Error 404
+        </p>
+        <h1
+          class="text-4xl font-medium leading-[1.05] tracking-[-0.02em] md:text-5xl lg:text-6xl"
+        >
+          No encontramos esta página
+        </h1>
+        <p
+          class="mx-auto mt-6 max-w-md text-lg text-[var(--color-text-secondary)] md:mx-0"
+        >
+          Puede que el enlace esté mal escrito o que la página se haya movido.
+          Volvamos a un lugar conocido.
+        </p>
+        <div
+          class="mt-10 flex flex-col justify-center gap-4 sm:flex-row md:justify-start"
+        >
+          <Button variant="primary" size="md" href="/">Volver al inicio</Button>
+          <Button variant="outline" size="md" href="/services/">
+            Ver servicios
+          </Button>
         </div>
       </div>
+      <img
+        src="/404.svg"
+        alt=""
+        class="mx-auto w-full max-w-[360px] md:max-w-[420px] order-first md:order-last"
+      />
     </div>
-  </main>
+  </section>
 </MainLayout>

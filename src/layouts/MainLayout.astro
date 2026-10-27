@@ -31,7 +31,7 @@ const { ...props } = Astro.props;
       initAnimations();
     });
   </script>
-  <body class="bg-white">
+  <body class="bg-white min-h-dvh flex flex-col">
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
@@ -41,7 +41,7 @@ const { ...props } = Astro.props;
         style="display:none;visibility:hidden"></iframe></noscript
     >
     <!-- End Google Tag Manager (noscript) -->
-    <main>
+    <main class="flex-1 flex flex-col">
       <Navbar />
       <slot />
       <Footer />
