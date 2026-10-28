@@ -22,15 +22,15 @@ const { index, title, description, image, title2, body } = Astro.props;
     aria-controls={`${title} accordion__item menu content`}
   >
     <div class="flex items-center gap-4 sm:gap-[25px] flex-1 min-w-0">
-      <span class="block text-base sm:text-xl md:text-2xl lg:text-3xl truncate"
+      <span class="block text-sm sm:text-xl md:text-2xl lg:text-3xl truncate"
         >{title}</span
       >
     </div>
     <div
-      class="bg-gray w-10 h-10 sm:w-[58px] sm:h-[58px] flex justify-center items-center rounded-full border border-dark flex-shrink-0 ml-4"
+      class="bg-gray w-8 h-8 sm:w-[58px] sm:h-[58px] flex justify-center items-center rounded-full border border-dark flex-shrink-0 ml-4"
     >
       <div
-        class="accordion__icon h-6 w-6 sm:h-10 sm:w-10 transition-transform duration-300 flex justify-center items-center relative"
+        class="accordion__icon h-5 w-5 sm:h-10 sm:w-10 transition-transform duration-300 flex justify-center items-center relative"
         aria-hidden="true"
       >
       </div>
@@ -42,25 +42,29 @@ const { index, title, description, image, title2, body } = Astro.props;
     class="accordion__content px-4 sm:px-[60px]"
   >
     <div class="w-full h-[2px] bg-black"></div>
-    <p class="prose mb-4 mt-1 max-w-full pt-5 pb-[60px] transition-[height]">
+    <p class="prose text-sm mb-4 mt-1 max-w-full pt-5 pb-8 sm:pb-[60px] transition-[height]">
       {description}
     </p>
     {
       image && (
         <div class="flex justify-center w-full my-4">
-          <img src={image} alt={title} class="h-auto rounded-lg shadow" />
+          <img
+            src={image}
+            alt={title}
+            class="w-full max-w-[720px] aspect-[4/3] object-cover object-center rounded-lg shadow"
+          />
         </div>
       )
     }
     <div>
-      <h3 class="prose mb-1 mt-1 max-w-full pt-5 pb-[10px] transition-[height]">
+      <h4 class="prose mb-1 mt-1 max-w-full pt-5 pb-[10px] transition-[height]">
         {title2}
-      </h3>
+      </h4>
       {
         Array.isArray(body) && body.length > 0 && body[0] !== "" ? (
-          <ul class="mb-4 mt-1 max-w-full pt-1 pb-[60px] list-disc pl-6 transition-[height]">
+          <ul class="text-sm mb-4 mt-1 max-w-full pt-1 pb-[30px] md:pb-[60px] list-disc pl-4 sm:pl-6 transition-[height]">
             {body.map((item) => (
-              <li>{item}</li>
+              <li class="pb-2">{item}</li>
             ))}
           </ul>
         ) : null
